@@ -1,0 +1,7 @@
+/* ----- Global Style ------ */
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
