@@ -5,3 +5,11 @@
 *::before {
 	box-sizing: border-box;
 }
+
+/* ----- Color Palette ----- */
+
+:root {
+	--color-primary: #387ed1;
+	--color-body: #424242;
+	--color-body-lighter: #666;
+}
