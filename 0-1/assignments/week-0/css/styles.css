@@ -67,3 +67,36 @@ h3 {
 		font-size: 2.8rem;
 	}
 }
+
+/* ----- Links ----- */
+
+a {
+	text-decoration: none;
+}
+
+.link-arrow {
+	color: var(--color-primary);
+	font-size: 2rem;
+	transition: margin 0.2s ease-in-out;
+}
+
+.link-arrow::after {
+	content: "-->";
+	margin-left: 3px;
+	transition: margin 0.2s ease-in-out;
+}
+
+.link-arrow:hover {
+	color: var(--color-body);
+}
+
+.link-arrow:hover::after {
+	margin-left: 6px;
+}
+
+@media screen and (min-width: 1024px) {
+	/* For Laptops and Desktops */
+	.link-arrow {
+		font-size: 1.6rem;
+	}
+}
