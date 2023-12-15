@@ -7,12 +7,41 @@
 		<link rel="stylesheet" href="./css/normalize.css" />
 		<link rel="stylesheet" href="./css/styles.css" />
 	</head>
-	<body>
-		<p>Two Column Grid</p>
-		<div class="grid grid--1x2">
-			<div style="height: 100px; background: gold; text-align: center;">Content Box1</div>
-			<div style="height: 100px; background: dodgerblue; text-align: center;">Content Box2</div>
-			<div style="height: 100px; background: lightpink; text-align: center;">Content Box3</div>
-		</div>
+	<body style="min-height: 200vh">
+		<header class="header">
+			<!-- Navabar -->
+			<nav class="nav">
+				<div class="container">
+					<!-- logo -->
+					<a href="/" class="nav__brand"
+						><img src="./images/logo.svg" alt="Zeroda"
+					/></a>
+
+					<!-- Navigation links -->
+					<ul class="navbar__links">
+						<li>
+							<a href="#">Signup</a>
+						</li>
+						<li>
+							<a href="#">About</a>
+						</li>
+						<li>
+							<a href="#">Products</a>
+						</li>
+						<li>
+							<a href="#">Pricing</a>
+						</li>
+						<li>
+							<a href="#">Support</a>
+						</li>
+					</ul>
+
+					<!-- Hamburger Menu -->
+					<svg class="icon" data-dropdown-button>
+						<use href="./images/sprite.svg#menu"></use>
+					</svg>
+				</div>
+			</nav>
+		</header>
 	</body>
 </html>
