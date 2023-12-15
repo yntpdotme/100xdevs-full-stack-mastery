@@ -497,3 +497,42 @@ a {
 	display: inline-block;
 	margin-top: 3rem;
 }
+
+/* ----- Marketing ----- */
+
+.marketing .container {
+	align-items: center;
+	gap: 4rem;
+	padding: 2rem;
+}
+
+.marketing__tagline {
+	margin-bottom: 1.5rem;
+}
+
+.marketing .grid {
+	margin-bottom: 1.5rem;
+}
+
+.marketing__heading {
+	margin-bottom: 3rem;
+}
+
+.marketing ul {
+	line-height: 2;
+}
+
+.marketing li::marker {
+	font-size: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+	/* For Tablets and Wider Screens */
+	.marketing__image {
+		width: 85%;
+	}
+
+	.marketing ul {
+		padding-left: 2rem;
+	}
+}
