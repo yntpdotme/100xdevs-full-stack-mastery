@@ -100,3 +100,17 @@ a {
 		font-size: 1.6rem;
 	}
 }
+
+/* ----- Icons ----- */
+
+.icon {
+	fill: var(--color-body-lighter);
+	height: 30px;
+	transition: all 0.3s ease-out;
+	width: 30px;
+}
+
+.icon:hover {
+	fill: var(--color-primary);
+}
+
