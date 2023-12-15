@@ -572,3 +572,50 @@ a {
 		justify-items: start;
 	}
 }
+
+/* ----- Pricing ----- */
+
+.pricing {
+	padding-top: 3rem;
+}
+
+.pricing .grid {
+	gap: 2rem 0;
+}
+
+.pricing__content div {
+	text-align: center;
+	padding: 1rem 2rem;
+	border: 1px solid #ccc;
+}
+
+.grid .pricing__content {
+	gap: 0;
+}
+
+.pricing h2 {
+	font-weight: 500;
+	margin-top: 1rem;
+}
+
+.pricing__content div:nth-child(even) {
+	border-top: 0;
+}
+
+.pricing__content h2 {
+	font-size: 4rem;
+	padding-bottom: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+	/* For Tablets and Wider Screens */
+	.pricing__content div:nth-child(even) {
+		border-top: 1px solid #ccc;
+		border-left: 0;
+	}
+
+	.pricing__content {
+		width: 95%;
+		margin: 0 auto;
+	}
+}
