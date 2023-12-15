@@ -210,6 +210,7 @@ a {
 .hamburger {
 	height: 28px;
 	padding-left: 1rem;
+	cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {
