@@ -114,3 +114,24 @@ a {
 	fill: var(--color-primary);
 }
 
+/* ----- Buttons ----- */
+
+.btn {
+	background: var(--color-primary);
+	border-radius: 3px;
+	border: 0;
+	color: #fff;
+	cursor: pointer;
+	font-size: 2rem;
+	font-weight: 500;
+	margin: 1rem 0;
+	outline: 0;
+	padding: 1rem 3.5rem;
+	text-align: center;
+	transition: all 0.3s ease-out;
+	white-space: nowrap;
+}
+
+.btn:hover {
+	background: #222;
+}
