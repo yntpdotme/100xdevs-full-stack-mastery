@@ -478,3 +478,22 @@ a {
 		width: 38px;
 	}
 }
+
+/* ----- Hero ----- */
+
+.hero {
+	text-align: center;
+}
+
+.hero__image {
+	max-width: 1140px;
+}
+
+.hero__tagline {
+	letter-spacing: 0.5px;
+}
+
+.hero .btn {
+	display: inline-block;
+	margin-top: 3rem;
+}
