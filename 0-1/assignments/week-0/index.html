@@ -12,6 +12,7 @@
 		/>
 		<link rel="stylesheet" href="./css/normalize.css" />
 		<link rel="stylesheet" href="./css/styles.css" />
+		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 	</head>
 	<body>
 		<header class="header">
@@ -176,6 +177,7 @@
 						class="marketing__image"
 						src="./images/largest-broker.svg"
 						alt=""
+						data-aos="fade-up"
 					/>
 					<header class="marketing__header">
 						<h2 class="marketing__heading">Largest stock broker in India</h2>
@@ -217,6 +219,8 @@
 						class="ecosystem__image"
 						src="./images/ecosystem.png"
 						alt="The Zerodha Universe"
+						data-aos="fade-up"
+						data-aos-anchor-placement="top-bottom"
 					/>
 				</picture>
 				<div>
@@ -236,7 +240,7 @@
 						</p>
 						<a href="#" class="link-arrow">See pricing</a>
 					</header>
-					<article class="grid grid--1x2 pricing__content">
+					<article class="grid grid--1x2 pricing__content" data-aos="fade-up">
 						<div>
 							<h2>₹0</h2>
 							<p>Free equaity delivery and direct mutual funds</p>
@@ -252,7 +256,7 @@
 			<!-- Education Section-->
 			<section class="section education">
 				<div class="container grid grid--1x2">
-					<img src="./images/education.svg" alt="" />
+					<img src="./images/education.svg" alt="" data-aos="fade-up"/>
 					<header class="education__header">
 						<h3 class="education__heading">Free and open market education</h3>
 						<p>
@@ -476,5 +480,11 @@
 
 		<!-- Script for Dropdown Section -->
 		<script src="./js/main.js"></script>
+
+		<!-- Script for Initializing AOS Library -->
+		<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+		<script>
+			AOS.init();
+		</script>
 	</body>
 </html>
