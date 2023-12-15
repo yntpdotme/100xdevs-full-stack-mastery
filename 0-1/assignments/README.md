@@ -24,7 +24,9 @@
 
 ## Foundation
 
- - #### Coming Soon...
+ - ### [Week 0 : Zerodha Landing Page (HTML/CSS)](./assignments/week-0/REAME.md)
+
+ - ### [Week 1 : JavaScript Fundamentals](./assignments/week-1/REAME.md)
 </br></br>
 
 
