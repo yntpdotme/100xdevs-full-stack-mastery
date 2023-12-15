@@ -641,3 +641,19 @@ a {
 	line-height: 1.7;
 	letter-spacing: 0.5px;
 }
+
+/* ----- Callout ----- */
+
+.callout {
+	padding-top: 3rem;
+	text-align: center;
+}
+
+.callout__heading {
+	margin-bottom: 2rem;
+}
+
+.callout .btn {
+	display: inline-block;
+	margin: 2rem;
+}
