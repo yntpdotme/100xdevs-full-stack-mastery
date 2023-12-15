@@ -6,6 +6,10 @@
 	box-sizing: border-box;
 }
 
+img {
+	width: 100%;
+}
+
 /* ----- Color Palette ----- */
 
 :root {
@@ -156,4 +160,74 @@ a {
 	max-width: 1140px;
 	margin: 0 auto;
 	padding: 0 2rem;
+}
+
+/* ----- Navigation Bar ----- */
+
+.header {
+	position: sticky;
+	top: 0;
+}
+
+.nav {
+	align-items: center;
+	background-color: #fff;
+	box-shadow: 2px 1px 2px #eee;
+}
+
+.nav .container {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	padding: 1.8rem 2rem;
+}
+
+.nav__brand {
+	transform: translateY(2px);
+	width: 115px;
+}
+
+.navbar__links {
+	display: none;
+}
+
+.nav .icon {
+	width: 24px;
+}
+
+.hamburger {
+	height: 28px;
+	padding-left: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+	/* For Tablets and Wider Screens */
+	.nav__brand {
+		width: 130px;
+	}
+
+	.navbar__links {
+		display: flex;
+		justify-content: end;
+		flex-grow: 2;
+		list-style: none;
+		margin: 0;
+		padding-right: 3rem;
+	}
+
+	.navbar__links a {
+		color: var(--color-body-lighter);
+		font-size: 1.5rem;
+		font-weight: 400;
+		padding-left: 4.2rem;
+		transition: all 0.3s ease-out;
+	}
+
+	.navbar__links a:hover {
+		color: var(--color-primary);
+	}
+
+	.nav .icon {
+		width: 22px;
+	}
 }
