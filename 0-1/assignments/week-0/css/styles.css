@@ -50,6 +50,7 @@ h2 {
 
 h3 {
 	font-size: 2.4rem;
+	font-weight: 500;
 	line-height: 1.3;
 }
 
@@ -81,6 +82,7 @@ a {
 .link-arrow {
 	color: var(--color-primary);
 	font-size: 2rem;
+	font-weight: 500;
 	transition: margin 0.2s ease-in-out;
 }
 
@@ -534,5 +536,39 @@ a {
 
 	.marketing ul {
 		padding-left: 2rem;
+	}
+}
+
+/* ----- Education ----- */
+
+.education .container {
+	gap: 4rem;
+	justify-items: center;
+	align-items: center;
+}
+
+.education__heading {
+	margin-bottom: 3rem;
+}
+
+.education img {
+	width: 80%;
+}
+
+.education p {
+	font-size: 1.7rem;
+	line-height: 1.8;
+	margin-bottom: 1rem;
+}
+
+.education .link-arrow {
+	display: inline-block;
+	margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+	/* For Tablets and Wider Screens */
+	.education .container {
+		justify-items: start;
 	}
 }
