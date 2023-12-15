@@ -8,24 +8,26 @@
 		<link rel="stylesheet" href="./css/styles.css" />
 	</head>
 	<body>
-		<p>Hero Component</p>
-		<section class="hero">
-			<div class="container">
-				<picture>
-					<source
-						type="image/webp"
-						srcset="./images/landing.webp 1x, ./images/landing@2x.webp 2x"
-					/>
-					<source
-						type="image/png"
-						srcset="./images/landing.png 1x, ./images/landing@2x.png 2x"
-					/>
-					<img class="hero__image" src="./images/landing.png" alt="" />
-				</picture>
-				<header class="hero__header">
-					<h1 class="hero__heading">Heading Goes Here</h1>
+		<p>Marketing Component</p>
+		<section class="marketing">
+			<div class="container grid grid--1x2">
+				<img class="marketing__image" src="./images/largest-broker.svg" alt="" />
+				<header class="marketing__header">
+					<h2 class="marketing__heading">Heading Goes Here</h2>
 					<p>Tagline goes here which gives idea about brand</p>
-					<a href="#" class="btn">Call To Action</a>
+					<div class="grid grid--1x2">
+						<ul>
+							<li>Item 1 is listed here</li>
+							<li>Item 2 is listed here</li>
+							<li>Item 3 is listed here</li>
+						</ul>
+						<ul>
+							<li>Item 1 is listed here</li>
+							<li>Item 2 is listed here</li>
+							<li>Item 3 is listed here</li>
+						</ul>
+					</div>
+					<img src="./images/press-logos.png" alt="" />
 				</header>
 			</div>
 		</section>
