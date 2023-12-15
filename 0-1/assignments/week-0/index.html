@@ -3,12 +3,287 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Zerodha</title>
+		<title>Zeroda</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+			rel="stylesheet"
+		/>
 		<link rel="stylesheet" href="./css/normalize.css" />
 		<link rel="stylesheet" href="./css/styles.css" />
 	</head>
 	<body>
-		<p>Footer Component</p>
+		<header class="header">
+			<!-- Navabar -->
+			<nav class="nav">
+				<div class="container">
+					<!-- logo -->
+					<a href="#" class="nav__brand"
+						><img src="./images/logo.svg" alt="Zeroda"
+					/></a>
+
+					<!-- Navigation links -->
+					<ul class="navbar__links">
+						<li>
+							<a href="#">Signup</a>
+						</li>
+						<li>
+							<a href="#">About</a>
+						</li>
+						<li>
+							<a href="#">Products</a>
+						</li>
+						<li>
+							<a href="#">Pricing</a>
+						</li>
+						<li>
+							<a href="#">Support</a>
+						</li>
+					</ul>
+
+					<!-- Hamburger Menu -->
+					<div class="hamburger" data-dropdown-button>
+						<svg class="icon" data-dropdown-button>
+							<use href="./images/sprite.svg#menu"></use>
+						</svg>
+					</div>
+				</div>
+			</nav>
+
+			<!-- Dropdown Menu -->
+			<section class="dropdown" data-dropdown>
+				<div class="dropdown-menu">
+					<!-- Cross icon for closing Dropdown : Mobile Only -->
+					<svg class="icon" data-dropdown-button>
+						<use href="./images/sprite.svg#cross"></use>
+					</svg>
+					<svg class="icon" data-dropdown-button>
+						<use href=""></use>
+					</svg>
+
+					<!-- Navigation Links : Mobile Only -->
+					<ul class="dropdown__links">
+						<li><a href="#">Signup</a></li>
+						<li><a href="#">About</a></li>
+						<li><a href="#">Products</a></li>
+						<li><a href="#">Pricing</a></li>
+						<li><a href="#">Support</a></li>
+					</ul>
+
+					<!-- Products Section -->
+					<article class="dropdown__products">
+						<div>
+							<img src="./images/products/kite-logo.svg" />
+							<a href="#">Kite</a>
+							<p>Trading platform</p>
+						</div>
+						<div>
+							<img src="./images/products/console.svg" />
+							<a href="#">Console</a>
+							<p>Backoffice</p>
+						</div>
+						<div>
+							<img src="./images/products/kite-connect.svg" />
+							<a href="#">Kite Connet</a>
+							<p>Trading APIs</p>
+						</div>
+						<div>
+							<img src="./images/products/coin.svg" />
+							<a href="#">Coin</a>
+							<p>Mutual funds</p>
+						</div>
+						<div class="education-mobile">
+							<img src="./images/products/varsity.png" />
+							<a href="#">Varsity</a>
+						</div>
+						<div class="education-mobile">
+							<img src="./images/products/tqna.png" />
+							<a href="#">Trading Q&A</a>
+						</div>
+					</article>
+
+					<!-- Footer Section -->
+					<footer class="dropdown__footer">
+						<div class="dropdown__footer-list">
+							<div>
+								<h3>Utilities</h3>
+								<ul>
+									<li><a href="#">Brokerage calculator</a></li>
+									<li><a href="#">Margin calculator</a></li>
+									<li><a href="#">Holidy calendar</a></li>
+								</ul>
+							</div>
+							<div>
+								<h3>Updates</h3>
+								<ul>
+									<li><a href="#">Z-Connect blog</a></li>
+									<li><a href="#">Pusle News</a></li>
+									<li><a href="#">Circulars / Bulletin</a></li>
+									<li><a href="#">IPOs</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="dropdown__footer-education">
+							<h3>Education</h3>
+							<div class="dropdown__footer-education__content">
+								<div>
+									<img src="./images/products/varsity.png" />
+									<a href="#">Varsity</a>
+								</div>
+								<div>
+									<img class="trading" src="./images/products/tqna.png" />
+									<a href="#">Trading Q&A</a>
+								</div>
+							</div>
+						</div>
+					</footer>
+				</div>
+			</section>
+		</header>
+
+		<main>
+			<!-- Hero Section -->
+			<section class="section hero">
+				<div class="container">
+					<picture>
+						<source
+							type="image/webp"
+							srcset="./images/landing.webp 1x, ./images/landing@2x.webp 2x"
+						/>
+						<source
+							type="image/png"
+							srcset="./images/landing.png 1x, ./images/landing@2x.png 2x"
+						/>
+						<img class="hero__image" src="./images/landing.png" alt="" />
+					</picture>
+					<header class="hero__header">
+						<h1 class="hero__heading">Invest in everything</h1>
+						<p class="hero__tagline">
+							Online platform to invest in stocks, derivatives, mutual funds,
+							and more
+						</p>
+						<a href="/" class="btn">Sign up now</a>
+					</header>
+				</div>
+			</section>
+
+			<!-- Marketing Section -->
+			<section class="section marketing">
+				<div class="container grid grid--1x2">
+					<img
+						class="marketing__image"
+						src="./images/largest-broker.svg"
+						alt=""
+					/>
+					<header class="marketing__header">
+						<h2 class="marketing__heading">Largest stock broker in India</h2>
+						<p class="marketing__tagline">
+							1+ Crore Zerodha clients contribute to over 15% of all retail
+							order volumes in India daily by trading and investing in:
+						</p>
+						<div class="grid grid--1x2">
+							<ul>
+								<li>Futures and Options</li>
+								<li>Commodity derivatives</li>
+								<li>Currency derivatives</li>
+							</ul>
+							<ul>
+								<li>Stocks & IPOs</li>
+								<li>Direct mutual funds</li>
+								<li>Bonds and Govt. Securities</li>
+							</ul>
+						</div>
+						<img src="./images/press-logos.png" alt="" />
+					</header>
+				</div>
+			</section>
+
+			<!-- Ecosystem Section -->
+			<section class="section ecosystem">
+				<header class="ecosystem__header">
+					<h2 class="ecosystem__heading">The Zerodha Universe</h2>
+					<p>
+						A whole ecosystem of modern investment apps
+						<br />
+						tailored to specific needs, built from the ground up
+					</p>
+				</header>
+				<picture>
+					<source type="image/webp" srcset="./images/ecosystem.webp" />
+					<source type="image/png" srcset="./images/ecosystem.png" />
+					<img
+						class="ecosystem__image"
+						src="./images/ecosystem.png"
+						alt="The Zerodha Universe"
+					/>
+				</picture>
+				<div>
+					<a href="#" class="link-arrow">Explore our products</a>
+					<a href="#" class="link-arrow">Try Kite demo</a>
+				</div>
+			</section>
+
+			<!-- Pricing Section-->
+			<section class="section pricing">
+				<div class="container grid grid--1x2">
+					<header class="pricing__header">
+						<h2 class="pricing__heading">Unbeatable pricing</h2>
+						<p>
+							We pioneered the concept of discount broking and price
+							transparency in India. Flat fees and no hidden charges.
+						</p>
+						<a href="#" class="link-arrow">See pricing</a>
+					</header>
+					<article class="grid grid--1x2 pricing__content">
+						<div>
+							<h2>₹0</h2>
+							<p>Free equaity delivery and direct mutual funds</p>
+						</div>
+						<div>
+							<h2>₹20</h2>
+							<p>Intraday and F&O</p>
+						</div>
+					</article>
+				</div>
+			</section>
+
+			<!-- Education Section-->
+			<section class="section education">
+				<div class="container grid grid--1x2">
+					<img src="./images/education.svg" alt="" />
+					<header class="education__header">
+						<h3 class="education__heading">Free and open market education</h3>
+						<p>
+							Varsity, the largest online stock market education book in the
+							world covering everything from basics to advanced trading.
+						</p>
+						<a href="#" class="link-arrow">Varsity</a>
+
+						<p>
+							TradingQ&A, the most active trading and investment community in
+							India for all your market related queries.
+						</p>
+						<a href="#" class="link-arrow">Trading Q&A</a>
+					</header>
+				</div>
+			</section>
+
+			<!-- Callout Section-->
+			<section class="section callout">
+				<header class="callout__header">
+					<h2 class="callout__heading">Open a Zerodha account</h2>
+					<p>
+						Modern platforms and apps, ₹0 investments, and flat ₹20 intraday and
+						F&O trades.
+					</p>
+				</header>
+				<a href="/" class="btn">Sign up now</a>
+			</section>
+		</main>
+
+		<!-- Footer Section -->
 		<footer class="footer">
 			<div class="container">
 				<div class="grid">
@@ -28,7 +303,10 @@
 									<use href="./images/sprite.svg#linktree"></use>
 								</svg>
 							</a>
-							<a href="https://www.linkedin.com/in/kadlagakash/" target="_blank">
+							<a
+								href="https://www.linkedin.com/in/kadlagakash/"
+								target="_blank"
+							>
 								<svg class="icon">
 									<use href="./images/sprite.svg#linkedin"></use>
 								</svg>
@@ -193,5 +471,8 @@
 				</div>
 			</div>
 		</footer>
+
+		<!-- Script for Dropdown Section -->
+		<script src="./js/main.js"></script>
 	</body>
 </html>
