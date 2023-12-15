@@ -135,3 +135,17 @@ a {
 .btn:hover {
 	background: #222;
 }
+
+/* ----- Grids ------ */
+
+.grid {
+	display: grid;
+}
+
+@media screen and (min-width: 768px) {
+	/* For Tablets */
+	.grid--1x2 {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
