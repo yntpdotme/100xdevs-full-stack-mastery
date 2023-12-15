@@ -10,6 +10,10 @@ img {
 	width: 100%;
 }
 
+.section {
+	margin: 5rem 0 8rem;
+}
+
 /* ----- Color Palette ----- */
 
 :root {
