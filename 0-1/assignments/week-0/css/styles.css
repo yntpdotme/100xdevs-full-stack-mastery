@@ -619,3 +619,25 @@ a {
 		margin: 0 auto;
 	}
 }
+
+/* ----- Ecosystem ----- */
+
+.ecosystem {
+	text-align: center;
+	margin-top: 10rem;
+}
+
+.ecosystem__image {
+	max-width: 850px;
+}
+
+.ecosystem .link-arrow {
+	display: inline-block;
+	margin: 2rem 1rem;
+}
+
+.ecosystem__header p {
+	padding-top: 0.5rem;
+	line-height: 1.7;
+	letter-spacing: 0.5px;
+}
