@@ -76,3 +76,21 @@
 <br><br>
 
 ## Winners
+
+🎉 Congratulations to the Bounty Winners! 🎉
+
+1. **Sid**: $50 <a href="https://codepen.io/dustyapi/pen/YzBJqjW" target="_blank">CodePen Link</a>
+
+2. **Rajat Mondal**: $50 <a href="https://codepen.io/Rajat-Mondal/pen/OJdabRM" target="_blank">CodePen Link</a>
+
+3. **Vineet Aagarwal**: $50 <a href="https://github.com/VineeTagarwaL-code/bounty100xdevs" target="_blank">GitHub Link</a>
+
+4. **Mayank**: $25 <a href="https://codepen.io/codescalper/pen/JjxmGVe" target="_blank">CodePen Link</a>
+
+5. **Harshit Jain**: $25 <a href="https://codepen.io/theoopsguy/pen/PoVyZQY" target="_blank">CodePen Link</a>
+
+6. **Aadesh Kulkarni**: $25 <a href="https://codepen.io/Aadesh-Kulkarni-the-typescripter/pen/eYxPZyQ" target="_blank">CodePen Link</a>
+
+
+Stay tuned for more exciting opportunities in the future.
+
