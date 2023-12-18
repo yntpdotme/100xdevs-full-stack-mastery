@@ -35,7 +35,7 @@ Welcome to the Bounties Hub! This section provides an overview of the bounties a
 
 ## Bounties
 
- - #### coming soon
+ - ### [Bounty 1: Enhancing YouTube Player Seekbar](./bounty-1/README.md)
 
 </br></br>
 
