@@ -36,9 +36,102 @@
   To test the server, run the `npm run test-todoServer` command in the terminal.
 */
 
+const zod = require("zod");
 const express = require("express");
 const app = express();
 
 app.use(express.json());
+
+// In-memory array to store todo items
+const todos = [];
+
+// Validation Logic
+const validateToDo = (todo) => {
+	const Schema = zod.object({
+		title: zod.string().min(3),
+    description: zod.string().optional(),
+    completed: zod.boolean().optional(),
+	});
+
+	return Schema.safeParse(todo);
+};
+
+/* ----- Retrive ----- */
+app.get("/todos", (req, res) => {
+	// Return the todos
+	res.status(200).json(todos);
+});
+
+app.get("/todos/:id", (req, res) => {
+	// Check if todo with requested id exists
+	const todo = todos.find((todo) => todo.id === parseInt(req.params.id));
+	if (!todo)
+		return res.status(404).send(`The todo with the given ID was not found`);
+
+	// Return the todo
+	res.status(200).json(todo);
+});
+
+/* ----- Create ----- */
+app.post("/todos", (req, res) => {
+	// Validate the Input
+	const input = validateToDo(req.body);
+	if (!input.success)
+		return res.status(400).send(input.error.issues[0].message);
+
+	// Add todo
+	const newTodo = {
+		id: todos.length + 1,
+		title: req.body.title,
+    description: req.body.description || '',
+    // completed: req.body.completed  || false,
+	};
+  todos.push(newTodo);
+
+	// Return the new todo
+	res.status(201).json(newTodo);
+});
+
+/* ----- Update ----- */
+app.put("/todos/:id", (req, res) => {
+	// Check if todo with requested id exists
+	const todo = todos.find((todo) => todo.id === parseInt(req.params.id));
+	if (!todo)
+		return res.status(404).send(`The todo with the given ID was not found`);
+
+	// Validate the Input
+	const input = validateToDo(req.body);
+	if (!input.success)
+    return res.status(400).send(input.error.issues[0].message);
+  
+  // Update todo
+  todo.title = req.body.title;
+  todo.description = req.body.description || '';
+  todo.completed = req.body.completed || false;
+
+	// Return the updated todo
+	res.status(200).json(todo);
+});
+
+/* ----- Delete ----- */
+app.delete("/todos/:id", (req, res) => {
+	// Check if todo with requested id exists
+	const todo = todos.find((todo) => todo.id === parseInt(req.params.id));
+	if (!todo)
+		return res.status(404).send(`The todo with the given ID was not found`);
+
+  
+  // Delete todo
+  const index = todos.indexOf(todo);
+  todos.splice(index, 1);
+
+	// Return the deleted todo
+	res.status(200).json(todo);
+});
+
+// Handle 404 for any other route
+app.use((req, res) => {
+  res.status(404).send('Route not found');
+});
 
 module.exports = app;
