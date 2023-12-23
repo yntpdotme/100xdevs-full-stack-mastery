@@ -22,3 +22,62 @@
 
 */
 
+/* ----- Way-1 Using updateClock() function ----- */
+function updateClock() {
+	const currentTime = new Date();
+	const hours = currentTime.getHours();
+	const minutes = currentTime.getMinutes();
+	const seconds = currentTime.getSeconds();
+	const ampm = hours >= 12 ? "PM" : "AM";
+
+	const time24hr = `${hours}:${minutes<10 ? "0" : ""}${minutes}:${seconds<10 ? "0" : ""}${seconds}`;
+	const time12hr = `${hours%12 || 12}:${minutes<10 ? "0" : ""}${minutes}:${seconds<10 ? "0" : ""}${seconds} ${ampm}`;
+
+	process.stdout.write(`\r${time24hr} | ${time12hr}`);
+}
+
+const way1 = () => {
+  setInterval(updateClock, 1000);
+};
+
+/* ----- Way-2 Using toLocaleTimeString() ----- */
+const way2 = () => {
+  setInterval(() => {
+    const currentTime = new Date();
+    const time12hr = currentTime.toLocaleTimeString();
+    const time24hr = currentTime.toLocaleTimeString("en-US", {
+      hour12: false,
+    });
+
+    process.stdout.write(`\r${time24hr} | ${time12hr}`);
+  }, 1000);
+}
+
+/* ----- Way-3 Using Intl.DateTimeFormat() ----- */
+const way3 = () => {
+  const timeFormatter1 = new Intl.DateTimeFormat("en-US", {
+    hour12: true,
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric",
+  });
+
+  const timeFormatter2 = new Intl.DateTimeFormat("en-US", {
+		hour12: false,
+		hour: "numeric",
+		minute: "numeric",
+		second: "numeric",
+	});
+
+  setInterval(() => {
+    const currentTime = new Date();
+    const time12hr = timeFormatter1.format(currentTime);
+    const time24hr = timeFormatter2.formatToParts(currentTime).map(({ value }) => value).join("");
+
+    process.stdout.write(`\r${time24hr} | ${time12hr}`);
+  }, 1000);
+}
+
+way1();
+// way2();
+// way3();
