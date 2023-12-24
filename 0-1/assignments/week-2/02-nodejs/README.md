@@ -1,18 +1,3 @@
-## Node.js Assignments
-
-In this series of assignments, you are going to create native HTTP servers in Node.js which will handle different kinds of application logics.
-
-You are provided empty JavaScript files (or having function signatures) in this directory. You have to follow the instructions given in each file and then run automated tests (also mentioned in each file) to check if you have successfully completed the assignment or you still have few more things to learn in it 😜
-
-### Tasks
-Recommended order of attempting the assignments.
-    
-  1. <strong>Todo List App</strong>
-
-  2. <strong>File Server</strong>
-
-<br>
-
 ## Important Notes
 
 1. If you are unable to understand the request/response of any assignment file or whatever the way it is being tested, you can take a look at its respective test file present in `tests/` directory.
@@ -24,6 +9,7 @@ Recommended order of attempting the assignments.
 4. To run individual tests 
     ```bash
     npm run test-todoServer
+    
     npm run test-fileServer
     ```
 <br>

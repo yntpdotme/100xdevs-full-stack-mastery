@@ -1,24 +1,3 @@
-# Asynchronous JavaScript Assignments
-
-This folder contains assignments related to asynchronous JavaScript.
-
-### Easy
-   1. Counter
-   2. Counter (no setInterval)
-   3. Read from a file
-   4. Write to a file
-
-### Medium
-   1. File cleaner
-   2. Clock
-
-### Hard
-   1. Promisify setTimeout
-   2. Sleep completely
-   3. Promise all
-   4. Promise chain
-<br><br>
-
 ## Development Setup
 
 1. If you have Node.js locally, you should run these on your machine
