@@ -27,14 +27,11 @@
  - ### [Week 0 : Zerodha Landing Page (HTML/CSS)](./week-0/REAME.md)
 
  - ### [Week 1 : JavaScript Fundamentals](./week-1/REAME.md)
-
- - ### [Week 2 : Asynchronous JavaScript and NodeJs](./week-2/README.md)
-</br></br>
-
+</br>
 
 ## Backend
 
- - #### Coming Soon...
+ - ### [Week 2 : Asynchronous JavaScript and NodeJs](./week-2/README.md)
 </br></br>
 
 ## Frontend
