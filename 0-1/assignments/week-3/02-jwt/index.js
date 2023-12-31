@@ -1,13 +1,16 @@
-/*
-	Getting Started with JWT 
-		- Write a function that takes in a username and password and returns a JWT token with the username encoded. Should return null if the username is not a valid email or if the password is less than 6 characters. Try using the zod library here.
-		- Write a function that takes a jwt as input and returns true if the jwt can be DECODED (not verified). Return false otherwise.
-		- Write a function that takes a jwt as input and returns true if the jwt can be VERIFIED. Return false otherwise.
-		- To test run `npx jest ./tests`
-*/
-
 const jwt = require("jsonwebtoken");
+const zod = require("zod");
 const jwtPassword = "secret";
+
+const validateInputs = (username, password) => {
+	usernameSchema = zod.string().email();
+	passwordSchema = zod.string().min(6);
+
+	return (
+		usernameSchema.safeParse(username).success &&
+		passwordSchema.safeParse(password).success
+	);
+};
 
 /**
  * Generates a JWT for a given username and password.
@@ -21,7 +24,9 @@ const jwtPassword = "secret";
  *                        the password does not meet the length requirement.
  */
 function signJwt(username, password) {
-	// Your code here
+	const valid = validateInputs(username, password);
+	if (!valid) return null;
+	return jwt.sign({ username }, jwtPassword);
 }
 
 /**
@@ -33,7 +38,12 @@ function signJwt(username, password) {
  *                    using the secret key.
  */
 function verifyJwt(token) {
-	// Your code here
+	try {
+		jwt.verify(token, jwtPassword);
+	} catch (err) {
+		return false;
+	}
+	return true;
 }
 
 /**
@@ -44,7 +54,7 @@ function verifyJwt(token) {
  *                         Returns false if the token is not a valid JWT format.
  */
 function decodeJwt(token) {
-	// Your code here
+	return jwt.decode(token) ? true : false;
 }
 
 module.exports = {
