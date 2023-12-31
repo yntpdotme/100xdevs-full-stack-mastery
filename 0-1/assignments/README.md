@@ -32,6 +32,8 @@
 ## Backend
 
  - ### [Week 2 : Asynchronous JavaScript and NodeJs](./week-2/README.md)
+ 
+ - ### [Week 3 : Middlewares, Auths, MongoDB](./week-3/README.md)
 </br></br>
 
 ## Frontend
