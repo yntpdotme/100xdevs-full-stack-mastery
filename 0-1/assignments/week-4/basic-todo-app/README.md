@@ -37,3 +37,11 @@ Try to add the following features:
 
 5. Efficient Updates:
     Update todos in place when a title changes in two iterations.
+
+
+## My Implementation
+<br>
+<a href="./index.html" align="center">
+  <h3>See the Exact Code</h3>
+  <img src="./result.jpg" alt="Jio Network blocking the view? Network switch reveals the magic!"/>
+</a>

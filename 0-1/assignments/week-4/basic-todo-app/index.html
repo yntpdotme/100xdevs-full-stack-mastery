@@ -76,29 +76,62 @@
 			}
 
 			function addTodoToDom(todo) {
-				
+				const todoDiv = document.getElementById("todos");
+				const todoItem = createTodoElement(todo);
+				todoDiv.appendChild(todoItem);
 			}
 
 			function removeTodoFromDom(todo) {
-				
+				const todoDiv = document.getElementById("todos");
+				const todoItem = document.querySelector(
+					`.todo-item[data-id="${todo.id}"]`
+				);
+
+				if (todoItem) {
+					todoDiv.removeChild(todoItem);
+				}
 			}
 
 			function updateTodoInDom(oldTodo, newTodo) {
-				
+				const todoDiv = document.getElementById("todos");
+				const todoItem = document.querySelector(
+					`.todo-item[data-id="${oldTodo.id}"]`
+				);
+
+				if (todoItem) {
+					todoItem.innerHTML = `Title: ${newTodo.title}, Description: ${newTodo.description} <button onclick="deleteTodo(${newTodo.id})">Delete</button> <button onclick="updateTodo(${newTodo.id})">Update</button>`;
+				}
 			}
 
 			function updateState(newTodos) {
-				// calculate the diff b/w newTodos and oldTodos.
-      	// More specifically, find out what todos are - 
-    	  // 1. added
-  	    // 2. deleted
-	      // 3. updated
 				const added = [];
 				const deleted = [];
 				const updated = [];
 
-				// calculate these 3 arrays
-      	// call addTodo, removeTodo, updateTodo functions on each of the elements
+				for (const newTodo of newTodos) {
+					const oldTodo = oldTodoState.find((todo) => todo.id === newTodo.id);
+					if (!oldTodo) {
+						added.push(newTodo);
+					} else if (
+						oldTodo.title !== newTodo.title ||
+						oldTodo.description !== newTodo.description
+					) {
+						updated.push({ oldTodo, newTodo });
+					}
+				}
+
+				for (const oldTodo of oldTodoState) {
+					const isDeleted = newTodos.every((todo) => todo.id !== oldTodo.id);
+					if (isDeleted) {
+						deleted.push(oldTodo);
+					}
+				}
+
+				added.forEach(addTodoToDom);
+				deleted.forEach(removeTodoFromDom);
+				updated.forEach(({ oldTodo, newTodo }) =>
+					updateTodoInDom(oldTodo, newTodo)
+				);
 
 				oldTodoState = JSON.parse(JSON.stringify(newTodos));
 			}
@@ -114,7 +147,7 @@
 				todoState.push(newTodo);
 				updateState(todoState);
 
-				// Clear Input fileds
+				// Clear Input Fields
 				document.getElementById("title").value = "";
 				document.getElementById("description").value = "";
 			}
