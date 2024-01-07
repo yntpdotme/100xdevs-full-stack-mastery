@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+
+			body {
+				margin: 0;
+				display: flex;
+				flex-direction: column;
+				place-items: center;
+				font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+				line-height: 1.5;
+				font-weight: 400;
+				background-color: #242424;
+				color: rgba(255, 255, 255, 0.87);
+			}
+
+			input {
+				box-sizing: border-box;
+				padding: 12px;
+				border-radius: 8px;
+				border: 0;
+				margin-top: 5px;
+				width: 100%;
+				max-width: 500px;
+			}
+
+			.todo-item {
+				display: flex;
+				flex-direction: column;
+				place-items: center;
+				gap: 10px;
+				margin-top: 30px;
+			}
+
+			.todo-item button {
+				width: 150px;
+				margin: 0 auto;
+			}
+
+			button {
+				border-radius: 8px;
+				border: 1px solid transparent;
+				padding: 0.6em 1.2em;
+				font-size: 1em;
+				font-weight: 500;
+				font-family: inherit;
+				cursor: pointer;
+				transition: border-color 0.25s;
+				width: 100%;
+				max-width: 500px;
+			}
+
+			button:hover,
+			button:focus {
+				border-color: #646cff;
+			}
+		</style>
+
+		<script>
+			let globalId = 1;
+			let todoState = [];
+			let oldTodoState = [];
+
+			function createTodoElement(todo) {
+				const todoDiv = document.createElement("div");
+				todoDiv.className = "todo-item";
+				todoDiv.innerHTML = `<div>Title: ${todo.title}, Description: ${todo.description}</div> <button onclick="deleteTodo(${todo.id})">Delete</button> <button onclick="updateTodo(${todo.id})">Update</button>`;
+				todoDiv.setAttribute("data-id", todo.id);
+				return todoDiv;
+			}
+
+			function addTodoToDom(todo) {
+				
+			}
+
+			function removeTodoFromDom(todo) {
+				
+			}
+
+			function updateTodoInDom(oldTodo, newTodo) {
+				
+			}
+
+			function updateState(newTodos) {
+				// calculate the diff b/w newTodos and oldTodos.
+      	// More specifically, find out what todos are - 
+    	  // 1. added
+  	    // 2. deleted
+	      // 3. updated
+				const added = [];
+				const deleted = [];
+				const updated = [];
+
+				// calculate these 3 arrays
+      	// call addTodo, removeTodo, updateTodo functions on each of the elements
+
+				oldTodoState = JSON.parse(JSON.stringify(newTodos));
+			}
+
+			function addTodo() {
+				const title = document.getElementById("title").value;
+				const description = document.getElementById("description").value;
+				const newTodo = {
+					title: title,
+					description: description,
+					id: globalId++,
+				};
+				todoState.push(newTodo);
+				updateState(todoState);
+
+				// Clear Input fileds
+				document.getElementById("title").value = "";
+				document.getElementById("description").value = "";
+			}
+
+			function deleteTodo(id) {
+				const index = todoState.findIndex((todo) => todo.id === id);
+				if (index !== -1) {
+					const deletedTodo = todoState.splice(index, 1)[0];
+					removeTodoFromDom(deletedTodo);
+					updateState(todoState);
+				}
+			}
+
+			function updateTodo(id) {
+				const existingTodo = todoState.find((todo) => todo.id === id);
+				if (existingTodo) {
+					const newTitle = prompt("Enter new title:", existingTodo.title);
+					const newDescription = prompt(
+						"Enter new description:",
+						existingTodo.description
+					);
+					const updatedTodo = {
+						...existingTodo,
+						title: newTitle,
+						description: newDescription,
+					};
+					updateTodoInDom(existingTodo, updatedTodo);
+					updateState(todoState);
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<h1>Basic To App</h1>
+		<input type="text" id="title" placeholder="Todo Title" /><br /><br />
+		<input
+			type="text"
+			id="description"
+			placeholder="Todo Description"
+		/><br /><br />
+		<button onclick="addTodo()">Add Todo</button>
+		<div id="todos"></div>
+	</body>
+</html>
