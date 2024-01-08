@@ -41,7 +41,11 @@ Try to add the following features:
 
 ## My Implementation
 <br>
-<a href="./index.html" align="center">
-  <h3>See the Exact Code</h3>
-  <img src="./result.jpg" alt="Jio Network blocking the view? Network switch reveals the magic!"/>
-</a>
+
+![Jio Network blocking the view? Network switch reveals the magic!](./result.jpg)
+
+<h3 align="center">
+
+[Source Code](./index.html)
+
+<h3>
