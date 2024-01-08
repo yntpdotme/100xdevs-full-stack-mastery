@@ -1,0 +1,20 @@
+/* Card.css */
+.card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 20px auto;
+  width: 300px;
+}
+
+.social-media img {
+  width: 30px;
+  margin-right: 10px;
+}
+
+.interests {
+  margin-top: 20px;
+}
+
+.interests h3 {
+  margin-bottom: 10px;
+}
