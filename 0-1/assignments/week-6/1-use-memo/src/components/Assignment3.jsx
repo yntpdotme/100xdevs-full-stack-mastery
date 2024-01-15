@@ -4,32 +4,32 @@
     You need to calculate the total amount of money you spent
 */
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 const Assignment3 = () => {
 	const [items, setItems] = useState([
-		{ name: "Chocolates", value: 10 },
-		{ name: "Chips", value: 20 },
-		{ name: "Onion", value: 30 },
-		{ name: "Tomato", value: 30 },
+		{ name: "Haldi", value: 10 },
+		{ name: "Chilli", value: 20 },
+		{ name: "Potato", value: 30 },
+		{ name: "Tomato", value: 40 },
 		// Add more items as needed
 	]);
 
-	// Your code starts here
-	const totalValue = 0;
-	// Your code ends here
+	const totalValue = useMemo(() => {
+		return items.reduce((total, item) => (total += item.value), 0);
+	}, [items]);
 
-  return (
+	return (
 		<div>
-			<ul>
+			<ul style={{"text-align": "left", margin: "30px 0 0 180px", "font-size": "18px"}}>
 				{items.map((item, index) => (
 					<li key={index}>
 						{item.name} - Price: ${item.value}
 					</li>
 				))}
-      </ul>
-      
-			<p>Total Value: ${totalValue}</p>
+			</ul>
+
+			<h3>Total Value: ${totalValue}</h3>
 		</div>
 	);
 };
