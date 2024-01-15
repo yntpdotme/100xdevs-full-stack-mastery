@@ -16,8 +16,8 @@ function App() {
       <h1>useMemo Assignments</h1>
 
       {/* <Assignment1 /> */}
-      <Assignment2 />
-      {/* <Assignment3 /> */}
+      {/* <Assignment2 /> */}
+      <Assignment3 />
     </>
   );
 }
