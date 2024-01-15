@@ -15,9 +15,9 @@ function App() {
       </div>
       <h1>useMemo Assignments</h1>
 
-      {/* <Assignment1 /> */}
+      <Assignment1 />
       {/* <Assignment2 /> */}
-      <Assignment3 />
+      {/* <Assignment3 /> */}
     </>
   );
 }
