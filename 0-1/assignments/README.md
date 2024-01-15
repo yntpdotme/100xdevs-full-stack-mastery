@@ -24,9 +24,9 @@
 
 ## Foundation
 
- - ### [Week 0 : Zerodha Landing Page (HTML/CSS)](./week-0/REAME.md)
+ - ### [Week 0 : Zerodha Landing Page (HTML/CSS)](./week-0/README.md)
 
- - ### [Week 1 : JavaScript Fundamentals](./week-1/REAME.md)
+ - ### [Week 1 : JavaScript Fundamentals](./week-1/README.md)
 </br></br>
 
 
