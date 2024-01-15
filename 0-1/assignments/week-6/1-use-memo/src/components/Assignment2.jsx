@@ -37,6 +37,14 @@ const Assignment2 = () => {
 				onChange={(e) => {
 					setFilter(e.target.value);
 				}}
+				style={{
+					padding: " 10px 15px",
+					border: "0",
+					"border-radius": "8px",
+					background: "#1a1a1a",
+					"font-size": "18px",
+				}}
+				placeholder="enter the keywords"
 			/>
 			<br />
 			<br />
