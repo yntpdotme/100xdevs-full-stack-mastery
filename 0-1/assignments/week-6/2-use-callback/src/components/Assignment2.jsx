@@ -9,7 +9,7 @@
 
 import React, { useState } from "react";
 
-export function Assignment2() {
+const Assignment2 = () => {
 	const [inputText, setInputText] = useState("");
 
 	// Your code starts here
@@ -34,3 +34,5 @@ export function Assignment2() {
 function Alert({ showAlert }) {
 	return <button onClick={showAlert}>Show Alert</button>;
 }
+
+export default Assignment2;

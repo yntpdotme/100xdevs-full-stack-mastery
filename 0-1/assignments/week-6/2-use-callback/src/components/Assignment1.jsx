@@ -5,24 +5,22 @@
     Use useCallback to ensure that these functions are not recreated on every render.
 */
 
-import { useState } from "react";
+import { useState, useCallback, memo } from "react";
 
 const Assignment1 = () => {
 	const [count, setCount] = useState(0);
 
-	// Your code starts here
-	function handleIncrement() {
+	const handleIncrement = useCallback(() => {
+		setCount((c) => c + 1);
+	}, []);
 
-	}
-
-	function handleDecrement() {
-		
-	}
-	// Your code ends here
+	const handleDecrement = useCallback(() => {
+		setCount((c) => c - 1);
+	}, []);
 
 	return (
 		<div>
-			<p>Count: {count}</p>
+			<h2>Count: {count}</h2>
 			<CounterButtons
 				onIncrement={handleIncrement}
 				onDecrement={handleDecrement}
@@ -31,11 +29,12 @@ const Assignment1 = () => {
 	);
 };
 
-const CounterButtons = ({ onIncrement, onDecrement }) => (
+const CounterButtons = memo(({ onIncrement, onDecrement }) => (
 	<div>
 		<button onClick={onIncrement}>Increment</button>
+		&nbsp;&nbsp;
 		<button onClick={onDecrement}>Decrement</button>
 	</div>
-);
+));
 
 export default Assignment1;
