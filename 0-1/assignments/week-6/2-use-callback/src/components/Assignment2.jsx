@@ -7,16 +7,14 @@
     We're also not passing it down to another component as a prop which is another reason for you to not see it's benefits immedietely.
 */
 
-import React, { useState } from "react";
+import { useCallback, useState } from "react";
 
 const Assignment2 = () => {
 	const [inputText, setInputText] = useState("");
 
-	// Your code starts here
-  function showAlert() {
-    
-  }
-	// Your code ends here
+	const showAlert = useCallback(() => {
+		alert(inputText);
+	}, [inputText]);
 
 	return (
 		<div>
@@ -25,14 +23,28 @@ const Assignment2 = () => {
 				value={inputText}
 				onChange={(e) => setInputText(e.target.value)}
 				placeholder="Enter some text"
+				style={{
+					padding: " 15px",
+					border: "0",
+					"border-radius": "8px",
+					background: "#1a1a1a",
+					"font-size": "18px",
+				}}
 			/>
+			<br />
 			<Alert showAlert={showAlert} />
 		</div>
 	);
-}
+};
 
 function Alert({ showAlert }) {
-	return <button onClick={showAlert}>Show Alert</button>;
+	return (
+		<>
+			<button style={{ margin: "20px" }} onClick={showAlert}>
+				Show Alert
+			</button>
+		</>
+	);
 }
 
 export default Assignment2;
