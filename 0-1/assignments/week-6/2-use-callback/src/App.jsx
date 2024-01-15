@@ -15,8 +15,8 @@ function App() {
 
 			<h1>useCallback Assignment</h1>
 
-			<Assignment1 />
-			{/* <Assignment2 /> */}
+			{/* <Assignment1 /> */}
+			<Assignment2 />
 		</>
 	);
 }
