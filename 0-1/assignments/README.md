@@ -42,6 +42,8 @@
  - ### [Week 4 : React Under The Hood](./week-4/README.md)
 
  - ### [Week 5 : React States and Props](./week-5/README.md)
+
+ - ### [Week 6 : React Hooks](./week-6/README.md)
 </br></br>
 
 ## DevOps
