@@ -10,6 +10,9 @@ const Assignment1 = () => {
 	const [input, setInput] = useState(0);
 
 	const factorial = (number) => {
+		if (number < 0)
+			return "Cannot Be Computed";
+
 		let ans = 1;
 		for (let i = 2; i <= number; i++) {
 			ans *= i;
@@ -28,8 +31,15 @@ const Assignment1 = () => {
 				type="number"
 				value={input}
 				onChange={(e) => setInput(Number(e.target.value))}
+				style={{
+					padding: " 15px",
+					border: "0",
+					"border-radius": "8px",
+					background: "#1a1a1a",
+					"font-size": "18px",
+				}}
 			/>
-			<p>Calculated Value: {expensiveValue}</p>
+			<p>Factorial is: {expensiveValue}</p>
 		</div>
 	);
 };
