@@ -5,7 +5,7 @@
     You will learn something new here, specifically how you have to pass more than one value in the dependency array.
 */
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 const words = ["hi", "my", "name", "is", "for", "to", "random", "word"];
 const TOTAL_LINES = 1000;
@@ -13,7 +13,9 @@ const TOTAL_LINES = 1000;
 const generateSentences = () => {
 	const ALL_WORDS = [];
 	for (let i = 0; i < TOTAL_LINES; i++) {
-		let sentence = words.map(() => words[Math.floor(words.length * Math.random())]).join(" ");
+		let sentence = words
+			.map(() => words[Math.floor(words.length * Math.random())])
+			.join(" ");
 		ALL_WORDS.push(sentence);
 	}
 	return ALL_WORDS;
@@ -23,7 +25,10 @@ const Assignment2 = () => {
 	const [sentences, setSentences] = useState(generateSentences());
 	const [filter, setFilter] = useState("");
 
-	const filteredSentences = sentences.filter((sentence) => sentence.includes(filter));
+	const filteredSentences = useMemo(
+		() => sentences.filter((sentence) => sentence.includes(filter)),
+		[sentences, filter]
+	);
 
 	return (
 		<div>
@@ -33,9 +38,16 @@ const Assignment2 = () => {
 					setFilter(e.target.value);
 				}}
 			/>
+			<br />
+			<br />
 
 			{filteredSentences.map((sentence, index) => (
-				<div key={index}>{sentence}</div>
+				<div
+					style={{ "text-align": "left", padding: "3px 0 3px 150px" }}
+					key={index}
+				>
+					{sentence}
+				</div>
 			))}
 		</div>
 	);
