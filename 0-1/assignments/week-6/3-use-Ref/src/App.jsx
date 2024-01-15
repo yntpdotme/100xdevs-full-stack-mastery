@@ -14,8 +14,8 @@ function App() {
 
 			<h1>useRef Assignments</h1>
 			
-			<Assignment1 />
-			{/* <Assignment2 /> */}
+			{/* <Assignment1 /> */}
+			<Assignment2 />
 		</>
 	);
 }
