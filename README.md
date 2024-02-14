@@ -104,12 +104,6 @@ Here are some related projects
 - [Ajaydeep Singh Rajpoot - 100xdevsCohort](https://github.com/Ajaydeep123/100xdevsCohort)
 
 - [Vishal Singh - 100xDevs_2.0](https://github.com/vishalsingh2972/100xDevs_2.0)
-
-- [Kandepi Bhavani - 100xDevs-Cohort-2.0](https://github.com/KandepiBhavani23/100xDevs-Cohort-2.0)
-
-- [Piyush Sharma - 100xDevs](https://github.com/piyusharmap/100xDevs)
-
-- [Taha Iftikhar- 100Xdevs](https://github.com/dexter-ifti/100Xdevs)
 </br></br>
 
 
