@@ -44,6 +44,8 @@
  - ### [Week 5 : React States and Props](./week-5/README.md)
 
  - ### [Week 6 : React Hooks](./week-6/README.md)
+
+ - ### [Week 7 : React Routing & Dynamic Components](./week-7/README.md)
 </br></br>
 
 ## DevOps
