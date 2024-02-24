@@ -2,7 +2,7 @@
 
 <h3 align="center">
 
-[🗂️ Source Code](./Profile.jsx)
+[🗂️ Source Code](./ParaGenerator.jsx)
 
 <h3>
 
