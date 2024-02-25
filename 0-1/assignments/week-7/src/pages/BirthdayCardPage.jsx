@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { BdayCard } from "../components";
+import { BirthdayCard } from "../components";
 import gitHubLogo from "../assets/github.svg";
 
-const BdayCardPage = () => {
+const BirthdayCardPage = () => {
 	return (
 		<>
 			<a
@@ -13,7 +13,7 @@ const BdayCardPage = () => {
 			</a>
 			<h1>Birthday Card</h1>
 
-			<BdayCard />
+			<BirthdayCard />
 
 			<Link to="/">
 				<button className="link-btn">Back To Home</button>
@@ -22,4 +22,4 @@ const BdayCardPage = () => {
 	);
 };
 
-export default BdayCardPage;
+export default BirthdayCardPage;

@@ -86,7 +86,7 @@
 
 <br>
 
-### [B'Day Card Component](./src/components/BdayCard/README.md)
+### [B'Day Card Component](./src/components/BirthdayCard/README.md)
 
 - Develop a birthday wisher site in React.
 - It takes a person's name as input and generates 2-3 visually appealing birthday wish cards.
