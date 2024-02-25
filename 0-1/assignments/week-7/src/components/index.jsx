@@ -1,5 +1,5 @@
 import BackgroundChanger from "./BackgroundChanger/BackgroundChanger";
-import BdayCard from "./BdayCard/BdayCard";
+import BirthdayCard from "./BirthdayCard/BirthdayCard";
 import GitHubCard from "./GitHubCard/GitHubCard";
 import OTPLogin from "./OTPLogin/OTPLogin";
 import ParaGenerator from "./ParaGenerator/ParaGenerator";
@@ -7,7 +7,7 @@ import Profile from "./Profile/Profile";
 
 export {
 	BackgroundChanger,
-	BdayCard,
+	BirthdayCard,
 	GitHubCard,
 	OTPLogin,
 	ParaGenerator,

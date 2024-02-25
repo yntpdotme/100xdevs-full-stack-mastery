@@ -8,7 +8,7 @@ import {
 	ParaGeneratorPage,
 	GitHubCardPage,
 	OTPLoginPage,
-	BdayCardPage,
+	BirthdayCardPage,
 } from "./pages";
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
 				<Route path="/para-generator" element={<ParaGeneratorPage />} />
 				<Route path="/github-card" element={<GitHubCardPage />} />
 				<Route path="/login" element={<OTPLoginPage />} />
-				<Route path="/bday-card" element={<BdayCardPage />} />
+				<Route path="/bday-card" element={<BirthdayCardPage />} />
 			</Routes>
 
 			<p className="read-the-docs">
