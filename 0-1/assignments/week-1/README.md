@@ -47,13 +47,12 @@ Implement a function `countVowels` that takes a string as an argument and return
 
 #### [Palindrome](./medium/palindrome.js)
 
-Implement a function `isPalindrome` which takes a cleanStr as an argument and returns true/false as its result. The input `cleanStr` is case-insensitive. 
+Implement a function `isPalindrome` which takes a cleanStr as an argument and returns true/false as its result. The input `cleanStr` is case-insensitive.
 
-#### [Time](./medium/time.js) 
+#### [Time](./medium/time.js)
 
 Write a function `calculateTime` that calculates the time (in seconds) it takes for the JS code to calculate the sum from 1 to n, given n as the input.
 <br></br><hr></br>
-
 
 ### 3. Hard
 
@@ -61,56 +60,54 @@ Write a function `calculateTime` that calculates the time (in seconds) it takes 
 
 Implement a class `Calculator` with various methods for arithmetic operations and expression calculation. The calculator should handle multiple continuous spaces and invalid non-numerical characters.
 
-#### [Todo List](./hard/todo-list.js) 
+#### [Todo List](./hard/todo-list.js)
 
 Implement a class `Todo` with methods for adding, removing, updating, and retrieving todos. The class should also provide a method to clear all todos.
 </br><br></br>
-
-
 
 ## Dependencies
 
 - [Node](https://nodejs.org/): JavaScript runtime for server-side development.
 
 - [Jest](https://jestjs.io/): JavaScript testing framework.
-</br></br><br>
-
-
+  </br></br><br>
 
 ## To Run and Test the Assignments
 
 Ensure you have Node.js installed on your machine. Follow the steps below to install and run the assignments:
 
-
 1. **Install nvm (Node Version Manager)**
-    ```bash
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-    ```
+
+   ```bash
+   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+   ```
 
 2. **Install Node.js LTS version**
-    ```bash
-    nvm install --lts
-    ```
+
+   ```bash
+   nvm install --lts
+   ```
 
 3. **To run a specific assignment**
-    ```bash
-    cd assignments/week-1 
-    node /easy/fileName.js
-    ```
+
+   ```bash
+   cd assignments/week-1
+   node /easy/fileName.js
+   ```
 
 4. **To test a specific assignment, run:**
-    ```bash
-    cd assignments/week-1 
-    npx jest ./tests/fileName.test.js
-    ```
+
+   ```bash
+   cd assignments/week-1
+   npx jest ./tests/fileName.test.js
+   ```
 
 5. **To test all assignments, run:**
-    ```bash
-    cd assignments/week-1 
-    npx jest ./tests
-    ```
-</br>
-
+   `bash
+cd assignments/week-1 
+npx jest ./tests
+`
+   </br>
 
 Feel free to explore each problem's solution and run the tests to verify their correctness.  
 Happy coding!

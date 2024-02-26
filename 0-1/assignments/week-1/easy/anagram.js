@@ -14,23 +14,22 @@
   @returns {boolean} True if the strings are anagrams, false otherwise.
 */
 
-
 function isAnagram(string1, string2) {
-	// Check if the lengths of the strings are different, if yes, they can't be anagrams
-	if (string1.length !== string2.length) {
-		return false;
-	} else {
-		// Convert the strings to lowercase, split into arrays, sort, and join back into strings
-		const sortedString1 = string1.toLowerCase().split("").sort().join("");
-		const sortedString2 = string2.toLowerCase().split("").sort().join("");
+  // Check if the lengths of the strings are different, if yes, they can't be anagrams
+  if (string1.length !== string2.length) {
+    return false;
+  } else {
+    // Convert the strings to lowercase, split into arrays, sort, and join back into strings
+    const sortedString1 = string1.toLowerCase().split('').sort().join('');
+    const sortedString2 = string2.toLowerCase().split('').sort().join('');
 
-		// Compare the sorted strings
-		return sortedString1 === sortedString2;
-	}
+    // Compare the sorted strings
+    return sortedString1 === sortedString2;
+  }
 }
 
 // Example usage
-console.log(isAnagram("Spar", "rasp"));
+console.log(isAnagram('Spar', 'rasp'));
 
 // Export the function for reuse in other modules
 module.exports = isAnagram;

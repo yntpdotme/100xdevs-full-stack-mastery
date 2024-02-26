@@ -1,56 +1,56 @@
-const { Router } = require("express");
-const mongoose = require("mongoose");
-const { Admin, Course } = require("../db/index");
-const adminMiddleware = require("../middleware/admin");
-const { validate, validateCourse } = require("../middleware/validation");
+const {Router} = require('express');
+const mongoose = require('mongoose');
+const {Admin, Course} = require('../db/index');
+const adminMiddleware = require('../middleware/admin');
+const {validate, validateCourse} = require('../middleware/validation');
 const router = Router();
 
 // Admin Routes
-router.post("/signup", async (req, res) => {
-	// Validate the Input
-	const input = validate(req.body);
-	if (!input.success) return res.status(400).send(input.error.message);
+router.post('/signup', async (req, res) => {
+  // Validate the Input
+  const input = validate(req.body);
+  if (!input.success) return res.status(400).send(input.error.message);
 
-	let admin = await Admin.findOne({ username: req.body.username });
+  let admin = await Admin.findOne({username: req.body.username});
 
-	// Check if Admin already Exists
-	if (admin) return res.status(400).send(`Admin already registered.`);
+  // Check if Admin already Exists
+  if (admin) return res.status(400).send(`Admin already registered.`);
 
-	// Create New Admin
-	admin = new Admin({
-		username: req.body.username,
-		password: req.body.password,
-	});
-	await admin.save();
+  // Create New Admin
+  admin = new Admin({
+    username: req.body.username,
+    password: req.body.password,
+  });
+  await admin.save();
 
-	// Return the New Admin
-	const { _id, username } = admin;
-	res.status(200).send({ _id, username });
+  // Return the New Admin
+  const {_id, username} = admin;
+  res.status(200).send({_id, username});
 });
 
-router.post("/courses", adminMiddleware, async (req, res) => {
-	// Validate the Input
-	const input = validateCourse(req.body);
-	if (!input.success) return res.status(400).send(input.error.message);
+router.post('/courses', adminMiddleware, async (req, res) => {
+  // Validate the Input
+  const input = validateCourse(req.body);
+  if (!input.success) return res.status(400).send(input.error.message);
 
-	// Add Course
-	let course = new Course({
-		title: req.body.title,
-		description: req.body.description,
-		imagelink: req.body.imagelink,
-		price: req.body.price,
-	});
-	course = await course.save();
+  // Add Course
+  let course = new Course({
+    title: req.body.title,
+    description: req.body.description,
+    imagelink: req.body.imagelink,
+    price: req.body.price,
+  });
+  course = await course.save();
 
-	// Return the New Course
-	const { _id, title } = course;
-	res.status(200).send({ _id, title });
+  // Return the New Course
+  const {_id, title} = course;
+  res.status(200).send({_id, title});
 });
 
-router.get("/courses", adminMiddleware, async (req, res) => {
-	const courses = await Course.find().sort({ title: 1 });
-	// Return the courses
-	res.send(courses);
+router.get('/courses', adminMiddleware, async (req, res) => {
+  const courses = await Course.find().sort({title: 1});
+  // Return the courses
+  res.send(courses);
 });
 
 module.exports = router;

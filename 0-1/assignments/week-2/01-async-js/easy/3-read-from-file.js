@@ -8,16 +8,16 @@
   - Gradually increase the complexity of the expensive operation to analyze its effects on the overall output.
 */
 
-const fs = require("fs");
+const fs = require('fs');
 
 // Read the contents of the file asynchronously
-fs.readFile("./easy/test.txt", "utf8", (err, data) => {
-	if (err) {
-		console.error(err);
-		return;
-	}
-	// Print the contents of the file to the console
-  console.log("File Contents:", data);
+fs.readFile('./easy/test.txt', 'utf8', (err, data) => {
+  if (err) {
+    console.error(err);
+    return;
+  }
+  // Print the contents of the file to the console
+  console.log('File Contents:', data);
 });
 
 /* 
@@ -29,5 +29,5 @@ fs.readFile("./easy/test.txt", "utf8", (err, data) => {
 // Simulate an expensive operation (e.g., a loop)
 let sum = 0;
 for (let index = 0; index < 1000000000; index++) {
-	sum += index;
+  sum += index;
 }

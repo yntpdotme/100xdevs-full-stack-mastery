@@ -1,83 +1,83 @@
 .profile {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	background-color: #1a1a1a;
-	border: 1px solid transparent;
-	border-radius: 8px;
-	margin: 4rem 1rem;
-	width: 400px;
-	overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1a1a1a;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  margin: 4rem 1rem;
+  width: 400px;
+  overflow: hidden;
 }
 
 .profile:hover {
-	border-color: #5e66ff;
-	filter: drop-shadow(0 0 1.5rem #646cffaa);
+  border-color: #5e66ff;
+  filter: drop-shadow(0 0 1.5rem #646cffaa);
 }
 
 .profile__image {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	position: relative;
-	height: 195px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  height: 195px;
 }
 
 .profile__cover-image {
-	width: 450px;
-	object-fit: cover;
-	border-radius: 8px 8px 0 0;
+  width: 450px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
 }
 
 .profile__avatar-image {
-	width: 110px;
-	height: 110px;
-	object-fit: cover;
-	border-radius: 100%;
-	position: absolute;
-	bottom: 0;
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 100%;
+  position: absolute;
+  bottom: 0;
 }
 
 .profile__details {
-	width: 100%;
-	text-align: center;
+  width: 100%;
+  text-align: center;
 }
 
 .profile__name {
-	font-size: 28px;
-	font-weight: bold;
-	margin-bottom: 14px;
-	margin-left: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 14px;
+  margin-left: 20px;
 }
 
 .profile__age {
-	font-size: 22px;
-	font-weight: 400;
-	margin-left: 5px;
-	color: #8a8a8a;
+  font-size: 22px;
+  font-weight: 400;
+  margin-left: 5px;
+  color: #8a8a8a;
 }
 
 .profile__city {
-	font-size: 24px;
-	color: #c9c9c9;
-	margin-top: 0;
+  font-size: 24px;
+  color: #c9c9c9;
+  margin-top: 0;
 }
 
 .profile__stats {
-	display: flex;
-	padding: 20px 40px;
-	justify-content: space-evenly;
-	color: #8a8a8a;
-	gap: 1rem;
-	border-top: 2px solid seashell;
+  display: flex;
+  padding: 20px 40px;
+  justify-content: space-evenly;
+  color: #8a8a8a;
+  gap: 1rem;
+  border-top: 2px solid seashell;
 }
 
 .profile__stats p {
-	width: 80px;
+  width: 80px;
 }
 
 .profile__stats-data {
-	font-size: 20px;
-	font-weight: 600;
-	color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
 }

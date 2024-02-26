@@ -30,7 +30,7 @@
 - Explore and contribute to the improvement of the YouTube player seekbar by adding segments.
 
 - Add segments similar to youtube on this <a href="https://codepen.io/100xdevs/pen/oNmaXxK" target="_blank">codebase</a>
-<br><br>
+  <br><br>
 
 ### Requirements:
 
@@ -73,7 +73,7 @@
 - The first person to make a successful and polished submission meeting the criteria wins the $150 bounty.
 
 - The implemented code will be integrated into the cohort website, showcasing your work to the entire community.
-<br><br>
+  <br><br>
 
 ## Winners
 
@@ -91,6 +91,4 @@
 
 6. **Aadesh Kulkarni**: $25 <a href="https://codepen.io/Aadesh-Kulkarni-the-typescripter/pen/eYxPZyQ" target="_blank">CodePen Link</a>
 
-
 Stay tuned for more exciting opportunities in the future.
-

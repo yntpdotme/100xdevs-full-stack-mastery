@@ -24,38 +24,37 @@
 
 ## Foundation
 
- - ### [Week 0 : Zerodha Landing Page (HTML/CSS)](./week-0/README.md)
+- ### [Week 0 : Zerodha Landing Page (HTML/CSS)](./week-0/README.md)
 
- - ### [Week 1 : JavaScript Fundamentals](./week-1/README.md)
-</br></br>
-
+- ### [Week 1 : JavaScript Fundamentals](./week-1/README.md)
+  </br></br>
 
 ## Backend
 
- - ### [Week 2 : Asynchronous JavaScript and NodeJs](./week-2/README.md)
- 
- - ### [Week 3 : Middlewares, Auths, MongoDB](./week-3/README.md)
-</br></br>
+- ### [Week 2 : Asynchronous JavaScript and NodeJs](./week-2/README.md)
+
+- ### [Week 3 : Middlewares, Auths, MongoDB](./week-3/README.md)
+  </br></br>
 
 ## Frontend
 
- - ### [Week 4 : React Under The Hood](./week-4/README.md)
+- ### [Week 4 : React Under The Hood](./week-4/README.md)
 
- - ### [Week 5 : React States and Props](./week-5/README.md)
+- ### [Week 5 : React States and Props](./week-5/README.md)
 
- - ### [Week 6 : React Hooks](./week-6/README.md)
+- ### [Week 6 : React Hooks](./week-6/README.md)
 
- - ### [Week 7 : React Routing & Dynamic Components](./week-7/README.md)
-</br></br>
+- ### [Week 7 : React Routing & Dynamic Components](./week-7/README.md)
+  </br></br>
 
 ## DevOps
 
- - #### Coming Soon...
-</br></br>
+- #### Coming Soon...
+  </br></br>
 
 ## Contributing
 
-Contributions are always welcome! 
+Contributions are always welcome!
 
 See [CONTRIBUTING.md](../../CONTRIBUTING.md) for ways to get started.
 </br></br>

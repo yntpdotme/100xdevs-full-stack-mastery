@@ -7,44 +7,44 @@
     We're also not passing it down to another component as a prop which is another reason for you to not see it's benefits immedietely.
 */
 
-import { useCallback, useState } from "react";
+import {useCallback, useState} from 'react';
 
 const Assignment2 = () => {
-	const [inputText, setInputText] = useState("");
+  const [inputText, setInputText] = useState('');
 
-	const showAlert = useCallback(() => {
-		alert(inputText);
-	}, [inputText]);
+  const showAlert = useCallback(() => {
+    alert(inputText);
+  }, [inputText]);
 
-	return (
-		<div>
-			<input
-				type="text"
-				value={inputText}
-				onChange={(e) => setInputText(e.target.value)}
-				placeholder="Enter some text"
-				style={{
-					padding: " 15px",
-					border: "0",
-					"border-radius": "8px",
-					background: "#1a1a1a",
-					"font-size": "18px",
-				}}
-			/>
-			<br />
-			<Alert showAlert={showAlert} />
-		</div>
-	);
+  return (
+    <div>
+      <input
+        type="text"
+        value={inputText}
+        onChange={e => setInputText(e.target.value)}
+        placeholder="Enter some text"
+        style={{
+          padding: ' 15px',
+          border: '0',
+          'border-radius': '8px',
+          background: '#1a1a1a',
+          'font-size': '18px',
+        }}
+      />
+      <br />
+      <Alert showAlert={showAlert} />
+    </div>
+  );
 };
 
-function Alert({ showAlert }) {
-	return (
-		<>
-			<button style={{ margin: "20px" }} onClick={showAlert}>
-				Show Alert
-			</button>
-		</>
-	);
+function Alert({showAlert}) {
+  return (
+    <>
+      <button style={{margin: '20px'}} onClick={showAlert}>
+        Show Alert
+      </button>
+    </>
+  );
 }
 
 export default Assignment2;

@@ -1,15 +1,15 @@
-const jwt = require("jsonwebtoken");
-const zod = require("zod");
-const jwtPassword = "secret";
+const jwt = require('jsonwebtoken');
+const zod = require('zod');
+const jwtPassword = 'secret';
 
 const validateInputs = (username, password) => {
-	usernameSchema = zod.string().email();
-	passwordSchema = zod.string().min(6);
+  usernameSchema = zod.string().email();
+  passwordSchema = zod.string().min(6);
 
-	return (
-		usernameSchema.safeParse(username).success &&
-		passwordSchema.safeParse(password).success
-	);
+  return (
+    usernameSchema.safeParse(username).success &&
+    passwordSchema.safeParse(password).success
+  );
 };
 
 /**
@@ -24,9 +24,9 @@ const validateInputs = (username, password) => {
  *                        the password does not meet the length requirement.
  */
 function signJwt(username, password) {
-	const valid = validateInputs(username, password);
-	if (!valid) return null;
-	return jwt.sign({ username }, jwtPassword);
+  const valid = validateInputs(username, password);
+  if (!valid) return null;
+  return jwt.sign({username}, jwtPassword);
 }
 
 /**
@@ -38,12 +38,12 @@ function signJwt(username, password) {
  *                    using the secret key.
  */
 function verifyJwt(token) {
-	try {
-		jwt.verify(token, jwtPassword);
-	} catch (err) {
-		return false;
-	}
-	return true;
+  try {
+    jwt.verify(token, jwtPassword);
+  } catch (err) {
+    return false;
+  }
+  return true;
 }
 
 /**
@@ -54,12 +54,12 @@ function verifyJwt(token) {
  *                         Returns false if the token is not a valid JWT format.
  */
 function decodeJwt(token) {
-	return jwt.decode(token) ? true : false;
+  return jwt.decode(token) ? true : false;
 }
 
 module.exports = {
-	signJwt,
-	verifyJwt,
-	decodeJwt,
-	jwtPassword,
+  signJwt,
+  verifyJwt,
+  decodeJwt,
+  jwtPassword,
 };

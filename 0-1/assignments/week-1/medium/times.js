@@ -11,20 +11,20 @@
 */
 
 function calculateTime(n) {
-	// Measure start time.
-	const startTime = Date.now();
+  // Measure start time.
+  const startTime = Date.now();
 
-	// Calculate sum from 1 to n.
-	let sum = 0;
-	for (let i = 1; i <= n; i++) {
-		sum += i;
-	}
+  // Calculate sum from 1 to n.
+  let sum = 0;
+  for (let i = 1; i <= n; i++) {
+    sum += i;
+  }
 
-	// Measure end time.
-	const endTime = Date.now();
+  // Measure end time.
+  const endTime = Date.now();
 
-	// Calculate and return time taken.
-	return endTime - startTime;
+  // Calculate and return time taken.
+  return endTime - startTime;
 }
 
 // Example usage

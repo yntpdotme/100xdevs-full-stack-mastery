@@ -11,39 +11,39 @@
 		The count for each user resets every second.
 */
 
-const request = require("supertest");
-const assert = require("assert");
-const express = require("express");
+const request = require('supertest');
+const assert = require('assert');
+const express = require('express');
 const app = express();
 
 let numberOfRequestsForUser = {};
 const rateLimiter = (req, res, next) => {
-	const userId = req.headers["user-id"];
+  const userId = req.headers['user-id'];
 
-	// Initialize request count for the user
-	numberOfRequestsForUser[userId] = numberOfRequestsForUser[userId] || 0;
+  // Initialize request count for the user
+  numberOfRequestsForUser[userId] = numberOfRequestsForUser[userId] || 0;
 
-	// Check if the user has exceeded the limit
-	if (numberOfRequestsForUser[userId] >= 5)
-		res.status(404).json({ error: "Rate limit exceeded" });
+  // Check if the user has exceeded the limit
+  if (numberOfRequestsForUser[userId] >= 5)
+    res.status(404).json({error: 'Rate limit exceeded'});
 
-	// Increment the request count for the user
-	numberOfRequestsForUser[userId]++;
-	next();
+  // Increment the request count for the user
+  numberOfRequestsForUser[userId]++;
+  next();
 };
 
 setInterval(() => {
-	numberOfRequestsForUser = {};
+  numberOfRequestsForUser = {};
 }, 1000);
 
 app.use(rateLimiter);
 
-app.get("/user", function (req, res) {
-	res.status(200).json({ name: "john" });
+app.get('/user', function (req, res) {
+  res.status(200).json({name: 'john'});
 });
 
-app.post("/user", function (req, res) {
-	res.status(200).json({ msg: "created dummy user" });
+app.post('/user', function (req, res) {
+  res.status(200).json({msg: 'created dummy user'});
 });
 
 module.exports = app;

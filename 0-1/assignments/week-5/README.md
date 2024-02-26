@@ -26,6 +26,7 @@
 ### [Business Card Component](./business-card-component//README.md)
 
 Develop a simple React App with a reusable Card Component, featuring:
+
 - Customizable props for the Component
 - Display of basic information:
   - Name
@@ -39,10 +40,11 @@ Consider this as a contemporary e-business card and infuse your creativity into 
 ### [Business Card Generator](./busines-card-management-system/README.md)
 
 Extend the basic assignment by implementing the following additional features:
+
 - Create a page where users can add Cards, providing input.
 - Develop a backend server to store these cards in a database, supporting basic CRUD operations.
 - Enable CRUD operations from the frontend, with the option to restrict access to admin users.
-<br><br>
+  <br><br>
 
 ## Dependencies
 
@@ -55,7 +57,7 @@ Extend the basic assignment by implementing the following additional features:
 - [Mongoose](https://mongoosejs.com/) – MongoDB object modeling
 
 - [React](https://react.dev/): JavaScript library for web and native UI.
-<br><br><br>
+  <br><br><br>
 
 ## Local Development
 
@@ -80,15 +82,15 @@ Ensure you have Node.js installed on your machine. Follow the steps below to ins
    cd business-card-component
    npm install
    npm run dev
-   
 
-   <<comment 
-    To run Business Card Management System 
+
+   <<comment
+    To run Business Card Management System
         1. set database url at db/index.js
         2. Start Backend
         3. Start Frontend
     comment
-    
+
    cd busines-card-management-system/backend
    npm install
    npm start
@@ -97,6 +99,7 @@ Ensure you have Node.js installed on your machine. Follow the steps below to ins
    npm install
    npm run dev
    ```
+
    </br>
 
 Feel free to explore each projects's implementation and run it locally to verify their correctness.

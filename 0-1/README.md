@@ -30,24 +30,23 @@
 </p>
 </br>
 
-
 ## Introduction
 
-From curiosity to code mastery, the **0-1 Cohort** by **[Harkirat Singh](https://twitter.com/kirat_tw)**  welcomes you. This repository includes resources, assignments, bouties, progress updates, and insights into the challenges of learning to code from scratch.
+From curiosity to code mastery, the **0-1 Cohort** by **[Harkirat Singh](https://twitter.com/kirat_tw)** welcomes you. This repository includes resources, assignments, bouties, progress updates, and insights into the challenges of learning to code from scratch.
 </br></br>
 
 ## Showcase
 
- - ### [Assignments : learn](./assignments/)
+- ### [Assignments : learn](./assignments/)
 
- - ### [Projects : apply](./projects/)
+- ### [Projects : apply](./projects/)
 
- - ### [Bounties : rewards](./bounties/)
+- ### [Bounties : rewards](./bounties/)
 </br>
 
 ## Contributing
 
-Contributions are always welcome! 
+Contributions are always welcome!
 
 See [CONTRIBUTING.md](../CONTRIBUTING.md) for ways to get started.
 </br></br>

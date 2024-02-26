@@ -11,39 +11,39 @@
  */
 
 function calculateTotalSpentByCategory(transactions) {
-	// Check if transactions array is empty
-	if (transactions.length === 0) {
-		console.log("Transactions array is empty.");
-		return [];
-	}
+  // Check if transactions array is empty
+  if (transactions.length === 0) {
+    console.log('Transactions array is empty.');
+    return [];
+  }
 
-	/* ---- Way-1 Using Ojbect & Destructuring ---- */
-	// Initialize an object to store category and total spent
-	const categoryTotal = {};
+  /* ---- Way-1 Using Ojbect & Destructuring ---- */
+  // Initialize an object to store category and total spent
+  const categoryTotal = {};
 
-	// Iterate through each transaction
-	transactions.forEach((transaction) => {
-		const { category, price } = transaction;
+  // Iterate through each transaction
+  transactions.forEach(transaction => {
+    const {category, price} = transaction;
 
-		// If the category already exists, add the price to the total
-		if (categoryTotal[category]) {
-			categoryTotal[category] += price;
-		} else {
-			// If the category doesn't exist, create a new entry
-			categoryTotal[category] = price;
-		}
-	});
+    // If the category already exists, add the price to the total
+    if (categoryTotal[category]) {
+      categoryTotal[category] += price;
+    } else {
+      // If the category doesn't exist, create a new entry
+      categoryTotal[category] = price;
+    }
+  });
 
-	// Convert the object into an array of objects
-	const totalSpentByCategory = Object.keys(categoryTotal).map((category) => ({
-		category,
-		totalSpent: categoryTotal[category],
-	}));
+  // Convert the object into an array of objects
+  const totalSpentByCategory = Object.keys(categoryTotal).map(category => ({
+    category,
+    totalSpent: categoryTotal[category],
+  }));
 
-	return totalSpentByCategory;
+  return totalSpentByCategory;
 
-	/* ----- Way-2: Using Maps ------ */
-	/*
+  /* ----- Way-2: Using Maps ------ */
+  /*
 		// Initialize a map to store category and total spent
 		const totalSpentByCategory = new Map();
 
@@ -73,27 +73,27 @@ function calculateTotalSpentByCategory(transactions) {
 
 // Example usage
 let transactions = [
-	{
-		id: 1,
-		timestamp: 1656076800000,
-		price: 10,
-		category: "Food",
-		itemName: "Pizza",
-	},
-	{
-		id: 2,
-		timestamp: 1656076800000,
-		price: 20,
-		category: "Clothing",
-		itemName: "Shirt",
-	},
-	{
-		id: 3,
-		timestamp: 1656076800000,
-		price: 15,
-		category: "Food",
-		itemName: "Coffee",
-	},
+  {
+    id: 1,
+    timestamp: 1656076800000,
+    price: 10,
+    category: 'Food',
+    itemName: 'Pizza',
+  },
+  {
+    id: 2,
+    timestamp: 1656076800000,
+    price: 20,
+    category: 'Clothing',
+    itemName: 'Shirt',
+  },
+  {
+    id: 3,
+    timestamp: 1656076800000,
+    price: 15,
+    category: 'Food',
+    itemName: 'Coffee',
+  },
 ];
 console.log(calculateTotalSpentByCategory(transactions));
 

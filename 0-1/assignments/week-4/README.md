@@ -37,7 +37,7 @@ Develop a simple React application with [Vite](https://vitejs.dev/) that manages
 
 - [Node](https://nodejs.org/): JavaScript runtime for server-side development.
 - [React](https://react.dev/): JavaScript library for web and native UI.
-<br><br><br>
+  <br><br><br>
 
 ## Local Development
 
@@ -67,6 +67,7 @@ Ensure you have Node.js installed on your machine. Follow the steps below to ins
    npm install
    npm run dev
    ```
+
    </br>
 
 Feel free to explore each projects's implementation and run it locally to verify their correctness.

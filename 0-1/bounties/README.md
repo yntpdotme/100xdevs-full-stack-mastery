@@ -31,11 +31,11 @@ Welcome to the Bounties Hub! This section provides an overview of the bounties a
 - **Total Bounty Pool:** 10-Lakhs 🤑
 
 - **Purpose of Bounties:** These bounties aim to provide practical challenges that align with the cohort's learning objectives, allowing participants to apply their skills and gain hands-on experience.
-</br></br></br>
+  </br></br></br>
 
 ## Bounties
 
- - ### [Bounty 1: Enhancing YouTube Player Seekbar](./bounty-1/README.md)
+- ### [Bounty 1: Enhancing YouTube Player Seekbar](./bounty-1/README.md)
 
 </br></br>
 
@@ -43,12 +43,12 @@ Welcome to the Bounties Hub! This section provides an overview of the bounties a
 
 Participation in bounties is exclusive to cohort members. There are two types of bounties:
 
-1. **Live Bounties (Weekends Class):** 
+1. **Live Bounties (Weekends Class):**
 
-    Challenges introduced and discussed during live sessions.
+   Challenges introduced and discussed during live sessions.
 
-2. **Offline Bounties (Discord Channel):** 
+2. **Offline Bounties (Discord Channel):**
 
-    Challenges posted on the Discord Bounties Channel for asynchronous participation.
+   Challenges posted on the Discord Bounties Channel for asynchronous participation.
 
 </br></br>

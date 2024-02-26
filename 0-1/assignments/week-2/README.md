@@ -53,11 +53,11 @@ Create a program that reads a file, eliminates all extra spaces, and then writes
 #### [Dynamic Clock](./01-async-js/medium/2-clock.js)
 
 Construct a clock displaying the current machine time. Ensure it updates every second and presents the time in the following formats:
-  - HH:MM:SS (e.g., 13:45:23)
-  - HH:MM:SS AM/PM (e.g., 01:45:23 PM) 
+
+- HH:MM:SS (e.g., 13:45:23)
+- HH:MM:SS AM/PM (e.g., 01:45:23 PM)
 
 <br><hr><br>
-
 
 ### 3. Hard
 
@@ -65,23 +65,23 @@ Construct a clock displaying the current machine time. Ensure it updates every s
 
 Write a function that returns a promise that resolves after n seconds have passed, where n is passed as an argument to the function.
 
-#### [Busy Waiting](./01-async-js/hard/2-sleep-completely.js) 
+#### [Busy Waiting](./01-async-js/hard/2-sleep-completely.js)
 
 Write a function that halts the JS thread (make it busy wait) for a given number of milliseconds.
 
-#### [Concurrent Promise Execution](./01-async-js/hard/3-promise-all.js) 
+#### [Concurrent Promise Execution](./01-async-js/hard/3-promise-all.js)
 
 Write three different functions, `wait1`, `wait2`, and `wait3`, each returning a promise resolving after t1, t2, and t3 seconds, respectively.
 
-Create a function, `calculateTime`, that utilizes these three functions to wait for all three promises to resolve using `Promise.all`. 
+Create a function, `calculateTime`, that utilizes these three functions to wait for all three promises to resolve using `Promise.all`.
 
 Return a promise that provides the total time in milliseconds it takes to complete the entire operation.
 
-#### [Sequential Promise Execution Time](./01-async-js/hard/4-promise-chain.js) 
+#### [Sequential Promise Execution Time](./01-async-js/hard/4-promise-chain.js)
 
-Write three functions, `wait1`, `wait2`, and `wait3`, that return promises resolving after t1, t2, and t3 seconds respectively. 
+Write three functions, `wait1`, `wait2`, and `wait3`, that return promises resolving after t1, t2, and t3 seconds respectively.
 
-Create a function, `calculateTime`, that sequentially calls all three functions in order. 
+Create a function, `calculateTime`, that sequentially calls all three functions in order.
 
 Return a `promise chain` that calculates and returns the time in milliseconds it takes to complete the entire operation.
 
@@ -89,16 +89,14 @@ Return a `promise chain` that calculates and returns the time in milliseconds it
 
 ### NodeJs
 
-#### [Todo List Server](./02-nodejs/1-todoServer.js) 
+#### [Todo List Server](./02-nodejs/1-todoServer.js)
 
-Create an Express HTTP server in Node.js to handle the logic of a todo list app. 
+Create an Express HTTP server in Node.js to handle the logic of a todo list app.
 
-
-#### [File Server](./02-nodejs/2-fileServer.js) 
+#### [File Server](./02-nodejs/2-fileServer.js)
 
 Create an Express HTTP server in Node.js that handles the logic of a file server using the built-in Node.js `fs` module
 <br><br><br>
-
 
 ## Dependencies
 
@@ -107,48 +105,49 @@ Create an Express HTTP server in Node.js that handles the logic of a file server
 - [Jest](https://jestjs.io/): JavaScript testing framework.
 
 - [Zod](https://zod.dev/): Schema declaration and validation library.
-<br><br><br>
-
+  <br><br><br>
 
 ## To Run and Test the Assignments
 
 Ensure you have Node.js installed on your machine. Follow the steps below to install and run the assignments:
 
-
 1. **Install nvm (Node Version Manager)**
-    ```bash
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-    ```
+
+   ```bash
+   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+   ```
 
 2. **Install Node.js LTS version**
-    ```bash
-    nvm install --lts
-    ```
+
+   ```bash
+   nvm install --lts
+   ```
 
 3. **To run a specific assignment**
-    ```bash
-    # To run async-js assignments
-    cd assignments/week-2/01-async-js 
-    node /easy/fileName.js
 
-    # To run node-js assignments
-    cd assignments/week-2/02-nodejs 
-    node /fileName.js
-    ```
+   ```bash
+   # To run async-js assignments
+   cd assignments/week-2/01-async-js
+   node /easy/fileName.js
+
+   # To run node-js assignments
+   cd assignments/week-2/02-nodejs
+   node /fileName.js
+   ```
 
 4. **To test a specific assignment, run:**
-    ```bash
-    cd assignments/week-2/01-async-js 
-    npx jest ./tests/fileName.test.js
-    ```
+
+   ```bash
+   cd assignments/week-2/01-async-js
+   npx jest ./tests/fileName.test.js
+   ```
 
 5. **To test all assignments, run:**
-    ```bash
-    cd assignments/week-2/01-async-js
-    npx jest ./tests
-    ```
-</br>
-
+   `bash
+cd assignments/week-2/01-async-js
+npx jest ./tests
+`
+   </br>
 
 Feel free to explore each problem's solution and run the tests to verify their correctness.  
 Happy coding!

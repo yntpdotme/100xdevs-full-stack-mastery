@@ -4,14 +4,17 @@
 */
 
 const startCounter = () => {
-	let count = 0;
+  let count = 0;
 
-	// Set interval for recurring increments
-	const counterInterval = setInterval(() => process.stdout.write(`\r${count++}`), 1000);
+  // Set interval for recurring increments
+  const counterInterval = setInterval(
+    () => process.stdout.write(`\r${count++}`),
+    1000,
+  );
 
-	// Optional: Add cleanup logic (clearInterval) if needed
-	// const durationInSeconds = 10;
-	// setTimeout(() => clearInterval(counterInterval), durationInSeconds * 1000);
+  // Optional: Add cleanup logic (clearInterval) if needed
+  // const durationInSeconds = 10;
+  // setTimeout(() => clearInterval(counterInterval), durationInSeconds * 1000);
 };
 
 // Start the counter

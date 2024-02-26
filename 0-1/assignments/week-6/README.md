@@ -26,64 +26,62 @@
 
 ### [useMemo Hook](./1-use-memo/README.md)
 
-#### [Task 1](./1-use-memo/src/components/Assignment1.jsx): 
+#### [Task 1](./1-use-memo/src/components/Assignment1.jsx):
 
-  - Create a React component that performs an expensive calculation (finding the factorial) based on user input.
-  
-  - Utilize the useMemo hook to ensure the calculation is only recomputed when the input changes, not on every render.
+- Create a React component that performs an expensive calculation (finding the factorial) based on user input.
 
+- Utilize the useMemo hook to ensure the calculation is only recomputed when the input changes, not on every render.
 
-#### [Task 2](./1-use-memo/src/components/Assignment2.jsx): 
-  - In this assignment, you will create a component that renders a large list of sentences and includes an input field for filtering these items. 
+#### [Task 2](./1-use-memo/src/components/Assignment2.jsx):
 
-  - The goal is to use useMemo to optimize the filtering process, ensuring the list is only re-calculated when necessary (e.g., when the filter criteria changes).
-    
-  - You will learn something new here, specifically how you have to pass more than one value in the dependency array.
+- In this assignment, you will create a component that renders a large list of sentences and includes an input field for filtering these items.
 
+- The goal is to use useMemo to optimize the filtering process, ensuring the list is only re-calculated when necessary (e.g., when the filter criteria changes).
+- You will learn something new here, specifically how you have to pass more than one value in the dependency array.
 
-#### [Task 3](./1-use-memo/src/components/Assignment3.jsx): 
+#### [Task 3](./1-use-memo/src/components/Assignment3.jsx):
 
-  - You have been given a list of items you shopped from the grocery store
-  
-  - You need to calculate the total amount of money you spent
+- You have been given a list of items you shopped from the grocery store
+
+- You need to calculate the total amount of money you spent
 
 <br><hr><br>
 
 ### [useCallback Hook](./2-use-callback/README.md)
 
-#### [Task 1](./src/components/Assignment1.jsx): 
+#### [Task 1](./src/components/Assignment1.jsx):
 
-  - Create a counter component with increment and decrement functions. 
+- Create a counter component with increment and decrement functions.
 
-  - Pass these functions to a child component which has buttons to perform the increment and decrement actions.
-  
-  - Use useCallback to ensure that these functions are not recreated on every render.
+- Pass these functions to a child component which has buttons to perform the increment and decrement actions.
 
+- Use useCallback to ensure that these functions are not recreated on every render.
 
-#### [Task 2](./src/components/Assignment2.jsx): 
-  - Create a component with a text input field and a button. The goal is to display an alert with the text entered when the button is clicked. 
+#### [Task 2](./src/components/Assignment2.jsx):
 
-  - Use useCallback to memoize the event handler function that triggers the alert, ensuring it's not recreated on every render.
-  
-  - Currently we only have inputText as a state variable and hence you might not see the benefits of useCallback
-  
-  - We're also not passing it down to another component as a prop which is another reason for you to not see it's benefits immedietely.
+- Create a component with a text input field and a button. The goal is to display an alert with the text entered when the button is clicked.
+
+- Use useCallback to memoize the event handler function that triggers the alert, ensuring it's not recreated on every render.
+
+- Currently we only have inputText as a state variable and hence you might not see the benefits of useCallback
+
+- We're also not passing it down to another component as a prop which is another reason for you to not see it's benefits immedietely.
 
 <br><hr><br>
 
 ### [useRef Hook](./2-use-callback/README.md)
 
-#### [Task 1](./src/components/Task1.jsx): 
+#### [Task 1](./src/components/Task1.jsx):
 
-  - Create a component with a text input field and a button. 
-  
-  - When the component mounts or the button is clicked, automatically focus the text input field using useRef.
+- Create a component with a text input field and a button.
 
-#### [Task 2](./src/components/Assignment2.jsx): 
-  
-  - Create a component that tracks and displays the number of times it has been rendered.
-  
-  - Use useRef to create a variable that persists across renders without causing additional renders when it changes.
+- When the component mounts or the button is clicked, automatically focus the text input field using useRef.
+
+#### [Task 2](./src/components/Assignment2.jsx):
+
+- Create a component that tracks and displays the number of times it has been rendered.
+
+- Use useRef to create a variable that persists across renders without causing additional renders when it changes.
 
 <br><br>
 
@@ -92,7 +90,7 @@
 - [Node.js](https://nodejs.org/) – JavaScript runtime
 
 - [React](https://react.dev/): JavaScript library for web and native UI.
-<br><br><br>
+  <br><br><br>
 
 ## Local Development
 
@@ -117,13 +115,14 @@ Ensure you have Node.js installed on your machine. Follow the steps below to ins
    cd folder_Name
    npm install
    npm run dev
-   
 
-   << comment 
-      Within the chosen folder, justComment on the specific Assignment 
+
+   << comment
+      Within the chosen folder, justComment on the specific Assignment
       component you want to work on (`<Assignment1/>` or `<Assignment2/>`...)
     comment
    ```
+
    </br>
 
 Feel free to explore each components's implementation and run it locally to verify their correctness. Happy coding!

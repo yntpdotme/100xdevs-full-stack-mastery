@@ -1,63 +1,63 @@
 .OTPLogin {
-	margin: 60px 0 80px;
+  margin: 60px 0 80px;
 }
 
 .OTPLogin__input {
-	display: flex;
-	justify-content: center;
-	gap: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .OTPLogin input {
-	width: 230px;
-	border-radius: 8px;
-	border: 1px solid transparent;
-	padding: 1rem 1.5rem;
-	font-size: 1.2em;
-	font-weight: 500;
-	font-family: inherit;
-	background-color: #1a1a1a;
-	cursor: pointer;
-	transition: border-color 0.25s;
-	outline: none;
+  width: 230px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 1rem 1.5rem;
+  font-size: 1.2em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  outline: none;
 }
 .OTPLogin input:hover {
-	border-color: #646cff;
+  border-color: #646cff;
 }
 .OTPLogin input:focus,
 .OTPLogin input:focus-visible {
-	outline: 4px auto -webkit-focus-ring-color;
+  outline: 4px auto -webkit-focus-ring-color;
 }
 .spin-button-none::-webkit-inner-spin-button,
 .spin-button-none::-webkit-outer-spin-button {
-	appearance: none;
+  appearance: none;
 }
 
 .error {
-	margin-top: 10px;
-	margin-left: 5px;
-	color: #ef4444;
-	font-size: 18px;
+  margin-top: 10px;
+  margin-left: 5px;
+  color: #ef4444;
+  font-size: 18px;
 }
 
 .OTP__input {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 10px;
-	margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
 }
 
 .OTP__input .otpInput {
-	width: 40px;
-	height: 40px;
-	padding: 10px;
-	text-align: center;
-	border-color: #9ca1ff;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  text-align: center;
+  border-color: #9ca1ff;
 }
 
 .otp-input__dash {
-	width: 10px;
-	height: 2px;
-	background-color: #9ca1ff;
+  width: 10px;
+  height: 2px;
+  background-color: #9ca1ff;
 }

@@ -5,25 +5,26 @@
   Treat the fs library as a black box, emphasizing understanding asynchronous tasks in the process. 
 */
 
-const fsPromises = require("fs").promises;
+const fsPromises = require('fs').promises;
 
 const content = ` Write this in the file.`;
 
 // Append the content to the file asynchronously.
-fsPromises.writeFile("./easy/test.txt", content, { flag: "a+" })
-	.then(() => {
-		console.log(`File written successfully`);
+fsPromises
+  .writeFile('./easy/test.txt', content, {flag: 'a+'})
+  .then(() => {
+    console.log(`File written successfully`);
 
-		// Read the contents of the file asynchronously.
-		return fsPromises.readFile("./easy/test.txt", "utf8");
-	})
-	.then((data) => {
-		// Print the contents of the file to the console.
-		console.log("File Contents:", data);
-	})
-	.catch((err) => {
-		console.error(err);
-	});
+    // Read the contents of the file asynchronously.
+    return fsPromises.readFile('./easy/test.txt', 'utf8');
+  })
+  .then(data => {
+    // Print the contents of the file to the console.
+    console.log('File Contents:', data);
+  })
+  .catch(err => {
+    console.error(err);
+  });
 
 /* 
   TODO: 

@@ -35,21 +35,20 @@ Your task is to implement a global middleware using `app.use` that maintains a c
 
 #### [Rate Limitter](./01-middlewares/2-rate-limitter.js)
 
-You have been given an express server with various endpoints. Your task is to implement a global middleware (`app.use`) that enforces rate limiting for user requests. 
-	
+You have been given an express server with various endpoints. Your task is to implement a global middleware (`app.use`) that enforces rate limiting for user requests.
 The rate limit should be set to a maximum of 5 requests per second. If a user exceeds this limit, the server should respond with a 404 error.
-	
 Flow:
-- Users will include their user ID in the header as 'user-id'.
-- The server should track the number of requests from each user and block further requests if the limit is exceeded. 
-- The count for each user resets every second.
 
+- Users will include their user ID in the header as 'user-id'.
+- The server should track the number of requests from each user and block further requests if the limit is exceeded.
+- The count for each user resets every second.
 
 #### [Error Count](./01-middlewares/3-error-count.js)
 
-You have been given an express server with various endpoints. 
+You have been given an express server with various endpoints.
 
 Your tasks are:
+
 1. Ensure that if there is ever an exception in any endpoint, the end user sees a status code of 404.
 2. Maintain the errorCount variable, which should increment every time there is an exception in any endpoint.
 
@@ -67,26 +66,24 @@ Write a function that takes a jwt as input and returns true if the jwt can be VE
 
 <br><hr><br>
 
-
-### Working With MongoDB 
+### Working With MongoDB
 
 #### [Course Selling Website](./03-mongo/README.md)
 
 Implement a course selling web application with two user types: Admins and Users.
 
-Admins can sign up and create courses, while Users can sign up, view courses, and purchase them. 
+Admins can sign up and create courses, while Users can sign up, view courses, and purchase them.
 
-Think of this application as a simplified version of platforms like Udemy. 
+Think of this application as a simplified version of platforms like Udemy.
 
 <br><hr><br>
 
-### Authentication  
+### Authentication
 
 #### [Course Selling Website with Auth](./04-mongo-with-jwt-auth/README.md)
 
-Build a course selling web application with enhanced security using JSON Web Tokens (JWT) for authentication. 
+Build a course selling web application with enhanced security using JSON Web Tokens (JWT) for authentication.
 <br><br><br>
-
 
 ## Dependencies
 
@@ -97,58 +94,59 @@ Build a course selling web application with enhanced security using JSON Web Tok
 - [Zod](https://zod.dev/): Schema declaration and validation library.
 
 - [MongoDB Atlas](https://www.mongodb.com/cloud/atlas/register): Cloud database service.
-<br><br><br>
-
+  <br><br><br>
 
 ## To Run and Test the Assignments
 
 Ensure you have Node.js installed on your machine. Follow the steps below to install and run the assignments:
 
-
 1. **Install nvm (Node Version Manager)**
-    ```bash
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-    ```
+
+   ```bash
+   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+   ```
 
 2. **Install Node.js LTS version**
-    ```bash
-    nvm install --lts
-    ```
+
+   ```bash
+   nvm install --lts
+   ```
 
 3. **To run a specific assignment**
-    ```bash
-    # To run middlewares assignments
-    cd assignments/week-3/01-middlewares 
-    node /fileName.js
 
-    # To run jwt assignments
-    cd assignments/week-3/02-jwt
-    node /index.js
+   ```bash
+   # To run middlewares assignments
+   cd assignments/week-3/01-middlewares
+   node /fileName.js
 
-    # To run mongodb assignments
-    cd assignments/week-3/03-mongo
-    npm i
-    node /index.js
+   # To run jwt assignments
+   cd assignments/week-3/02-jwt
+   node /index.js
 
-    # To run mongodb with jwt auth assignments
-    cd assignments/week-3/04-mongo-with-jwt-auth
-    npm i
-    node /index.js
-    ```
+   # To run mongodb assignments
+   cd assignments/week-3/03-mongo
+   npm i
+   node /index.js
+
+   # To run mongodb with jwt auth assignments
+   cd assignments/week-3/04-mongo-with-jwt-auth
+   npm i
+   node /index.js
+   ```
 
 4. **To test a specific assignment, run:**
-    ```bash
-    cd assignments/week-3/01-middlewares 
-    npx jest ./tests/fileName.spec.js
-    ```
+
+   ```bash
+   cd assignments/week-3/01-middlewares
+   npx jest ./tests/fileName.spec.js
+   ```
 
 5. **To test all assignments, run:**
-    ```bash
-    cd assignments/week-3/01-middlewares 
-    npx jest ./tests
-    ```
-</br>
-
+   `bash
+cd assignments/week-3/01-middlewares 
+npx jest ./tests
+`
+   </br>
 
 Feel free to explore each problem's solution and run the tests to verify their correctness.  
 Happy coding!

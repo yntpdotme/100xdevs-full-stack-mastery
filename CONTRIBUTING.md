@@ -1,5 +1,6 @@
 # How to Contribute
-Thank you for considering contributing to our collaborative learning environment! 
+
+Thank you for considering contributing to our collaborative learning environment!
 
 We welcome any suggestions or improvements that can enhance the learning experience for all cohort members.
 </br></br>
@@ -24,18 +25,19 @@ All pull requests SHOULD adhere to the [Conventional Commits specification](http
 </br></br>
 
 ### Ways To Contribute
+
 <hr></br>
 
 1. **Bug Reports and Typos:**
 
-    Help us maintain a clean and error-free repository by reporting any bugs or typos you come across.
+   Help us maintain a clean and error-free repository by reporting any bugs or typos you come across.
 
 2. **Session Notes:**
 
-    Contribute summaries or notes from each cohort session to enhance the collective learning experience.
+   Contribute summaries or notes from each cohort session to enhance the collective learning experience.
 
 3. **Project Ideas and Tips:**
-   
+
    Share your creative project ideas, as well as tips and tricks that can benefit fellow learners.
 
 4. **GSOC Guidance:**

@@ -1,5 +1,5 @@
 const http = require('http');
-const { v4: uuidv4 } = require('uuid');
+const {v4: uuidv4} = require('uuid');
 
 const server = require('../1-todoServer');
 const port = 3000;
@@ -9,15 +9,15 @@ describe('Todo API', () => {
   let createdTodoId;
   let globalServer;
 
-  beforeAll((done) => {
+  beforeAll(done => {
     if (globalServer) {
-        globalServer.close();
+      globalServer.close();
     }
     globalServer = server.listen(3000);
-    done()
+    done();
   });
 
-  afterAll((done) => {
+  afterAll(done => {
     globalServer.close(done);
   });
 
@@ -26,7 +26,7 @@ describe('Todo API', () => {
     description: 'A new todo item',
   };
 
-  test('should create a new todo item', (done) => {
+  test('should create a new todo item', done => {
     const options = {
       method: 'POST',
       headers: {
@@ -34,11 +34,11 @@ describe('Todo API', () => {
       },
     };
 
-    const req = http.request(`${baseUrl}/todos`, options, (res) => {
+    const req = http.request(`${baseUrl}/todos`, options, res => {
       expect(res.statusCode).toBe(201);
       let data = '';
 
-      res.on('data', (chunk) => {
+      res.on('data', chunk => {
         data += chunk;
       });
 
@@ -54,12 +54,12 @@ describe('Todo API', () => {
     req.end();
   });
 
-  test('should retrieve all todo items', (done) => {
-    http.get(`${baseUrl}/todos`, (res) => {
+  test('should retrieve all todo items', done => {
+    http.get(`${baseUrl}/todos`, res => {
       expect(res.statusCode).toBe(200);
       let data = '';
 
-      res.on('data', (chunk) => {
+      res.on('data', chunk => {
         data += chunk;
       });
 
@@ -74,12 +74,12 @@ describe('Todo API', () => {
     });
   });
 
-  test('should retrieve a specific todo item by ID', (done) => {
-    http.get(`${baseUrl}/todos/${createdTodoId}`, (res) => {
+  test('should retrieve a specific todo item by ID', done => {
+    http.get(`${baseUrl}/todos/${createdTodoId}`, res => {
       expect(res.statusCode).toBe(200);
       let data = '';
 
-      res.on('data', (chunk) => {
+      res.on('data', chunk => {
         data += chunk;
       });
 
@@ -91,7 +91,7 @@ describe('Todo API', () => {
     });
   });
 
-  test('should update a specific todo item', (done) => {
+  test('should update a specific todo item', done => {
     const updatedTodo = {
       title: 'Updated Todo',
       description: 'An updated todo item',
@@ -107,17 +107,17 @@ describe('Todo API', () => {
     const req = http.request(
       `${baseUrl}/todos/${createdTodoId}`,
       options,
-      (res) => {
+      res => {
         expect(res.statusCode).toBe(200);
         done();
-      }
+      },
     );
 
     req.write(JSON.stringify(updatedTodo));
     req.end();
   });
 
-  test('should delete a specific todo item', (done) => {
+  test('should delete a specific todo item', done => {
     const options = {
       method: 'DELETE',
     };
@@ -125,17 +125,17 @@ describe('Todo API', () => {
     const req = http.request(
       `${baseUrl}/todos/${createdTodoId}`,
       options,
-      (res) => {
+      res => {
         expect(res.statusCode).toBe(200);
         done();
-      }
+      },
     );
 
     req.end();
   });
 
-  test('should return 404 for a non-existent todo item', (done) => {
-    http.get(`${baseUrl}/todos/${uuidv4()}`, (res) => {
+  test('should return 404 for a non-existent todo item', done => {
+    http.get(`${baseUrl}/todos/${uuidv4()}`, res => {
       expect(res.statusCode).toBe(404);
       done();
     });

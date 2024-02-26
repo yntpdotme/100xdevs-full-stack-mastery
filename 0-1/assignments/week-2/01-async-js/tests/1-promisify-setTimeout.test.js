@@ -1,7 +1,7 @@
-const wait = require("../hard/1-promisify-setTimeout");
+const wait = require('../hard/1-promisify-setTimeout');
 
-describe("wait function", () => {
-  test("resolves after 1 second", () => {
+describe('wait function', () => {
+  test('resolves after 1 second', () => {
     const start = Date.now();
     return expect(wait(1))
       .resolves.toBeUndefined() // Wait for 1 second
@@ -12,7 +12,7 @@ describe("wait function", () => {
       });
   }, 2000); // Set timeout to 2000 ms (2 seconds)
 
-  test("resolves after 2 seconds", () => {
+  test('resolves after 2 seconds', () => {
     const start = Date.now();
     return expect(wait(2))
       .resolves.toBeUndefined() // Wait for 2 seconds
@@ -23,7 +23,7 @@ describe("wait function", () => {
       });
   }, 3000); // Set timeout to 3000 ms (3 seconds)
 
-  test("resolves after 3 seconds", () => {
+  test('resolves after 3 seconds', () => {
     const start = Date.now();
     return expect(wait(3))
       .resolves.toBeUndefined() // Wait for 3 seconds

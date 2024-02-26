@@ -15,36 +15,36 @@
   To test the server, run the `npm run test-fileServer` command in the terminal.
 */
 
-const express = require("express");
-const fsPromises = require("fs").promises; // Use promises version of fs
+const express = require('express');
+const fsPromises = require('fs').promises; // Use promises version of fs
 
 const app = express();
 
 // GET /files
-app.get("/files", async (req, res) => {
-	try {
-		const files = await fsPromises.readdir("./files");
-		res.json(files);
-	} catch (error) {
-		res.status(500).json({ error: "Internal Server Error" });
-	}
+app.get('/files', async (req, res) => {
+  try {
+    const files = await fsPromises.readdir('./files');
+    res.json(files);
+  } catch (error) {
+    res.status(500).json({error: 'Internal Server Error'});
+  }
 });
 
 // GET /file/:filename
-app.get("/file/:filename", async (req, res) => {
-	const { filename } = req.params;
+app.get('/file/:filename', async (req, res) => {
+  const {filename} = req.params;
   const filePath = `./files/${filename}`;
 
-	try {
-		const fileContent = await fsPromises.readFile(filePath, "utf-8");
-		res.send(fileContent);
-	} catch (error) {
-		if (error.code === "ENOENT") {
-			res.status(404).send("File not found");
-		} else {
-			res.status(500).json({ error: "Internal Server Error" });
-		}
-	}
+  try {
+    const fileContent = await fsPromises.readFile(filePath, 'utf-8');
+    res.send(fileContent);
+  } catch (error) {
+    if (error.code === 'ENOENT') {
+      res.status(404).send('File not found');
+    } else {
+      res.status(500).json({error: 'Internal Server Error'});
+    }
+  }
 });
 
 // Handle 404 for any other route

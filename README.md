@@ -85,15 +85,14 @@ Transforming into a full-stack ninja 🥷: Stay tuned.
 - [TypeScript](https://www.typescriptlang.org/) – typed javaScript
 
 - [Vercel](https://vercel.com/) – deployments
-</br></br>
+  </br></br>
 
 ## Contributing
 
-Contributions are always welcome! 
+Contributions are always welcome!
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for ways to get started.
 </br></br>
-
 
 ## Related
 
@@ -104,8 +103,7 @@ Here are some related projects
 - [Ajaydeep Singh Rajpoot - 100xdevsCohort](https://github.com/Ajaydeep123/100xdevsCohort)
 
 - [Vishal Singh - 100xDevs_2.0](https://github.com/vishalsingh2972/100xDevs_2.0)
-</br></br>
-
+  </br></br>
 
 ## License
 

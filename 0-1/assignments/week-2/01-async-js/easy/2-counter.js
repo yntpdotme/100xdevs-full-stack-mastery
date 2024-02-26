@@ -7,10 +7,10 @@ let count = 0;
 
 // Function to update the counter and display it
 const updateCounter = () => {
-	process.stdout.write(`\r${++count}`); // Increment and display the counter
+  process.stdout.write(`\r${++count}`); // Increment and display the counter
 
-	// Schedule the next update using setTimeout
-	setTimeout(updateCounter, 1000);
+  // Schedule the next update using setTimeout
+  setTimeout(updateCounter, 1000);
 };
 
 // Start the counter using setTimeout

@@ -1,7 +1,7 @@
-const sleep = require("../hard/2-sleep-completely");
+const sleep = require('../hard/2-sleep-completely');
 
-describe("sleep function", () => {
-  test("resolves after 1 second", () => {
+describe('sleep function', () => {
+  test('resolves after 1 second', () => {
     const start = Date.now();
     return expect(sleep(1000))
       .resolves.toBeUndefined() // Wait for 1 second
@@ -12,7 +12,7 @@ describe("sleep function", () => {
       });
   }, 2000); // Set timeout to 2000 ms (2 seconds)
 
-  test("resolves after 2 seconds", () => {
+  test('resolves after 2 seconds', () => {
     const start = Date.now();
     return expect(sleep(2000))
       .resolves.toBeUndefined() // Wait for 2 seconds
@@ -23,7 +23,7 @@ describe("sleep function", () => {
       });
   }, 3000); // Set timeout to 3000 ms (3 seconds)
 
-  test("resolves after 3 seconds", () => {
+  test('resolves after 3 seconds', () => {
     const start = Date.now();
     return expect(sleep(3000))
       .resolves.toBeUndefined() // Wait for 3 seconds

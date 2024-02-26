@@ -1,28 +1,28 @@
-import { useState } from "react";
+import {useState} from 'react';
 
-const Form = ({ onGenerate }) => {
-	const [formData, setFormData] = useState({
-		name: "",
-		description: "",
-		linkedin: "",
-		twitter: "",
-		github: "",
-		interests: "",
-	});
+const Form = ({onGenerate}) => {
+  const [formData, setFormData] = useState({
+    name: '',
+    description: '',
+    linkedin: '',
+    twitter: '',
+    github: '',
+    interests: '',
+  });
 
-	const handleChange = (e) => {
-		const { name, value } = e.target;
-		setFormData({ ...formData, [name]: value });
-	};
+  const handleChange = e => {
+    const {name, value} = e.target;
+    setFormData({...formData, [name]: value});
+  };
 
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		onGenerate(formData);
-	};
+  const handleSubmit = e => {
+    e.preventDefault();
+    onGenerate(formData);
+  };
 
-	return (
-		<form onSubmit={handleSubmit}>
-			<div>
+  return (
+    <form onSubmit={handleSubmit}>
+      <div>
         <input
           type="text"
           name="name"
@@ -41,7 +41,7 @@ const Form = ({ onGenerate }) => {
           required
         />
       </div>
-			<div>
+      <div>
         <input
           type="text"
           name="linkedin"
@@ -59,7 +59,7 @@ const Form = ({ onGenerate }) => {
           required
         />
       </div>
-			<div>
+      <div>
         <input
           type="text"
           name="github"
@@ -77,9 +77,9 @@ const Form = ({ onGenerate }) => {
           required
         />
       </div>
-			<button type="submit">Generate</button>
-		</form>
-	);
+      <button type="submit">Generate</button>
+    </form>
+  );
 };
 
 export default Form;
