@@ -1,0 +1,114 @@
+.github-card {
+	margin: 60px 0 80px;
+}
+
+.github-card input {
+	width: 90%;
+	border-radius: 8px;
+	border: 1px solid transparent;
+	padding: 1rem 1.5rem;
+	font-size: 1.2em;
+	font-weight: 500;
+	font-family: inherit;
+	background-color: #1a1a1a;
+	cursor: pointer;
+	transition: border-color 0.25s;
+	outline: none;
+}
+.github-card input:hover {
+	border-color: #646cff;
+}
+.github-card input:focus,
+.github-card input:focus-visible {
+	outline: 4px auto -webkit-focus-ring-color;
+}
+
+.github-card__input {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+}
+
+.loader {
+	display: inline-block;
+	border: 6px solid rgba(0, 0, 0, 0.3);
+	border-radius: 50%;
+	border-top: 6px solid #646cff;
+	width: 32px;
+	height: 32px;
+	animation: spin 1s linear infinite;
+	margin-left: 8px;
+	margin-top: 40px;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.error-message {
+	margin-top: 10px;
+	margin-left: 5px;
+	color: #ef4444;
+	font-size: 18px;
+}
+
+.github-card__details {
+	width: 660px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 3rem 3.5rem;
+	border-radius: 4px;
+	box-sizing: border-box;
+	background-color: #000; /* Or a light background color */
+	margin: 50px auto;
+	gap: 40px;
+	text-align: start;
+	filter: drop-shadow(0 0 1rem #646cffaa);
+}
+
+.github-card__details img {
+	width: 200px;
+	height: 200px;
+	border-radius: 10px;
+	margin-right: 1rem;
+}
+
+.github-card__right {
+	align-self: stretch;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.github-card__details h2 {
+	margin-top: 1rem;
+	margin-bottom: 0.3rem;
+	font-weight: bold;
+	text-align: start;
+}
+
+.github-card__right p {
+	font-size: 1.1rem;
+	margin-top: 0px;
+}
+
+.github-card__button {
+	font-size: 18px;
+	justify-self: end;
+}
+
+.github-card__button:hover {
+	filter: drop-shadow(0 0 0.3rem #646cffaa);
+}
+
+.github-card__name {
+	font-size: 20px;
+	margin: 0;
+	font-weight: 500;
+}
