@@ -19,7 +19,7 @@ const ProfilePage = () => {
 	return (
 		<>
 			<a
-				href="https://github.com/KadlagAkash/100xdevs-full-stack-mastery/blob/main/0-1/assignments/week-7/src/components/Profile.jsx"
+				href="https://github.com/KadlagAkash/100xdevs-full-stack-mastery/blob/main/0-1/assignments/week-7/src/components/Profile/Profile.jsx"
 				target="_blank"
 			>
 				<img src={gitHubLogo} className="logo" alt="Github logo" />
