@@ -37,11 +37,11 @@ From curiosity to code mastery, the **0-1 Cohort** by **[Harkirat Singh](https:/
 
 ## Showcase
 
-- ### [Assignments : learn](./assignments/)
+- ### [Assignments : learn](./assignments/README.md)
 
-- ### [Projects : apply](./projects/)
+- ### [Projects : apply](./projects/README.md)
 
-- ### [Bounties : rewards](./bounties/)
+- ### [Bounties : rewards](./bounties/README.md)
 </br>
 
 ## Contributing
