@@ -49,7 +49,7 @@ Implement a function `countVowels` that takes a string as an argument and return
 
 Implement a function `isPalindrome` which takes a cleanStr as an argument and returns true/false as its result. The input `cleanStr` is case-insensitive.
 
-#### [Time](./medium/time.js)
+#### [Times](./medium/times.js)
 
 Write a function `calculateTime` that calculates the time (in seconds) it takes for the JS code to calculate the sum from 1 to n, given n as the input.
 <br></br><hr></br>
