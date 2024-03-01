@@ -16,7 +16,7 @@ let n = 3000;
 sleep(n)
   .then(() => {
     // Log a message when the promise is resolved
-    console.log(`Function sleeps for ${n} seconds`);
+    console.log(`Function sleeps for ${n/1000} seconds`);
   })
   .catch(error => {
     // Log an error message if the promise is rejected
