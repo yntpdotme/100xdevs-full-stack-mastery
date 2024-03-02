@@ -9,12 +9,11 @@ Develop a simple React application with [Vite](https://vitejs.dev/), following t
 
 ## My Implementation
 
-<br>
+<h3 align="center">
+
+[🗂️ Source Code](./src/App.jsx)
+
+<h3>
 
 ![Jio Network blocking the view? Network switch reveals the magic!](./result.jpg)
 
-<h3 align="center">
-
-[Source Code](./src/App.jsx)
-
-<h3>
