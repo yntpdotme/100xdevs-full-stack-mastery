@@ -6,7 +6,7 @@
 </a>
 
 <p align="center">
-  Showcase of my adventure through the 100xDevs Full Stack Mastery Cohort
+  Showcase of my adventure through the 100xDevs Cohort 2.0
 </p>
 
 <div align= "center">
@@ -18,8 +18,8 @@
 
 <p align="center">
   <a href="#introduction"><strong>Introduction</strong></a> ·
-  <a href="#highlights"><strong>Highlights</strong></a> ·
   <a href="#documentation"><strong>Documentation</strong></a> ·
+  <a href="#highlights"><strong>Highlights</strong></a> ·
   <a href="#tech-stack"><strong>Tech Stack</strong></a> ·
   <a href="#contributing"><strong>Contributing</strong></a>
 </p>
@@ -28,6 +28,17 @@
 ## Introduction
 
 **100xDevs** is an initiative by **[Harkirat Singh](https://www.youtube.com/@harkirat1)** aimed at mentoring individuals in becoming 100x Engineers. From basics to full-stack mastery, this repository documents my in-depth learning journey within the program.
+</br></br>
+
+## Documentation
+
+### [0-1 Cohort](./0-1/README.md)
+
+The foundational building blocks of my development journey within the 100xDevs program.([Dive In](./0-1/README.md#showcase))
+
+### [1-100 Cohort](./1-100/)
+
+Transforming into a full-stack ninja 🥷: Stay tuned.
 </br></br>
 
 ## Highlights
@@ -42,17 +53,6 @@
 
 - **Real-world Projects**: See theory in action through practical, real-world projects.
   </br></br>
-
-## Documentation
-
-### [0-1 Cohort](./0-1/README.md)
-
-The foundational building blocks of my development journey within the 100xDevs program.([Dive In](./0-1/README.md#showcase))
-
-### [1-100 Cohort](./1-100/)
-
-Transforming into a full-stack ninja 🥷: Stay tuned.
-</br></br>
 
 ## Tech Stack
 
