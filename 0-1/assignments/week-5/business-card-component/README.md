@@ -1,13 +1,20 @@
 ## My Implementation
-
-![Jio Network blocking the view? Network switch reveals the magic!](./src/assets/card.gif)
-
 <h3 align="center">
 
-[Source Code of Business Card Component](./src/components/Card.jsx)
+[🗂️ Source Code](./src/components/Card.jsx)
 
 <h3>
-<br>
+
+<p align="center">
+ <img width = "600px" alt="Jio Network blocking the view? Network switch reveals the magic!" src="./src/assets/card-input.jpg">
+ 
+ <br>
+ <br>
+ 
+ <img width = "800px" alt="Jio Network blocking the view? Network switch reveals the magic!" src="./src/assets/card-output.jpg">
+
+<p>
+
 
 ## Workflow
 

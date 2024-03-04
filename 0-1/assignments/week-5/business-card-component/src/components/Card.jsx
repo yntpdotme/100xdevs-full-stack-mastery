@@ -1,7 +1,7 @@
 import React from 'react';
 import linkedinLogo from '../assets/linkedin-icon.png';
 import githubLogo from '../assets/github-icon.png';
-import twitterLogo from '../assets/twitter-icon.png';
+import twitterLogo from '../assets/twitter.png';
 import './Card.css';
 
 const Card = props => {
@@ -21,7 +21,7 @@ const Card = props => {
 
         {twitter && (
           <a href={twitter} target="_blank" rel="noopener noreferrer">
-            <img src={twitterLogo} alt="Twitter" />
+            <img src={twitterLogo} alt="Twitter" id='twitter' />
           </a>
         )}
 

@@ -1,20 +1,44 @@
 /* Card.css */
 .card {
-  border: 1px solid #ccc;
-  padding: 20px;
-  margin: 20px auto;
-  width: 300px;
+  background: #000;
+  padding: 20px 40px;
+  margin: 50px auto;
+  width: 450px;
+  border-radius: 4px;
+  filter: drop-shadow(0 0 1rem #646cffaa);
+}
+
+.card h2 {
+  font-size: 3.5rem;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.card p {
+  font-size: 1.5rem;
+  margin-top: 10px;
 }
 
 .social-media img {
-  width: 30px;
-  margin-right: 10px;
+  width: 42px;
+  margin: 5px 20px;
+}
+
+#twitter {
+  width: 40px;
+  border-radius: 20%;
+  background: #fff;
+  box-sizing: border-box;
+  padding: 5px;
 }
 
 .interests {
+  font-size: 1.3rem;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .interests h3 {
+  font-size: 1.8rem;
   margin-bottom: 10px;
 }
