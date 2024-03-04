@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -69,9 +69,14 @@
 
       function createTodoElement(todo) {
         const todoDiv = document.createElement('div');
+
         todoDiv.className = 'todo-item';
-        todoDiv.innerHTML = `<div>Title: ${todo.title}, Description: ${todo.description}</div> <button onclick="deleteTodo(${todo.id})">Delete</button> <button onclick="updateTodo(${todo.id})">Update</button>`;
+        todoDiv.innerHTML = `<div>Title: ${todo.title}, Description: ${todo.description}</div> 
+        <button onclick="deleteTodo(${todo.id})">Delete</button> 
+        <button onclick="updateTodo(${todo.id})">Update</button>`;
+
         todoDiv.setAttribute('data-id', todo.id);
+
         return todoDiv;
       }
 
@@ -84,7 +89,7 @@
       function removeTodoFromDom(todo) {
         const todoDiv = document.getElementById('todos');
         const todoItem = document.querySelector(
-          `.todo-item[data-id="${todo.id}"]`,
+          `.todo-item[data-id="${todo.id}"]`
         );
 
         if (todoItem) {
@@ -92,89 +97,84 @@
         }
       }
 
-      function updateTodoInDom(oldTodo, newTodo) {
+      function updateTodoInDom(newTodo) {
         const todoDiv = document.getElementById('todos');
         const todoItem = document.querySelector(
-          `.todo-item[data-id="${oldTodo.id}"]`,
+          `.todo-item[data-id="${newTodo.id}"]`
         );
 
         if (todoItem) {
-          todoItem.innerHTML = `Title: ${newTodo.title}, Description: ${newTodo.description} <button onclick="deleteTodo(${newTodo.id})">Delete</button> <button onclick="updateTodo(${newTodo.id})">Update</button>`;
+          todoItem.innerHTML = `Title: ${newTodo.title}, Description: ${newTodo.description} 
+          <button onclick="deleteTodo(${newTodo.id})">Delete</button> 
+          <button onclick="updateTodo(${newTodo.id})">Update</button>`;
         }
       }
 
       function updateState(newTodos) {
-        const added = [];
-        const deleted = [];
-        const updated = [];
-
-        for (const newTodo of newTodos) {
-          const oldTodo = oldTodoState.find(todo => todo.id === newTodo.id);
-          if (!oldTodo) {
-            added.push(newTodo);
-          } else if (
-            oldTodo.title !== newTodo.title ||
-            oldTodo.description !== newTodo.description
-          ) {
-            updated.push({oldTodo, newTodo});
-          }
-        }
-
-        for (const oldTodo of oldTodoState) {
-          const isDeleted = newTodos.every(todo => todo.id !== oldTodo.id);
-          if (isDeleted) {
-            deleted.push(oldTodo);
-          }
-        }
+        const added = newTodos.filter(
+          newTodo => !oldTodoState.some(oldTodo => oldTodo.id === newTodo.id)
+        );
+        const deleted = oldTodoState.filter(
+          oldTodo => !newTodos.some(newTodo => newTodo.id === oldTodo.id)
+        );
+        const updated = newTodos.filter(newTodo =>
+          oldTodoState.some(oldTodo => oldTodo.id === newTodo.id)
+        );
 
         added.forEach(addTodoToDom);
         deleted.forEach(removeTodoFromDom);
-        updated.forEach(({oldTodo, newTodo}) =>
-          updateTodoInDom(oldTodo, newTodo),
-        );
+        updated.forEach(updateTodoInDom);
 
-        oldTodoState = JSON.parse(JSON.stringify(newTodos));
+        oldTodoState = [...newTodos];
       }
 
       function addTodo() {
-        const title = document.getElementById('title').value;
-        const description = document.getElementById('description').value;
+        const titleInput = document.getElementById('title');
+        const descriptionInput = document.getElementById('description');
+
+        const title = titleInput.value;
+        const description = descriptionInput.value;
+
         const newTodo = {
-          title: title,
-          description: description,
+          title,
+          description,
           id: globalId++,
         };
+
         todoState.push(newTodo);
         updateState(todoState);
 
         // Clear Input Fields
-        document.getElementById('title').value = '';
-        document.getElementById('description').value = '';
+        titleInput.value = '';
+        descriptionInput.value = '';
       }
 
       function deleteTodo(id) {
         const index = todoState.findIndex(todo => todo.id === id);
         if (index !== -1) {
-          const deletedTodo = todoState.splice(index, 1)[0];
-          removeTodoFromDom(deletedTodo);
+          todoState.splice(index, 1);
           updateState(todoState);
         }
       }
 
       function updateTodo(id) {
-        const existingTodo = todoState.find(todo => todo.id === id);
-        if (existingTodo) {
+        const index = todoState.findIndex(todo => todo.id === id);
+        if (index !== -1) {
+          const existingTodo = todoState[index];
+
           const newTitle = prompt('Enter new title:', existingTodo.title);
           const newDescription = prompt(
             'Enter new description:',
-            existingTodo.description,
+            existingTodo.description
           );
+
           const updatedTodo = {
             ...existingTodo,
             title: newTitle,
             description: newDescription,
           };
-          updateTodoInDom(existingTodo, updatedTodo);
+
+          todoState[index] = updatedTodo;
           updateState(todoState);
         }
       }
