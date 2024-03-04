@@ -1,0 +1,22 @@
+{
+  "name": "todo-server",
+  "version": "1.0.0",
+  "description": "This is a simple todo application backend",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "npx nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KadlagAkash/100xdevs-full-stack-mastery/blob/main/0-1/projects/basic-todo-app/server"
+  },
+  "author": "Akash Kadlag",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^5.0.0-beta.1",
+    "mongoose": "^8.2.0"
+  }
+}
