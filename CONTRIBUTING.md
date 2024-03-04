@@ -9,12 +9,11 @@ We welcome any suggestions or improvements that can enhance the learning experie
 
 Conventional Commits use the [GitHub flow](https://guides.github.com/introduction/flow/) as main versioning workflow
 
-1. Fork the Conventional Commits repository
+1. Fork rhw repository
 2. Create a new branch for each feature, fix or improvement
 3. Send a pull request from each feature branch to the **main** branch
 
-It is very important to separate new features or improvements into separate feature branches, and to send a
-pull request for each branch.
+It is very important to separate new features or improvements into separate feature branches, and to send a pull request for each branch.
 
 This allow to review and pull in new features or improvements individually.
 </br></br>
