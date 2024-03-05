@@ -21,6 +21,13 @@ const validateTodoCreation = todo => {
         .trim()
         .min(3, {message: 'Must be 3 or more characters long'})
         .max(1024, {message: 'Must be 1024 or fewer characters long'}),
+
+      userId: z
+        .string({
+          required_error: 'userId is required',
+          invalid_type_error: 'userId must be a string',
+        })
+        .refine(val => val.length === 24, {message: 'Invalid userId'}),
     })
     .strict();
 

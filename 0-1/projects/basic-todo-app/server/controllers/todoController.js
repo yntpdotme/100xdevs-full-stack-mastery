@@ -1,22 +1,25 @@
-import {Todo} from '../models/todo.js';
+import {Todo} from '../models/Todo.js';
+import {User} from '../models/User.js';
 import {validateCreation, validateUpdate} from '../validators/types.js';
 
 const getAllTodos = async (req, res) => {
-  const todos = await Todo.find({}, {__v: 0}).sort({isComplete: 1, title: 1});
+  const todos = await Todo.find({ createdBy: req.user._id })
+    .populate('createdBy', 'name -_id')
+    .select('-__v')
+    .sort({isComplete: 1, title: 1});
 
   res.json(todos);
 };
 
 const getTodoById = async (req, res) => {
-  const todo = await Todo.findById(req.params.id);
+  const todo = await Todo.findById(req.params.id).select('-__v');
   if (!todo)
     return res.status(404).send('The todo with the given ID was not found');
 
-  const {__v, ...todoData} = todo.toObject();
   res.json({
     status: 'success',
     message: 'Todo retrieved successfully',
-    data: todoData,
+    data: todo,
   });
 };
 
@@ -24,9 +27,13 @@ const createTodo = async (req, res) => {
   const {error} = validateCreation(req.body);
   if (error) return res.status(400).send(error.issues[0].message);
 
+  const user = await User.findById(req.body.userId);
+  if (!user) return res.status(404).send('Invalid User.');
+
   const todo = new Todo({
     title: req.body.title,
     description: req.body.description,
+    createdBy: user._id,
   });
   await todo.save();
 
