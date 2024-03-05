@@ -76,9 +76,7 @@ const validateUserSignUp = user => {
         .max(255, {message: 'Must be 255 or fewer characters long'}),
 
       email: z
-        .string({
-          required_error: 'Email is required',
-        })
+        .string({required_error: 'Email is required'})
         .email('Please enter a valid email address'),
 
       password: z
@@ -107,8 +105,25 @@ const validateUserSignUp = user => {
   return schema.safeParse(user);
 };
 
+// Validation Logic for User SignIn
+const validateUserSignIn = user => {
+  const schema = z
+    .object({
+      email: z
+        .string({required_error: 'Email is required'})
+        .email('Please enter a valid email address'),
+      password: z
+        .string({required_error: 'Password is required'})
+        .min(1, 'Password is required'),
+    })
+    .strict();
+
+  return schema.safeParse(user);
+};
+
 export {
   validateTodoCreation as validateCreation,
   validateTodoUpdate as validateUpdate,
   validateUserSignUp as validateRegister,
+  validateUserSignIn as validateLogin,
 };
