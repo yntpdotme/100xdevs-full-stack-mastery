@@ -1,5 +1,6 @@
 import express from 'express';
 
+import authorization from '../middleware/authorization.js';
 import validateObjectId from '../middleware/validateObjectId.js';
 import {
   createTodo,
@@ -13,13 +14,13 @@ const router = express.Router();
 
 router
   .route('/')
-  .get(getAllTodos)
-  .post(createTodo);
+  .get(authorization, getAllTodos)
+  .post(authorization, createTodo);
 
 router
   .route('/:id')
-  .get(validateObjectId, getTodoById)
-  .put(validateObjectId, updateTodoById)
-  .delete(validateObjectId, deleteTodoById);
+  .get(validateObjectId, authorization, getTodoById)
+  .put(validateObjectId, authorization, updateTodoById)
+  .delete(validateObjectId, authorization, deleteTodoById);
 
 export default router;
