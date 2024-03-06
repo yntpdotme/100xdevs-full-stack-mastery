@@ -16,7 +16,7 @@
 
 <h2 align="center">
 
-[🗂️&nbsp; Frontend](./client/)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Backend &nbsp;📂](./server/)
+[🗂️&nbsp; Frontend](./client/)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Backend &nbsp;📂](./server/README.md)
 
 </h2>
 <br>

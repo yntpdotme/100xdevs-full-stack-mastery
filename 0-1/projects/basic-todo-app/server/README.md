@@ -1,19 +1,72 @@
-The todo application uses various routes for different functionalities.
 
-Here's an overview:
+<h2 align="center">
 
-- `/api/todos`: Manage todos.
-  	
-	- `GET /`: Get all todos.
-	
-	- `POST /`: Add a new todo.
+[🗂️&nbsp; Source Code](../server/)
 
-  - `PUT /:id`: Update a specific todo.
+</h2>
+<br>
 
-  - `DELETE /:id`: Delete a specific todo.  
+# Todo Application Backend APIs
 
-<Br>
+It uses various routes for different functionalities.
+<br>
+Here's an overview:  
+<br>
 
-- `/api/signin`: Authentication route.
-	
-	- `POST /`: Sign in or Sign up with credentials.
+
+## User Authentication
+
+### Sign Up
+
+- Endpoint: `/api/signup`
+
+- Method: `POST`
+
+- Description: Register a new account with required information.
+
+
+### Sign In
+
+- Endpoint: `/api/signin`
+
+- Method: `POST`
+
+- Description: Authenticate and sign in with credentials.
+
+<br>
+
+## Todo Management
+
+### Get All Todos
+
+- Endpoint: `/api/todos`
+
+- Method: `GET`
+
+- Description: Retrieve all todos.
+
+### Add a New Todo
+
+- Endpoint: `/api/todos`
+
+- Method: `POST`
+
+- Description: Create a new todo.
+
+### Update Todo
+
+- Endpoint: `/api/todos/:id`
+
+- Method: `PUT`
+
+- Description: Update a specific todo.
+
+### Delete Todo
+
+- Endpoint: `/api/todos/:id`
+
+- Method: `DELETE`
+
+- Description: Delete a specific todo.
+
+<br>
