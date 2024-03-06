@@ -2,9 +2,11 @@ import express from 'express';
 
 import routes from './startup/routes.js';
 import db from './startup/db.js';
+import prod from './startup/prod.js';
 
 const app = express();
 
+prod(app);
 routes(app);
 db();
 
