@@ -3,6 +3,7 @@ import {zodResolver} from '@hookform/resolvers/zod';
 import './AuthForm.css';
 
 import z from 'zod';
+import {useEffect} from 'react';
 
 const signUpSchema = z
   .object({
@@ -43,13 +44,28 @@ const AuthForm = ({onSubmit, buttonText, isSignUp}) => {
     register,
     handleSubmit,
     formState: {errors, isValid},
+    setFocus,
+    setError,
+    reset,
   } = useForm({
     resolver: zodResolver(isSignUp ? signUpSchema : signInSchema),
     mode: 'onChange',
   });
 
-  const onSubmitHandler = data => {
-    onSubmit(data);
+  useEffect(() => {
+    isSignUp ? setFocus('name') : setFocus('email');
+  }, [isSignUp, setFocus]);
+
+  const onSubmitHandler = async data => {
+    try {
+      await onSubmit(data);
+      reset();
+    } catch (error) {
+      setError('message', {
+        type: 'manual',
+        message: 'An unexpected error occurred. Please try again.',
+      });
+    }
   };
 
   return (
