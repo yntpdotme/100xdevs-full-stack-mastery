@@ -1,10 +1,31 @@
 form {
   display: flex;
-  min-width: 350px;
-  width: 90%;
+  width: 400px;
   flex-direction: column;
-  gap: 1.5rem;
   margin: auto;
   margin-top: 50px;
   margin-bottom: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  form {
+    width: 90%;
+  }
+}
+
+.error {
+  color: #ff4e4e;
+  font-size: 1rem;
+  margin: 0;
+  margin-bottom: 0.5rem;
+  text-align: left;
+  margin-left: 5px;
+}
+
+form input {
+  margin: 1rem 0;
+}
+
+form button {
+  margin-top: 1rem;
 }
