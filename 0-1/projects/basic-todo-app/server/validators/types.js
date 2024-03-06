@@ -99,14 +99,14 @@ const validateUserSignUp = user => {
           return passwordRegex.test(password);
         }, 'Password must have at least 6 characters, one uppercase letter, one lowercase letter, one digit, and one special character.'),
 
-      passwordConfirmation: z.string({
-        required_error: 'Password Confirmation is required',
+      confirmPassword: z.string({
+        required_error: 'Confirm Password is required',
       }),
     })
     .strict()
-    .refine(data => data.password === data.passwordConfirmation, {
+    .refine(data => data.password === data.confirmPassword, {
       message: 'Passwords do not match',
-      path: ['passwordConfirmation'],
+      path: ['confirmPassword'],
     });
 
   return schema.safeParse(user);
