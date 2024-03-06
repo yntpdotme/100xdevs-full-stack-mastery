@@ -1,8 +1,15 @@
 .headline {
   font-size: 4.5rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 
 .tagline {
-  font-size: 2rem;
+  font-size: 1.4rem;
   font-weight: 500;
+  margin: 0;
+}
+
+.logo {
+  margin-bottom: 1rem;
 }
