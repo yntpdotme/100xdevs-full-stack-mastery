@@ -2,6 +2,7 @@ import {Link, useNavigate} from 'react-router-dom';
 
 import {AuthForm} from '../../components';
 import signinService from '../../services/signinService';
+import {setAccessToken} from '../../services/tokenStroage';
 
 import './SignInPage.css';
 
@@ -10,7 +11,7 @@ const SignInPage = () => {
 
   const handleSignIn = async formData => {
     const response = await signinService.signIn(formData);
-    console.log('User Loged In successfully:', response);
+    setAccessToken(response?.data?.access_token);
 
     navigate('/todos');
   };
