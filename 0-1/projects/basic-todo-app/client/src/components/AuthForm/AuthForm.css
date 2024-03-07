@@ -7,7 +7,7 @@ form {
   margin-bottom: 30px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 576px) {
   form {
     width: 90%;
   }
@@ -20,6 +20,12 @@ form {
   margin-bottom: 0.5rem;
   text-align: left;
   margin-left: 5px;
+}
+
+.error-bottom {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  text-align: center;
 }
 
 form input {
