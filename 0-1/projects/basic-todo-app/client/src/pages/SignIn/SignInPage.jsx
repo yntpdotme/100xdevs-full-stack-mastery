@@ -1,10 +1,18 @@
-import {Link} from 'react-router-dom';
-import { AuthForm } from '../../components';
-import './SignInPage.css'
+import {Link, useNavigate} from 'react-router-dom';
+
+import {AuthForm} from '../../components';
+import signinService from '../../services/signinService';
+
+import './SignInPage.css';
 
 const SignInPage = () => {
+  const navigate = useNavigate();
+
   const handleSignIn = async formData => {
-    // Implement signin logic using the provided api service
+    const response = await signinService.signIn(formData);
+    console.log('User Loged In successfully:', response);
+
+    navigate('/todos');
   };
 
   return (
