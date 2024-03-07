@@ -61,9 +61,15 @@ const AuthForm = ({onSubmit, buttonText, isSignUp}) => {
       await onSubmit(data);
       reset();
     } catch (error) {
+      let errorMessage = 'An unexpected error occurred. Please try again.';
+
+      if (error?.response?.data) {
+        errorMessage = error.response.data;
+      }
+
       setError('message', {
         type: 'manual',
-        message: 'An unexpected error occurred. Please try again.',
+        message: errorMessage,
       });
     }
   };
@@ -96,10 +102,12 @@ const AuthForm = ({onSubmit, buttonText, isSignUp}) => {
           )}
         </>
       )}
-      {errors.message && <p className="error">{errors.message}</p>}
       <button type="submit" disabled={!isValid}>
         {buttonText}
       </button>
+      {errors.message && (
+        <p className="error error-bottom">{errors.message.message}</p>
+      )}
     </form>
   );
 };
