@@ -5,4 +5,9 @@ export default axios.create({
   baseURL,
 });
 
+export const apiClientAuthenticated = axios.create({
+  baseURL,
+  withCredentials: true,
+});
+
 export {CanceledError};
