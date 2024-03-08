@@ -37,7 +37,16 @@ const TodosPage = () => {
   };
 
   const deleteTodo = todoId => {
-    // Implement logic to delete todo (send DELETE request)
+    const oldTodos = [...todos];
+
+    // Update the UI
+    setTodos(todos.filter(t => t._id !== todoId));
+
+    // API Call
+    todoService.deleteTodo(todoId).catch(err => {
+      setError(err.message);
+      setTodos(oldTodos);
+    });
   };
 
   const logOut = () => {
