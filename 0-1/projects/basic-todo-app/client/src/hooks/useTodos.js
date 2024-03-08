@@ -18,7 +18,12 @@ const useTodos = () => {
         if (error instanceof CanceledError) return;
         setError(error.message);
       })
-      .finally(() => setLoading(false));
+      .finally(() => {
+        // Simulate loader delay for 1 seconds
+        setTimeout(() => {
+          setLoading(false);
+        }, 1000);
+      });
 
     return () => cancel();
   }, []);
