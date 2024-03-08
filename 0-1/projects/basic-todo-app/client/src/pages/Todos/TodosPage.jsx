@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+import {jwtDecode} from 'jwt-decode';
 
 import useTodos from '../../hooks/useTodos';
 import {getAccessToken, removeAccessToken} from '../../services/tokenStroage';
@@ -19,7 +20,30 @@ const TodosPage = () => {
   const navigate = useNavigate();
 
   const createTodo = () => {
-    // Implement logic to add new todo (send POST request)
+    if (!newTodo.title || !newTodo.description) return;
+
+    const oldTodos = [...todos];
+    const {_id: userId} = jwtDecode(getAccessToken());
+
+    // Update the UI
+    newTodo.userId = userId;
+    setTodos([...todos, newTodo]);
+
+    // API Call
+    todoService
+      .createTodo(newTodo)
+      .then(({data: savedTodo}) => {
+        setTodos([...todos, savedTodo]);
+        setNewTodo({
+          title: '',
+          description: '',
+          userId: '',
+        });
+      })
+      .catch(err => {
+        setError(err.message);
+        setTodos(oldTodos);
+      });
   };
 
   const updateTodo = todo => {
