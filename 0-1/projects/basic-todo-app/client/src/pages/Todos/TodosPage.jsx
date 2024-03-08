@@ -33,7 +33,7 @@ const TodosPage = () => {
     todoService
       .createTodo(newTodo)
       .then(({data: savedTodo}) => {
-        setTodos([...todos, savedTodo]);
+        setTodos([...todos, savedTodo.data]);
         setNewTodo({
           title: '',
           description: '',
@@ -80,9 +80,6 @@ const TodosPage = () => {
 
   useEffect(() => {
     if (!getAccessToken()) navigate('/');
-    return () => {
-      // Cleanup logic
-    };
   }, [navigate]);
 
   return (
