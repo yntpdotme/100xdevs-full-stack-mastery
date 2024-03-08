@@ -20,7 +20,7 @@ const todoService = {
   },
 
   updateTodo(todo) {
-    return apiClientAuthenticated.put('/todos/' + todo.id, todo);
+    return apiClientAuthenticated.put('/todos/' + todo._id, todo);
   },
 };
 
