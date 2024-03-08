@@ -23,7 +23,17 @@ const TodosPage = () => {
   };
 
   const updateTodo = todo => {
-    // Implement logic to update todo status (send PUT request to update status)
+    const oldTodos = [...todos];
+    const updatedTodo = {...todo, isComplete: !todo.isComplete};
+
+    // Update the UI
+    setTodos(todos.map(t => (t._id === todo._id ? updatedTodo : t)));
+
+    // API Call
+    todoService.updateTodo(updatedTodo).catch(err => {
+      setError(err.message);
+      setTodos(oldTodos);
+    });
   };
 
   const deleteTodo = todoId => {
