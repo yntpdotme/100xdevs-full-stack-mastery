@@ -11,7 +11,7 @@ const HomePage = () => {
       <p className="tagline">Be kind to your mind with our</p>
       <h1 className="headline">Todo App</h1>
       <br />
-      <Link to="/signup">
+      <Link to="/signin">
         <button>Get Started</button>
       </Link>
     </div>
