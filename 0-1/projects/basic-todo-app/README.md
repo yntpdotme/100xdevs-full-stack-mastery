@@ -16,7 +16,7 @@
 
 <h2 align="center">
 
-[🗂️&nbsp; Frontend](./client/)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Backend &nbsp;📂](./server/README.md)
+[🗂️&nbsp; Frontend](./client/README.md)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Backend &nbsp;📂](./server/README.md)
 
 </h2>
 <br>
@@ -34,7 +34,7 @@
 To-Do App created during Week-5 of 100xDevs Cohort by Harkirat Singh.
 
 <p align=center>
-	<img width = "700px" alt="Jio Network blocking the view? Network switch reveals the magic!" src="./assets/frontend.png">
+	<img width = "550px" alt="Jio Network blocking the view? Network switch reveals the magic!" src="./assets/frontend.png">
 <p>
 <br>
 
@@ -42,7 +42,20 @@ To-Do App created during Week-5 of 100xDevs Cohort by Harkirat Singh.
 
 - **Organized File and Folder Structure**: Maintain a well-organized file and folder structure for easy navigation and management.
 
-- <br><br>
+- **Intuitive UI**: Well-organized and intuitive user interface design for a smooth user experience.
+
+- **Custom Hook**: Efficient data management with a custom hook.
+
+- **Schema Validation**: Enforced schema validation on both frontend and backend for enhanced data integrity.
+
+- **Backend Integration**: Seamless backend integration for CRUD operations on todos.
+
+- **Secure Authentication**: Robust user authentication with JWT token implementation.
+
+- **Security Measures**: Implemented production security measures.
+
+- **Documentation**: For clarity & a local development setup guide.
+  <br><br>
 
 ## <a name="tech-stack">⚙️&nbsp; Tech Stack</a>
 
@@ -58,19 +71,96 @@ To-Do App created during Week-5 of 100xDevs Cohort by Harkirat Singh.
 
 ## <a name="local-development"> 🖥️&nbsp;&nbsp; Local Development</a>
 
-1. **Clone the repository:**
+0.  **Prerequisites** <br>
+    Make sure you have the following installed on your machine:
 
-   ```bash
-   git clone https://github.com/KadlagAkash/100xdevs-full-stack-mastery.git
-   ```
+    - [Git](https://git-scm.com/)
+    - [Node.js](https://nodejs.org/en)
+    - [npm](https://www.npmjs.com/) (Node Package Manager)
 
-2. **Navigate to the project directory:**
+1.  **Clone the repository:**
 
-   ```bash
-   cd 100xdevs-full-stack-mastery/0-1/projects/basic-to-do-app/
-   ```
+    ```bash
+    git clone https://github.com/KadlagAkash/100xdevs-full-stack-mastery.git
+    ```
 
-<br><br>
+2.  **Navigate to the project directory:**
+
+    ```bash
+    cd 100xdevs-full-stack-mastery/0-1/projects/basic-to-do-app/
+    ```
+
+3.  **Setup Backend:**
+
+    - **Navigate to the Backend Codebase:**
+
+      ```bash
+      cd server/
+      ```
+
+    - **Install dependencies:**
+
+      ```bash
+      npm install
+      ```
+
+    - **Add Environment Variables:**
+
+      ```bash
+      touch .env
+      cat >> .env
+      DB_URL = "your_mongo_db_connection_string"
+
+      JWT_SECRET_KEY = "your_secret_key"
+      (Control+D to terminate)
+      ```
+
+    - **Run the Server:**
+
+      ```bash
+      npm run dev
+      ```
+
+4.  **Setup Frontend:**
+
+    - **Navigate to the Fronend Codebase:**
+
+      ```bash
+      cd frontend/
+      ```
+
+    - **Install dependencies:**
+
+      ```bash
+      npm install
+      ```
+
+    - **Add Environment Variables:**
+
+      ```bash
+      touch .env
+      cat >> .env
+      VITE_API_BASE_URL = 'enter_api_base_url'
+      (Control+D to terminate)
+      ```
+
+    - **Run the App:**
+
+      ```bash
+      npm run dev
+      ```
+    - **Open your browser:**
+
+      Visit [http://localhost:5173](http://localhost:5173) to explore the todo application.
+
+    <br><br>
+
+## 🤝&nbsp;&nbsp;Contributing
+
+Contributions are always welcome!
+
+See [CONTRIBUTING.md](../../../CONTRIBUTING.md) for ways to get started.
+</br></br>
 
 ## 🪪&nbsp;&nbsp; Licensing Information
 
