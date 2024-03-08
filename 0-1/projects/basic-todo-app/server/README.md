@@ -1,18 +1,17 @@
-
-<h2 align="center">
+<h3 align="center">
 
 [🗂️&nbsp; Source Code](../server/)
 
-</h2>
+</h3>
 <br>
 
-# Todo Application Backend APIs
+<h1 align="center">Todo Application Backend API</h1>
 
-It uses various routes for different functionalities.
-<br>
-Here's an overview:  
-<br>
+- It uses various routes for different functionalities.
 
+- Here's an overview:
+
+<br>
 
 ## User Authentication
 
@@ -23,7 +22,6 @@ Here's an overview:
 - Method: `POST`
 
 - Description: Register a new account with required information.
-
 
 ### Sign In
 
@@ -70,3 +68,5 @@ Here's an overview:
 - Description: Delete a specific todo.
 
 <br>
+
+Feel free to explore backend APIs implementation and run it locally to verify it's correctness. Happy coding!
