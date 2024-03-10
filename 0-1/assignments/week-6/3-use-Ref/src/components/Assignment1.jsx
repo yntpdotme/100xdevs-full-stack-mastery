@@ -7,7 +7,7 @@
 import {useEffect, useRef, useCallback} from 'react';
 
 const Assignment1 = () => {
-  const inputRef = useRef();
+  const inputRef = useRef(null);
 
   useEffect(() => {
     inputRef.current.focus();

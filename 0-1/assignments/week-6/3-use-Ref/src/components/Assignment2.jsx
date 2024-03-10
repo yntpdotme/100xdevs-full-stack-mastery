@@ -8,15 +8,18 @@ import {useState} from 'react';
 
 const Assignment2 = () => {
   const [, forceRender] = useState(0);
+  const totalRenders = useRef(0);
 
-  const handleReRender = () => {
+  const handleReRender = useCallback(() => {
     // Update state to force re-render
     forceRender(Math.random());
-  };
+  }, []);
+
+  totalRenders.current += 1;
 
   return (
     <div>
-      <h2>This component has rendered {0} times.</h2>
+      <p>This component has rendered {totalRenders.current} times.</p>
       <button onClick={handleReRender}>Force Re-render</button>
     </div>
   );

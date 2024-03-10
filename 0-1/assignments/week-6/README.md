@@ -49,7 +49,7 @@
 
 ### [useCallback Hook](./2-use-callback/README.md)
 
-#### [Task 1](./src/components/Assignment1.jsx):
+#### [Task 1](./2-use-callback/src/components/Assignment1.jsx):
 
 - Create a counter component with increment and decrement functions.
 
@@ -57,7 +57,7 @@
 
 - Use useCallback to ensure that these functions are not recreated on every render.
 
-#### [Task 2](./src/components/Assignment2.jsx):
+#### [Task 2](./2-use-callback/src/components/Assignment2.jsx):
 
 - Create a component with a text input field and a button. The goal is to display an alert with the text entered when the button is clicked.
 
@@ -69,15 +69,15 @@
 
 <br><hr><br>
 
-### [useRef Hook](./2-use-callback/README.md)
+### [useRef Hook](./3-use-Ref/README.md)
 
-#### [Task 1](./src/components/Task1.jsx):
+#### [Task 1](./3-use-Ref/src/components/Assignment1.jsx):
 
 - Create a component with a text input field and a button.
 
 - When the component mounts or the button is clicked, automatically focus the text input field using useRef.
 
-#### [Task 2](./src/components/Assignment2.jsx):
+#### [Task 2](./3-use-Ref/src/components/Assignment2.jsx):
 
 - Create a component that tracks and displays the number of times it has been rendered.
 
