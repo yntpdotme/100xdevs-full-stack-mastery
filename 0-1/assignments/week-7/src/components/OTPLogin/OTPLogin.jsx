@@ -113,6 +113,7 @@ const OtpInput = ({length = 4, onOtpSubmit}) => {
     // Select the text inside the input
     inputRefs.current[index].select();
 
+    // Focus on the previous empty field (if any)
     if (index > 0 && !otp[index - 1]) {
       inputRefs.current[otp.indexOf('')].focus();
     }

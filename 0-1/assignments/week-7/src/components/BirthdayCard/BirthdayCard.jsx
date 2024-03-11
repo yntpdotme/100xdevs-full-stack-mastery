@@ -20,10 +20,11 @@ const BirthdayCard = () => {
   };
 
   const renderBirthdayCards = () => {
+    setLoading(true);
+
     setShowCards(true);
 
-    setLoading(true);
-    // Simulate loader delay for 3 seconds
+    // Simulate loader delay for 1 second
     setTimeout(() => {
       setLoading(false);
     }, 1000);
@@ -41,7 +42,7 @@ const BirthdayCard = () => {
       link.download = `${name
         .trim()
         .toLocaleLowerCase()
-        .replace(/\s+/g, '-')}_birthday_card.jpg`;
+        .replace(/\s+/g, '_')}_birthday_card.jpg`;
       link.click();
     });
   };

@@ -32,6 +32,7 @@ const GitHubCard = () => {
       console.error('Error fetching GitHub user data:', error);
       setError('Failed to fetch user data. Please try again.'); // Set user-friendly error message
     } finally {
+      // Simulate loader delay for 0.5 second
       setTimeout(() => setLoading(false), 500);
     }
   };

@@ -138,13 +138,26 @@ Ensure you have Node.js installed on your machine. Follow the steps below to ins
    npm install
    ```
 
-6. **Run the project:**
+6. **Add Environment Variable:**
+
+   Use for ParaGenerator Assignment.
+
+   Get your API key here [**Google AI Studio** 🔗](https://aistudio.google.com/app/apikey)
+
+   ```bash
+   touch .env
+   cat >> .env
+   VITE_GEMINI_API_KEY="enter api key"
+   (Control+D to terminate)
+   ```
+
+7. **Run the project:**
 
    ```bash
    npm run dev
    ```
 
-7. **Open your browser:**
+8. **Open your browser:**
 
    Visit [http://localhost:5173](http://localhost:5173) to view the project.
 

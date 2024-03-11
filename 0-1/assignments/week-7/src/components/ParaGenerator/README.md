@@ -23,3 +23,5 @@
 - `App.jsx` component renders `HomePage.jsx` component which displays buttons linking to various components. Clicking a button navigates to the respective component page.
 
 - `ParaGeneratorPage.jsx` renders `ParaGenerator.jsx` component. It also has Back button navigates back to `HomePage.jsx`.
+
+- `ParaGeneratoe.jsx` use `Gemini API` for generating paragraph. It uses `gemini-pro` model with the `generateContent()` method to generate text output.
