@@ -87,7 +87,7 @@ To-Do App created during Week-5 of 100xDevs Cohort by Harkirat Singh.
 2.  **Navigate to the project directory:**
 
     ```bash
-    cd 100xdevs-full-stack-mastery/0-1/projects/basic-to-do-app/
+    cd 100xdevs-full-stack-mastery/0-1/projects/basic-todo-app/
     ```
 
 3.  **Setup Backend:**

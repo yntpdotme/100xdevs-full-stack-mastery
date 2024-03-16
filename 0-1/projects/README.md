@@ -14,6 +14,8 @@
 <br>
 
 - ### [Week 5 : Basic Todo App (MERN)](./basic-todo-app/README.md)
+
+- ### [Week 8 : Basic Wallet App (MERN + Tailwind)](./basic-wallet-app/README.md)
   </br></br>
 
 ## Contributing
