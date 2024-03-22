@@ -1,11 +1,13 @@
 import express from 'express';
+import cookieParser from 'cookie-parser';
 
-import {testRouter} from '../routes/testRouter.js';
+import {authRouter} from '../routes/index.js';
 import {errorHandler} from '../middlewares/error.middlewares.js';
 
 const routes = app => {
-  app.use(express.json());
-  app.use('/api/v1/test', testRouter);
+  app.use(express.json({limit: '16kb'}));
+  app.use(cookieParser());
+  app.use('/api/v1/auth', authRouter);
   app.use(errorHandler);
 };
 
