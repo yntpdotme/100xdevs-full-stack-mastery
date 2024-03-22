@@ -1,4 +1,4 @@
-import { errorHandler } from '../middlewares/error.middlewares.js';
+import {errorHandler} from '../middlewares/error.middlewares.js';
 
 /**
  * @description Common Error class to throw an error from anywhere.
@@ -11,12 +11,14 @@ class ApiError extends Error {
    * @param {string} message
    * @param {any[]} errors
    * @param {string} stack
+   * @param {string} authenticate
    */
   constructor(
     statusCode,
     message = 'Something went wrong',
     errors = [],
-    stack = ''
+    stack = '',
+    authenticate = null,
   ) {
     super(message);
     this.statusCode = statusCode;
@@ -25,11 +27,18 @@ class ApiError extends Error {
     this.success = false;
     this.errors = errors;
 
+    if (authenticate) {
+      this.headers = {
+        'WWW-Authenticate': authenticate,
+      };
+    }
+
     if (stack) {
       this.stack = stack;
     } else {
       Error.captureStackTrace(this, this.constructor);
     }
+
   }
 }
 
