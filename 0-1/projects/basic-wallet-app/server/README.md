@@ -53,11 +53,11 @@
 
 ### Update User
 
-- Endpoint: `/api/v1/users/:id`
+- Endpoint: `/api/v1/users/me`
 
-- Method: `PUT`
+- Method: `PATCH`
 
-- Description: Update a specific users.
+- Description: Update a specific user.
 
 <br/>
 
