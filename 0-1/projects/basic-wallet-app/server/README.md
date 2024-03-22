@@ -31,6 +31,14 @@
 
 - Description: Authenticate and sign in with credentials.
 
+### Sing Out
+
+- Endpoint: `/api/v1/auth/logout`
+
+- Method: `POST`
+
+- Description: Logs out the authenticated user session.
+
 <br>
 
 ## User Management &nbsp;👤
