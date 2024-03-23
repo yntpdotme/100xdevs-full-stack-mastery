@@ -61,23 +61,31 @@
 
 <br/>
 
-## Account Management &nbsp;💰
+## Wallet Management &nbsp;💰
 
 ### Get Balance
 
-- Endpoint: `/api/v1/account/balance`
+- Endpoint: `/api/v1/wallet/balance`
 
 - Method: `GET`
 
-- Description: Retrive balance of current user.
+- Description: Retrieves the wallet balance for the authenticated user.
 
-### Transfer Ammount
+### Doposite Ammount
 
-- Endpoint: `/api/v1/account/transfer`
+- Endpoint: `/api/v1/wallet/deposit`
 
 - Method: `POST`
 
-- Description: Transfer mnoney to another user
+- Description: Allows authenticated users to add funds to their wallet.
+
+### Transfer Ammount
+
+- Endpoint: `/api/v1/wallet/transfer`
+
+- Method: `POST`
+
+- Description: Allows authenticated users to transfer funds to another wallet.
 
 <br>
 
