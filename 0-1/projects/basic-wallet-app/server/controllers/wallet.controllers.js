@@ -5,7 +5,7 @@ import {Transaction} from '../models/transaction.models.js';
 import {ApiError} from '../utils/ApiError.js';
 import {ApiResponse} from '../utils/ApiResponse.js';
 import {
-  ValidateDeposite,
+  ValidateDeposit,
   ValidateTransfer,
 } from '../validators/wallet.validators.js';
 
@@ -27,8 +27,8 @@ const getBalance = async (req, res) => {
   );
 };
 
-const depositeAmount = async (req, res) => {
-  const {error} = ValidateDeposite(req.body);
+const depositAmount = async (req, res) => {
+  const {error} = ValidateDeposit(req.body);
   if (error) throw new ApiError(400, error.issues[0].message, []);
 
   const {amount} = req.body;
@@ -42,7 +42,7 @@ const depositeAmount = async (req, res) => {
   // ADMIN_ID must come from DB. Hardcoding it for testing.
   const ADMIN_ID = '65ffe9ec8d4a1398face07e2';
 
-  // Store deposite data
+  // Store deposit data
   await Transaction.create({
     senderId: ADMIN_ID, // system-generated funds
     recipientId: req.user._id,
@@ -122,4 +122,4 @@ const transferAmount = async (req, res, next) => {
   }
 };
 
-export {getBalance, depositeAmount, transferAmount};
+export {getBalance, depositAmount, transferAmount};
