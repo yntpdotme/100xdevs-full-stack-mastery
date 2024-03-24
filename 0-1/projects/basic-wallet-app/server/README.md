@@ -89,4 +89,16 @@
 
 <br>
 
+## Transactions History &nbsp;🧾
+
+### Get All Transactions
+
+- Endpoint: `/api/v1/transactions/`
+
+- Method: `GET`
+
+- Description: Allowed authenticated users to see their past transactions.
+
+<br><br>
+
 Feel free to explore backend APIs implementation and run it locally to verify it's correctness. Happy coding!

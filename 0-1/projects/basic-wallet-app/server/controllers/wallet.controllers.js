@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 
 import {Wallet} from '../models/wallet.models.js';
+import {Transaction} from '../models/transaction.models.js';
 import {ApiError} from '../utils/ApiError.js';
 import {ApiResponse} from '../utils/ApiResponse.js';
 import {
@@ -9,12 +10,18 @@ import {
 } from '../validators/wallet.validators.js';
 
 const getBalance = async (req, res) => {
-  const wallet = await Wallet.findOne({userId: req.user._id});
+  const wallet = await Wallet.findOne({userId: req.user._id}).populate(
+    'userId'
+  );
 
   return res.json(
     new ApiResponse(
       200,
-      {balance: wallet.balanceINR, currency: 'INR'},
+      {
+        walletHolder: wallet.userId?.name,
+        balance: wallet.balanceINR,
+        currency: 'INR',
+      },
       'Users fetched successfully'
     )
   );
@@ -25,15 +32,31 @@ const depositeAmount = async (req, res) => {
   if (error) throw new ApiError(400, error.issues[0].message, []);
 
   const {amount} = req.body;
-  const wallet = await Wallet.findOne({userId: req.user._id});
 
-  wallet.balance += amount * 100;
-  await wallet.save();
+  const wallet = await Wallet.findOneAndUpdate(
+    {userId: req.user._id},
+    {$inc: {balance: amount}},
+    {new: true}
+  ).populate('userId');
+
+  // ADMIN_ID must come from DB. Hardcoding it for testing.
+  const ADMIN_ID = '65ffe9ec8d4a1398face07e2';
+
+  // Store deposite data
+  await Transaction.create({
+    senderId: ADMIN_ID, // system-generated funds
+    recipientId: req.user._id,
+    amount: amount,
+  });
 
   return res.json(
     new ApiResponse(
       201,
-      {balance: wallet.balanceINR, currency: 'INR'},
+      {
+        walletHolder: wallet.userId?.name,
+        balance: wallet.balanceINR,
+        currency: 'INR',
+      },
       'Deposit is successful'
     )
   );
@@ -56,7 +79,7 @@ const transferAmount = async (req, res, next) => {
       session
     );
 
-    if (!senderWallet || senderWallet.balance < amount) {
+    if (!senderWallet || senderWallet.balanceINR < amount) {
       throw new ApiError(400, 'Insufficient balance');
     }
 
@@ -78,6 +101,13 @@ const transferAmount = async (req, res, next) => {
       {userId: recipientId},
       {$inc: {balance: amount}}
     ).session(session);
+
+    // Store tranfer data
+    await Transaction.create({
+      senderId: req.user._id,
+      recipientId: recipientId,
+      amount: amount,
+    });
 
     // Commit the transaction
     await session.commitTransaction();
