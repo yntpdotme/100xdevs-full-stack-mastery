@@ -1,6 +1,6 @@
 import z from 'zod';
 
-const walletDepositeValidator = transaction => {
+const walletDepositValidator = transaction => {
   const schema = z.object({
     amount: z
       .number({
@@ -48,6 +48,6 @@ const walletTransferValidator = transaction => {
 };
 
 export {
-  walletDepositeValidator as ValidateDeposite,
+  walletDepositValidator as ValidateDeposit,
   walletTransferValidator as ValidateTransfer,
 };
