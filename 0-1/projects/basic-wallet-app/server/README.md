@@ -35,9 +35,17 @@
 
 - Endpoint: `/api/v1/auth/logout`
 
-- Method: `POST`
+- Method: `GET`
 
 - Description: Logs out the authenticated user session.
+
+### 
+
+- Endpoint: `/api/v1/auth/refresh`
+
+- Method: `POST`
+
+- Description: Refreshes the access token.
 
 <br>
 
