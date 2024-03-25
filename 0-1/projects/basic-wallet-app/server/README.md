@@ -107,6 +107,49 @@
 
 - Description: Allowed authenticated users to see their past transactions.
 
-<br><br>
+<br>
 
 Feel free to explore backend APIs implementation and run it locally to verify it's correctness. Happy coding!
+
+<br><br>
+
+<h1 align="center">🖥️&nbsp;&nbsp; Local Development</h1>
+
+- **Navigate to the Backend Codebase:**
+
+	```bash
+	cd server/
+	```
+
+- **Install dependencies:**
+
+	```bash
+	npm install
+	```
+
+- **Add Environment Variables:**
+
+	```bash
+	touch .env
+	cat >> .env
+	DB_URL = "mongodb_string/wallet_app"
+	
+	ACCESS_TOKEN_SECRET="access_token_secret"
+	ACCESS_TOKEN_EXPIRY=1d # 1 day
+
+	REFRESH_TOKEN_SECRET="refresh_token_secret"
+	REFRESH_TOKEN_EXPIRY=10d # 10day
+
+	CORS_ORIGIN="http://localhost:"
+
+	(Control+D to terminate)
+	```
+
+- **Run the Server:**
+
+	```bash
+	npm run dev
+	```
+
+<br><br>
+
