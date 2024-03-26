@@ -28,6 +28,9 @@ export default {
         forground: 'hsl(210 20% 98%)',
         'white-400': 'rgba(255, 255, 255, 0.80)',
       },
+      animation: {
+        'spin-slow': 'spin 20s linear infinite',
+      },
     },
   },
   plugins: [],
