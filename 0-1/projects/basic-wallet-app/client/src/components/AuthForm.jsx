@@ -87,7 +87,7 @@ const AuthForm = ({onSubmit, buttonText, isSignUp}) => {
             Password
           </label>
 
-          <div className="relative">
+          <div className="relative pb-3">
             <Input
               props={register('password')}
               type={showPassword ? 'text' : 'password'}
@@ -104,7 +104,7 @@ const AuthForm = ({onSubmit, buttonText, isSignUp}) => {
             />
           </div>
 
-          {!errors.password && (
+          {isSignUp && !errors.password && (
             <span className="block pl-1 pt-1 text-xs font-normal leading-tight text-gray-400">
               Ensure it&apos;s at least 6 characters
             </span>
@@ -114,7 +114,7 @@ const AuthForm = ({onSubmit, buttonText, isSignUp}) => {
         {isSignUp && (
           <div className="flex flex-col space-y-1">
             <label
-              className="[&amp;>*]:mt-[0.35rem] w-full text-sm font-medium text-gray-500 dark:text-gray-400"
+              className="w-full text-sm font-medium text-gray-400"
               htmlFor="confirmPassword"
             >
               Repeat password

@@ -27,6 +27,7 @@ export default {
         background: 'hsl(224 71.4% 4.1%)',
         forground: 'hsl(210 20% 98%)',
         'white-400': 'rgba(255, 255, 255, 0.80)',
+        'dark-800': 'rgb(30, 41, 59)',
       },
       animation: {
         'spin-slow': 'spin 20s linear infinite',
