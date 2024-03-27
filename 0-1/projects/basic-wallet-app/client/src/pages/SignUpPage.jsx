@@ -11,11 +11,11 @@ const SignUpPage = () => {
 
   return (
     <main className="max-container flex h-screen flex-col items-center justify-center">
-      <p className="mb-10 bg-gradient-to-r from-gray-600 to-white bg-clip-text font-palanquin text-xl font-extrabold text-transparent md:text-2xl">
+      <p className="mb-10 bg-gradient-to-r from-gray-600 to-white bg-clip-text font-palanquin text-2xl font-extrabold text-transparent">
         PaymentX
       </p>
 
-      <div className="flex w-full max-w-sm flex-col items-center space-y-4 rounded-xl border-transparent bg-transparent px-2 py-1 max-sm:px-6 md:w-8/12 md:border md:px-8 md:py-6 lg:w-7/12 lg:border-[#1E2931] lg:bg-background lg:px-6 lg:shadow-[0_0_1200px_0] lg:shadow-primary/30 xl:w-6/12 2xl:w-5/12">
+      <div className="flex w-full max-w-sm flex-col items-center space-y-4 rounded-xl border-transparent bg-transparent px-2 py-6 max-sm:px-1 md:w-8/12 md:border md:px-8 md:shadow-[0_0_1200px_0] md:shadow-primary/30 lg:w-7/12 lg:border-dark-800 lg:bg-background lg:px-6 xl:w-6/12 2xl:w-5/12">
         <div>
           <h5 className="mb-2 font-palanquin text-xl font-medium">
             Create an account
