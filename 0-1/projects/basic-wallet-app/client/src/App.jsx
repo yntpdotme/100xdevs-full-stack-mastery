@@ -10,18 +10,20 @@ import {
   TransferPage,
 } from './pages';
 import {githubLogo} from './assets';
-import {SideBar} from './components';
+import {NavBar, SideBar} from './components';
 
 const App = () => {
   const location = useLocation();
 
-  const renderSideBar = !['/', '/signin', '/signup'].includes(
+  const renderNavigation = !['/', '/signin', '/signup'].includes(
     location.pathname,
   );
 
   return (
     <>
-      {renderSideBar && (
+      {renderNavigation && <NavBar />}
+
+      {renderNavigation && (
         <aside>
           <SideBar />
         </aside>
