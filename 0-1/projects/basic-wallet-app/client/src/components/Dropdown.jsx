@@ -4,7 +4,7 @@ import {NavLink} from './index';
 
 const Dropdown = () => {
   return (
-    <div className="bg-popover absolute top-[75px] mx-3 w-[calc(100vw-2rem)] overflow-hidden rounded-md border border-dark-800 px-1 py-3 font-light shadow-[0_30px_60px_-16px] shadow-primary/40">
+    <div className="bg-popover absolute top-[72px] mx-3 w-[calc(100vw-2rem)] overflow-hidden rounded-md border border-dark-800 px-1 py-3 font-light shadow-[0_30px_60px_-16px] shadow-primary/40">
       <div className="flex flex-col space-y-3 overflow-y-auto px-1 font-montserrat">
         {navLinks.map((navLink, index) => (
           <NavLink

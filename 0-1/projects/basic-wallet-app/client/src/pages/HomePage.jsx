@@ -10,38 +10,36 @@ const HomePage = () => {
   };
 
   return (
-    <main className="max-container">
-      <section className="relative flex h-screen w-full flex-col items-center justify-center px-1">
-        <p className="absolute left-5 top-20 animate-pulse font-montserrat xl:left-0">
-          From{' '}
-          <a href="https://linktr.ee/kadlagakash" target="_blank">
-            <span className="font-medium">Akash Kadlag</span>
-          </a>
-          ...
-        </p>
+    <section className="max-container relative flex h-screen flex-col items-center justify-center px-1">
+      <p className="absolute left-5 top-20 animate-pulse font-montserrat xl:left-0">
+        From{' '}
+        <a href="https://linktr.ee/kadlagakash" target="_blank">
+          <span className="font-medium">Akash Kadlag</span>
+        </a>
+        ...
+      </p>
 
-        <img
-          src={reactLogo}
-          alt="React logo"
-          className="h-14 animate-spin-slow hover:drop-shadow-[0_0_2rem_#646cff] md:h-16 lg:h-20"
-        />
+      <img
+        src={reactLogo}
+        alt="React logo"
+        className="h-14 animate-spin-slow hover:drop-shadow-[0_0_2rem_#646cff] md:h-16 lg:h-20"
+      />
 
-        <h1 className="md:text-5xl mt-4 bg-gradient-to-r from-gray-700 to-white bg-clip-text font-palanquin text-[72px] font-extrabold text-transparent max-sm:leading-[82px] lg:mt-2 lg:text-8xl xl:text-[110px]">
-          PaymentX
-        </h1>
+      <h1 className="md:text-5xl mt-4 bg-gradient-to-r from-gray-700 to-white bg-clip-text font-palanquin text-[72px] font-extrabold text-transparent max-sm:leading-[82px] lg:mt-2 lg:text-8xl xl:text-[110px]">
+        PaymentX
+      </h1>
 
-        <h2 className="mb-10 bg-clip-text pt-2 text-center font-montserrat text-lg md:text-[22px] lg:mb-14 lg:pt-3 lg:text-2xl lg:leading-8 xl:text-3xl">
-          Transforming Payments into&nbsp;a&nbsp;breeze!
-        </h2>
+      <h2 className="mb-10 bg-clip-text pt-2 text-center font-montserrat text-lg md:text-[22px] lg:mb-14 lg:pt-3 lg:text-2xl lg:leading-8 xl:text-3xl">
+        Transforming Payments into&nbsp;a&nbsp;breeze!
+      </h2>
 
-        <ButtonHero
-          onClick={handleSetStarted}
-          lable="Get Started"
-          iconURL={rightArrow}
-          roundedCorners="full"
-        />
-      </section>
-    </main>
+      <ButtonHero
+        onClick={handleSetStarted}
+        lable="Get Started"
+        iconURL={rightArrow}
+        roundedCorners="full"
+      />
+    </section>
   );
 };
 

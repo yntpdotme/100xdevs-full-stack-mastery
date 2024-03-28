@@ -9,7 +9,9 @@ const NavBar = () => {
 
   return (
     <nav className="lg:hidden">
-      <div className="flex items-start justify-between p-4 pt-6">
+      <div
+        className={`flex items-start justify-between p-4 pt-6 ${ `border-b border-primary/20`} `}
+      >
         <div className="bg-gradient-to-r from-gray-600 to-white bg-clip-text font-palanquin text-2xl font-extrabold text-transparent">
           <Link to="/">PaymentX</Link>
         </div>

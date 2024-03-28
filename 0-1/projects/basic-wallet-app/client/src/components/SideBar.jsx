@@ -12,7 +12,7 @@ const SideBar = () => {
   return (
     <div className="hidden lg:block">
       <div
-        className={`fixed flex h-screen flex-col border-r border-dark-800 transition-[width] duration-100 motion-reduce:transition-none ${open ? `w-[17rem]` : `w-[6rem]`}`}
+        className={`sticky top-0 flex h-screen flex-col border-r border-dark-800 transition-[width] duration-100 motion-reduce:transition-none ${open ? `w-[17rem]` : `w-[6rem]`}`}
       >
         <div className="m-6 bg-gradient-to-r from-gray-600 to-white bg-clip-text pl-4 font-palanquin text-xl font-extrabold text-transparent md:text-2xl">
           <Link to="/">{open ? 'PaymentX' : 'X'}</Link>
