@@ -1,4 +1,4 @@
-import {Route, Routes} from 'react-router-dom';
+import {Route, Routes, useLocation} from 'react-router-dom';
 
 import {
   DashboardPage,
@@ -10,10 +10,23 @@ import {
   TransferPage,
 } from './pages';
 import {githubLogo} from './assets';
+import {SideBar} from './components';
 
 const App = () => {
+  const location = useLocation();
+
+  const renderSideBar = !['/', '/signin', '/signup'].includes(
+    location.pathname,
+  );
+
   return (
     <>
+      {renderSideBar && (
+        <aside>
+          <SideBar />
+        </aside>
+      )}
+
       <main className="h-screen">
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -22,17 +35,17 @@ const App = () => {
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/transfer" element={<TransferPage />} />
           <Route path="/transactions" element={<TransactionsPage />} />
-          <Route path="/me" element={<ProfilePage />} />
+          <Route path="/profile" element={<ProfilePage />} />
         </Routes>
 
         <a
           href="https://github.com/KadlagAkash/100xdevs-full-stack-mastery/blob/main/0-1/projects/basic-wallet-app/README.md"
-          className="absolute bottom-10 right-5"
+          className="absolute bottom-5 right-5"
         >
           <img
             src={githubLogo}
             alt="GitHub logo"
-            className="md:h-18 h-12 animate-pulse hover:drop-shadow-[0_0_2rem_#FFF] lg:h-14 xl:right-0 xl:h-16"
+            className="md:h-18 h-12 animate-pulse hover:drop-shadow-[0_0_2rem_#FFF] lg:h-14 xl:h-16"
           />
         </a>
       </main>
