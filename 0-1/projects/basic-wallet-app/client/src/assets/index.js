@@ -8,11 +8,14 @@ import dashboardIcon from './dashboard.svg';
 import profileIcon from './profile.svg';
 import transferIcon from './transfer.svg';
 import transactionsIcon from './transactions.svg';
-import openSideBar from './open-sidebar.svg'
-import closeSideBar from './close-sidebar.svg'
-import hamburgerMenu from './hamburger-menu.svg'
-import signOutIcon from './sign-out.svg'
-import settingsIcon from './settings.svg'
+import openSideBar from './open-sidebar.svg';
+import closeSideBar from './close-sidebar.svg';
+import hamburgerMenu from './hamburger-menu.svg';
+import signOutIcon from './sign-out.svg';
+import settingsIcon from './settings.svg';
+import sunIcon from './sun.svg';
+import moonIcon from './moon.svg';
+import themeIcon from './theme.svg';
 
 export {
   githubLogo,
@@ -29,5 +32,8 @@ export {
   closeSideBar,
   hamburgerMenu,
   signOutIcon,
-  settingsIcon
+  settingsIcon,
+  sunIcon,
+  moonIcon,
+  themeIcon,
 };

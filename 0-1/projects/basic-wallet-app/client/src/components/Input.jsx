@@ -5,7 +5,7 @@ const Input = ({props, type, placeholder, error, id}) => {
         {...props}
         type={type}
         placeholder={placeholder}
-        className="bg-background ring-offset-background flex h-10 w-full rounded-md border border-dark-800 px-3 py-2 text-sm outline-none file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-[#9CA3AF] focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 "
+        className="ring-offset-backgroundoutline-none flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-dark-800 dark:placeholder:text-[#9CA3AF]"
         id={id}
       />
       {error && (

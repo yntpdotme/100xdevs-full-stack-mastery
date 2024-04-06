@@ -25,11 +25,11 @@ const HomePage = () => {
         className="h-14 animate-spin-slow hover:drop-shadow-[0_0_2rem_#646cff] md:h-16 lg:h-20"
       />
 
-      <h1 className="md:text-5xl mt-4 bg-gradient-to-r from-gray-700 to-white bg-clip-text font-palanquin text-[72px] font-extrabold text-transparent max-sm:leading-[82px] lg:mt-2 lg:text-8xl xl:text-[110px]">
+      <h1 className="md:text-5xl mt-4 bg-gradient-to-r from-gray-400 to-gray-950 bg-clip-text font-palanquin text-[72px] font-extrabold text-transparent dark:from-gray-700 dark:to-white max-sm:leading-[82px] lg:mt-2 lg:text-[80px] xl:text-8xl">
         PaymentX
       </h1>
 
-      <h2 className="mb-10 bg-clip-text pt-2 text-center font-montserrat text-lg md:text-[22px] lg:mb-14 lg:pt-3 lg:text-2xl lg:leading-8 xl:text-3xl">
+      <h2 className="mb-10 mt-2 bg-clip-text pt-2 text-center font-montserrat text-lg text-foreground md:mt-1 md:text-[22px] lg:mb-14 lg:pt-3 lg:text-2xl lg:leading-8 xl:text-[26px]">
         Transforming Payments into&nbsp;a&nbsp;breeze!
       </h2>
 

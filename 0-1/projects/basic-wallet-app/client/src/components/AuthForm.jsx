@@ -1,13 +1,11 @@
 import {useForm} from 'react-hook-form';
 import {zodResolver} from '@hookform/resolvers/zod';
-import {useEffect, useState} from 'react';
+import {useEffect} from 'react';
 
 import {signInSchema, signUpSchema} from '../validators/formValidators';
-import {Input, Button} from './index';
-import {openEyeIcon, closeEyeIcon} from '../assets';
+import {Input, Button, InputPassword} from './index';
 
 const AuthForm = ({onSubmit, buttonText, isSignUp}) => {
-  const [showPassword, setShowPassword] = useState(false);
   const {
     register,
     handleSubmit,
@@ -86,23 +84,13 @@ const AuthForm = ({onSubmit, buttonText, isSignUp}) => {
           >
             Password
           </label>
-
-          <div className="relative pb-3">
-            <Input
-              props={register('password')}
-              type={showPassword ? 'text' : 'password'}
-              placeholder=""
-              error={errors.password?.message}
-              id="password"
-            />
-
-            <img
-              src={showPassword ? closeEyeIcon : openEyeIcon}
-              alt={showPassword ? 'Hide Password' : 'Show Password'}
-              className="absolute right-3 top-0 h-10 p-2"
-              onClick={() => setShowPassword(!showPassword)}
-            />
-          </div>
+          <InputPassword
+            props={register('password')}
+            type="password"
+            placeholder=""
+            error={errors.password?.message}
+            id="password"
+          />
 
           {isSignUp && !errors.password && (
             <span className="block pl-1 pt-1 text-xs font-normal leading-tight text-gray-400">

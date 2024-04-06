@@ -11,3 +11,6 @@ export const navLinks = [
   {label: 'User Profile', icon: profileIcon, link: '/profile'},
   {label: 'Transaction History', icon: transactionsIcon, link: '/transactions'},
 ];
+
+export const soureCodeLink =
+  'https://github.com/KadlagAkash/100xdevs-full-stack-mastery/blob/main/0-1/projects/basic-wallet-app/README.md';
