@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'class',
   theme: {
     fontSize: {
       xs: ['12px', '16px'],
@@ -19,18 +20,32 @@ export default {
         montserrat: ['Montserrat', 'sans-serif'],
       },
       colors: {
-        primary: 'hsl(263.4 70% 50.4%)',
+        background: 'hsl(var(--background) / <alpha-value>)',
+        foreground: 'hsl(var(--foreground) / <alpha-value>)',
+        primary: 'hsl(var(--primary) / <alpha-value>)',
+        'primary-foreground': 'hsl(var(--primary-foreground) / <alpha-value>)',
+        accent: 'hsl(var(--accent) / <alpha-value>)',
+        'accent-foreground': 'hsl(var(--accent-foreground) / <alpha-value>)',
+        popover: 'hsl(var(--popover) / <alpha-value>)',
+        'popover-foreground': 'hsl(var(--popover-foreground) / <alpha-value>)',
+        muted: 'hsl(var(--muted) / <alpha-value>)',
+        'muted-foreground': 'hsl(var(--muted-foreground) / <alpha-value>)',
+        destructive: 'hsl(var(--destructive) / <alpha-value>)',
+        'destructive-foreground':
+          'hsl(var(--destructive-foreground) / <alpha-value>)',
+        border: 'hsl(var(--border) / <alpha-value>)',
+        input: 'hsl(var(--input) / <alpha-value>)',
+        ring: 'hsl(var(--ring) / <alpha-value>)',
+
         'primary-300': 'hsla(252.5, 94.74%, 85.1%, 0.1)',
         'primary-400': 'hsl(255.14, 91.74%, 76.27%)',
         'primary-700': 'hsl(263.39, 69.96%, 50.39%)',
-        secondary: 'hsl(215 27.9% 16.9%)',
-        accent: 'hsl(215 27.9% 16.9%)',
-        background: 'hsl(224 71.4% 4.1%)',
-        forground: 'hsl(210 20% 98%)',
-        'white-400': 'rgba(255, 255, 255, 0.80)',
+
+        'gray-50': 'rgb(249 250 251)',
+        'gray-100': 'rgb(243, 244, 246)',
+
         'dark-800': 'rgb(30, 41, 59)',
-        popover: 'hsl(224 71.4% 4.1%)',
-        muted: 'hsl(215 27.9% 16.9%)',
+        'dark-900': 'rgb(15, 23, 42)',
       },
       animation: {
         'spin-slow': 'spin 20s linear infinite',

@@ -12,9 +12,9 @@ const SideBar = () => {
   return (
     <div className="hidden lg:block">
       <div
-        className={`sticky top-0 flex h-screen flex-col border-r border-dark-800 transition-[width] duration-100 motion-reduce:transition-none ${open ? `w-[17rem]` : `w-[6rem]`}`}
+        className={`sticky top-0 flex h-screen flex-col border-r border-gray-200 transition-[width] duration-100 motion-reduce:transition-none dark:border-dark-800 ${open ? `w-[17rem]` : `w-[6rem]`}`}
       >
-        <div className="m-6 bg-gradient-to-r from-gray-600 to-white bg-clip-text pl-4 font-palanquin text-xl font-extrabold text-transparent md:text-2xl">
+        <div className="m-6 bg-gradient-to-r from-gray-400 to-gray-950 bg-clip-text pl-4 font-palanquin text-xl font-extrabold text-transparent dark:from-gray-600 dark:to-white md:text-2xl">
           <Link to="/">{open ? 'PaymentX' : 'X'}</Link>
         </div>
 
@@ -30,7 +30,7 @@ const SideBar = () => {
         </div>
 
         {showMenu && (
-          <div className="absolute bottom-24 left-5">
+          <div className="absolute bottom-[90px] left-5">
             <PopUp />
           </div>
         )}
@@ -40,11 +40,11 @@ const SideBar = () => {
             <div className="flex justify-center">
               <button
                 type="button"
-                className={`transation-border group flex w-full cursor-pointer items-center space-x-3 rounded-lg border p-2 transition-colors focus:outline-none ${!open && `border-transparent`} ${open && `border-dark-800 hover:bg-dark-800/40`}`}
+                className={`transation-border group flex w-full cursor-pointer items-center space-x-3 rounded-lg border p-2 transition-colors focus:outline-none ${!open && `border-transparent`} ${open && `border-gray-100 hover:bg-gray-50 dark:border-dark-800 hover:dark:bg-dark-800/40`}`}
                 onClick={() => setShowMenu(!showMenu)}
               >
                 <span className="relative mx-auto flex h-9 w-9 shrink-0 overflow-hidden rounded-full group-focus:ring-2">
-                  <span className="text-primary-foreground flex h-full w-full items-center justify-center rounded-full bg-primary font-semibold uppercase">
+                  <span className="flex h-full w-full items-center justify-center rounded-full bg-primary font-semibold uppercase text-primary-foreground">
                     U
                   </span>
                 </span>

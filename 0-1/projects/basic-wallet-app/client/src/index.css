@@ -22,3 +22,41 @@ body {
     margin: 0 auto;
   }
 }
+
+@layer base {
+  :root {
+    --background: 0deg 0% 100%;
+    --foreground: 224deg 71.4% 4.1%;
+    --popover: 0deg 0% 100%;
+    --popover-foreground: 224deg 71.4% 4.1%;
+    --primary: 258.3deg 89.5% 66.3%;
+    --primary-foreground: 210deg 20% 98%;
+    --muted: 220deg 14.3% 95.9%;
+    --muted-foreground: 220deg 8.9% 46.1%;
+    --accent: 220deg 14.3% 95.9%;
+    --accent-foreground: 220.9deg 39.3% 11%;
+    --destructive: 0deg 84.2% 60.2%;
+    --destructive-foreground: 210deg 20% 98%;
+    --border: 220deg 13% 91%;
+    --input: 220deg 13% 91%;
+    --ring: 262.1deg 83.3% 57.8%;
+  }
+
+  .dark {
+    --background: 224deg 71.4% 4.1%;
+    --foreground: 210deg 20% 98%;
+    --popover: 224deg 71.4% 4.1%;
+    --popover-foreground: 210deg 20% 98%;
+    --primary: 263.4deg 70% 50.4%;
+    --primary-foreground: 210deg 20% 98%;
+    --muted: 215deg 27.9% 16.9%;
+    --muted-foreground: 217deg.9 10.6% 64.9%;
+    --accent: 215deg 27.9% 16.9%;
+    --accent-foreground: 210deg 20% 98%;
+    --destructive: 0deg 62.8% 30.6%;
+    --destructive-foreground: 210deg 20% 98%;
+    --border: 215deg 27.9% 16.9%;
+    --input: 215deg 27.9% 16.9%;
+    --ring: 263.4deg 70% 50.4%;
+  }
+}

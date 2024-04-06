@@ -1,16 +1,17 @@
 import {Link} from 'react-router-dom';
 
-import {dashboardIcon, settingsIcon, signOutIcon} from '../assets';
+import {dashboardIcon, settingsIcon, signOutIcon, themeIcon} from '../assets';
+import ThemeToggler from './ThemeToggler';
 
 const PopUp = () => {
   return (
-    <div className="min-w-[14.5rem] overflow-hidden rounded-md border border-dark-800 bg-popover p-1 font-light shadow-[0_30px_100px_-5px] shadow-primary/40">
+    <div className="relative min-w-[14.5rem] rounded-md border border-gray-200 bg-popover p-1 font-light text-popover-foreground shadow-lg dark:border-dark-800 dark:shadow-2xl dark:shadow-primary/40">
       <div
-        className="focus:text-accent-foreground relative flex cursor-default select-none items-center rounded-none p-3 text-sm outline-none transition-colors hover:bg-accent"
+        className="relative flex cursor-default select-none items-center rounded-none px-3 py-1.5 text-sm outline-none transition-colors hover:bg-accent focus:text-accent-foreground"
         tabIndex="-1"
       >
-        <div className="flex flex-col justify-start truncate text-left text-[15px]">
-          <div className="text-gray-500">Signed in as</div>
+        <div className="flex flex-col justify-start truncate text-left text-sm">
+          <div className="text-xs text-gray-500">Signed in as</div>
           <div>
             <span className="block truncate">user@email.com</span>
           </div>
@@ -20,20 +21,20 @@ const PopUp = () => {
       <div role="separator" className="-mx-1 my-1 h-px bg-muted"></div>
 
       <Link
-        className="focus:text-accent-foreground relative flex cursor-default select-none items-center space-x-2 rounded-sm p-3 text-[15px] outline-none transition-colors hover:bg-accent data-[disabled]:pointer-events-none data-[disabled]:opacity-50"
+        className="relative flex cursor-default select-none items-center space-x-2.5 rounded-sm px-3 py-1.5 font-montserrat text-sm font-normal outline-none transition-colors hover:bg-accent focus:text-accent-foreground"
         tabIndex="-1"
         to="/dashboard"
       >
-        <img src={dashboardIcon} className="h-5" />
+        <img src={dashboardIcon} className="h-5 dark:invert dark:filter" />
         <span>Dashboard</span>
       </Link>
 
       <Link
-        className="focus:text-accent-foreground relative flex cursor-default select-none items-center space-x-2 rounded-sm p-3 py-2.5 text-[15px] outline-none transition-colors hover:bg-accent data-[disabled]:pointer-events-none data-[disabled]:opacity-50"
+        className="relative flex cursor-default select-none items-center space-x-2.5 rounded-sm px-3 py-1.5 font-montserrat text-sm font-normal outline-none transition-colors hover:bg-accent focus:text-accent-foreground"
         tabIndex="-1"
         to="/profile"
       >
-        <img src={settingsIcon} className="h-5" />
+        <img src={settingsIcon} className="h-5 dark:invert dark:filter" />
         <span>Settings</span>
       </Link>
 
@@ -43,12 +44,29 @@ const PopUp = () => {
         className="-mx-1 my-1 hidden h-px bg-muted lg:flex"
       ></div>
 
-      <button
-        className="focus:text-accent-foreground relative flex w-full cursor-pointer select-none items-center rounded-sm p-3 text-[15px] outline-none transition-colors hover:bg-accent"
+      <div
+        className="relative flex cursor-default select-none items-center justify-between space-x-2 rounded-sm px-3 py-1.5 font-montserrat text-sm font-normal outline-none transition-colors hover:bg-accent focus:text-accent-foreground"
         tabIndex="-1"
       >
-        <span className="flex items-center space-x-2">
-          <img src={signOutIcon} className="h-5" />
+        <div className="flex space-x-2.5">
+          <img src={themeIcon} className="h-5 dark:invert dark:filter" />
+          <span>Theme</span>
+        </div>
+        <ThemeToggler />
+      </div>
+
+      <div
+        role="separator"
+        aria-orientation="horizontal"
+        className="-mx-1 my-1 hidden h-px bg-muted lg:flex"
+      ></div>
+
+      <button
+        className="relative flex w-full cursor-pointer select-none items-center rounded-sm px-3 py-2 font-montserrat text-sm font-normal outline-none transition-colors hover:bg-accent focus:text-accent-foreground"
+        tabIndex="-1"
+      >
+        <span className="flex items-center space-x-2.5">
+          <img src={signOutIcon} className="h-5 dark:invert dark:filter" />
           <span>Sign out</span>
         </span>
       </button>

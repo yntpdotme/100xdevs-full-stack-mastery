@@ -9,7 +9,7 @@ const ButtonHero = ({
   return (
     <button
       onClick={onClick || (() => {})}
-      className={`hover:shadow-primary/60 from-primary to-primary-700 inline-flex items-center justify-center bg-transparent bg-gradient-to-r px-8 py-4 text-lg font-medium text-white shadow-2xl transition-colors hover:to-indigo-600 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-80 lg:text-[22px] ${roundedCorners && `rounded-${roundedCorners}`} ${fullWidth && 'w-full'}`}
+      className={`hover:shadow-primary/60 from-primary to-primary-700 inline-flex items-center justify-center bg-transparent bg-gradient-to-r px-8 py-4 text-lg font-medium text-white shadow-2xl transition-colors hover:to-indigo-600 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-80 lg:text-xl ${roundedCorners && `rounded-${roundedCorners}`} ${fullWidth && 'w-full'}`}
       disabled={isDisabled || false}
     >
       <span className="font-montserrat flex items-center space-x-1">
