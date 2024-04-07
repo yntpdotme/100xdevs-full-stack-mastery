@@ -1,6 +1,6 @@
 const ButtonHero = ({
   onClick,
-  lable,
+  label,
   iconURL,
   roundedCorners,
   fullWidth,
@@ -13,7 +13,7 @@ const ButtonHero = ({
       disabled={isDisabled || false}
     >
       <span className="font-montserrat flex items-center space-x-1">
-        <span>{lable || 'lable Goes Here'}</span>
+        <span>{label || 'label Goes Here'}</span>
         {iconURL && (
           <img src={iconURL} alt="arrow right icon" className="h-5 lg:h-6" />
         )}
