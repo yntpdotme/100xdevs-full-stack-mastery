@@ -45,7 +45,7 @@ const App = () => {
           </Routes>
 
           {!renderNavigation && (
-            <div className="pointer-events-auto absolute right-0 top-16 px-2 py-3 lg:right-5">
+            <div className="pointer-events-auto absolute right-0 top-6 px-2 py-3 lg:right-5">
               <ThemeToggler />
             </div>
           )}

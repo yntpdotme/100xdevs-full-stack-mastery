@@ -125,7 +125,7 @@ const AuthForm = ({onSubmit, buttonText, isSignUp}) => {
         )}
 
         <Button
-          lable={buttonText}
+          label={buttonText}
           fullWidth
           roundedCorners="md"
           isDisabled={!isValid}

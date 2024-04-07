@@ -11,7 +11,7 @@ const HomePage = () => {
 
   return (
     <section className="max-container relative flex h-screen flex-col items-center justify-center px-1">
-      <p className="absolute left-5 top-20 animate-pulse font-montserrat xl:left-0">
+      <p className="absolute left-5 top-10 animate-pulse font-montserrat xl:left-0">
         From{' '}
         <a href="https://linktr.ee/kadlagakash" target="_blank">
           <span className="font-medium">Akash Kadlag</span>
@@ -35,7 +35,7 @@ const HomePage = () => {
 
       <ButtonHero
         onClick={handleSetStarted}
-        lable="Get Started"
+        label="Get Started"
         iconURL={rightArrow}
         roundedCorners="full"
       />
