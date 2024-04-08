@@ -9,6 +9,8 @@ import PopUp from './PopUp';
 import Dropdown from './Dropdown';
 import NavBar from './NavBar';
 import SourceCode from './SourceCode';
+import GainIndicator from './GainIndicator';
+import DepositForm from './DepositForm';
 
 export {
   AuthForm,
@@ -22,4 +24,6 @@ export {
   Dropdown,
   NavBar,
   SourceCode,
+  GainIndicator,
+  DepositForm,
 };
