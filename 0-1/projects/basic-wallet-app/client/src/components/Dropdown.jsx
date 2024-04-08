@@ -21,7 +21,6 @@ const Dropdown = () => {
               key={index}
               onClick={() => {
                 setShowDropDown(p => !p);
-                console.log('hk');
               }}
             />
           ))}

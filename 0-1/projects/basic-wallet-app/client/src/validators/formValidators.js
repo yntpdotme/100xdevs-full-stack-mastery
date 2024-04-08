@@ -5,10 +5,10 @@ export const signUpSchema = z
     name: z
       .string({required_error: 'Name is required'})
       .min(2, 'Name must be at least 3 characters')
-			.max(255, 'Name must be at most 255 characters'),
-		
-		email: z.string({ required_error: 'Email is required' }).email(),
-		
+      .max(255, 'Name must be at most 255 characters'),
+
+    email: z.string({required_error: 'Email is required'}).email(),
+
     password: z
       .string({required_error: 'Password is required'})
       .min(
@@ -33,9 +33,25 @@ export const signUpSchema = z
 export const signInSchema = z.object({
   email: z
     .string({required_error: 'Email is required'})
-		.email('Please enter a valid email address'),
-	
+    .email('Please enter a valid email address'),
+
   password: z
     .string({required_error: 'Password is required'})
     .min(1, 'Password is required'),
+});
+
+export const depositSchema = z.object({
+  amount: z
+    .number({
+      required_error: 'Amount is required',
+      invalid_type_error: 'Amount must be a number',
+    })
+    .min(0.01, {message: 'Minimum amount must be 0.01'})
+    .refine(
+      amount => {
+        const decimalCount = (amount.toString().split('.')[1] || '').length;
+        return decimalCount <= 2;
+      },
+      {message: 'Amount must have up to two decimal digits'},
+    ),
 });
