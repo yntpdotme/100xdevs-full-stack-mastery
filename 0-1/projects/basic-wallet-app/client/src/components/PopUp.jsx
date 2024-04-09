@@ -3,12 +3,13 @@ import {Link} from 'react-router-dom';
 import {dashboardIcon, settingsIcon, signOutIcon, themeIcon} from '../assets';
 import ThemeToggler from './ThemeToggler';
 
-const PopUp = () => {
+const PopUp = ({hidePopUp}) => {
   return (
     <div className="relative min-w-[14.5rem] rounded-md border border-gray-200 bg-popover p-1 font-light text-popover-foreground shadow-lg dark:border-dark-800 dark:shadow-2xl dark:shadow-primary/40">
       <div
         className="relative flex cursor-default select-none items-center rounded-none px-3 py-1.5 text-sm outline-none transition-colors hover:bg-accent focus:text-accent-foreground"
         tabIndex="-1"
+        onClick={hidePopUp}
       >
         <div className="flex flex-col justify-start truncate text-left text-sm">
           <div className="text-xs text-gray-500">Signed in as</div>
@@ -24,6 +25,7 @@ const PopUp = () => {
         className="relative flex cursor-default select-none items-center space-x-2.5 rounded-sm px-3 py-1.5 font-montserrat text-sm font-normal outline-none transition-colors hover:bg-accent focus:text-accent-foreground"
         tabIndex="-1"
         to="/dashboard"
+        onClick={hidePopUp}
       >
         <img src={dashboardIcon} className="h-5 dark:invert dark:filter" />
         <span>Dashboard</span>
@@ -33,6 +35,7 @@ const PopUp = () => {
         className="relative flex cursor-default select-none items-center space-x-2.5 rounded-sm px-3 py-1.5 font-montserrat text-sm font-normal outline-none transition-colors hover:bg-accent focus:text-accent-foreground"
         tabIndex="-1"
         to="/profile"
+        onClick={hidePopUp}
       >
         <img src={settingsIcon} className="h-5 dark:invert dark:filter" />
         <span>Settings</span>
@@ -47,6 +50,7 @@ const PopUp = () => {
       <div
         className="relative flex cursor-default select-none items-center justify-between space-x-2 rounded-sm px-3 py-1.5 font-montserrat text-sm font-normal outline-none transition-colors hover:bg-accent focus:text-accent-foreground"
         tabIndex="-1"
+        onClick={() => setTimeout(hidePopUp, 500)}
       >
         <div className="flex space-x-2.5">
           <img src={themeIcon} className="h-5 dark:invert dark:filter" />
@@ -64,6 +68,7 @@ const PopUp = () => {
       <button
         className="relative flex w-full cursor-pointer select-none items-center rounded-sm px-3 py-2 font-montserrat text-sm font-normal outline-none transition-colors hover:bg-accent focus:text-accent-foreground"
         tabIndex="-1"
+        onClick={hidePopUp}
       >
         <span className="flex items-center space-x-2.5">
           <img src={signOutIcon} className="h-5 dark:invert dark:filter" />
