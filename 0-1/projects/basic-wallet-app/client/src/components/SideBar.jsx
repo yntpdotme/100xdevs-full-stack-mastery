@@ -31,7 +31,7 @@ const SideBar = () => {
 
         {showMenu && (
           <div className="absolute bottom-[90px] left-5">
-            <PopUp />
+            <PopUp hidePopUp={() => setShowMenu(!showMenu)} />
           </div>
         )}
 
