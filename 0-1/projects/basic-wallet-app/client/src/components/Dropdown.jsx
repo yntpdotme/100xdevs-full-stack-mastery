@@ -10,7 +10,7 @@ const Dropdown = () => {
 
   return (
     <>
-      <div className="fixed inset-x-0 inset-y-14 bg-background/80 backdrop-blur-sm"></div>
+      <div className="fixed inset-x-0 inset-y-14 bottom-0 bg-background/80 backdrop-blur-sm"></div>
       <div className="absolute top-[72px] mx-3 w-[calc(100vw-1.8rem)] overflow-hidden rounded-md border border-gray-200 bg-popover px-1 pb-1.5 pt-3 font-light shadow-lg dark:border-dark-800 dark:shadow-[0_30px_60px_-16px] dark:shadow-primary/40">
         <div className="flex flex-col space-y-3 overflow-y-auto px-1 font-montserrat">
           {navLinks.map((navLink, index) => (

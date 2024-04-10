@@ -11,7 +11,7 @@ const NavBar = () => {
 
   return (
     <>
-      <nav className="lg:hidden">
+      <nav className="lg:hidden relative z-10">
         <div className="flex items-start justify-between border-b border-gray-100 p-4 pt-6 dark:border-primary/20">
           <div className="bg-gradient-to-r from-gray-400 to-gray-950 bg-clip-text font-palanquin text-2xl font-extrabold text-transparent dark:from-gray-600 dark:to-white">
             <Link to="/">PaymentX</Link>
