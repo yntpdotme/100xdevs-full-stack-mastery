@@ -16,6 +16,8 @@ import settingsIcon from './settings.svg';
 import sunIcon from './sun.svg';
 import moonIcon from './moon.svg';
 import themeIcon from './theme.svg';
+import payIcon from './payment.svg';
+import closeIcon from './close.svg'
 
 export {
   githubLogo,
@@ -36,4 +38,6 @@ export {
   sunIcon,
   moonIcon,
   themeIcon,
+  payIcon,
+  closeIcon,
 };

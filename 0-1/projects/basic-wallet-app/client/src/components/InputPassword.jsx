@@ -2,7 +2,7 @@ import {useState} from 'react';
 
 import {closeEyeIcon, openEyeIcon} from '../assets';
 
-const Input = ({props, type, placeholder, error, id}) => {
+const InputPassword = ({props, type, placeholder, error, id}) => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
@@ -31,4 +31,4 @@ const Input = ({props, type, placeholder, error, id}) => {
   );
 };
 
-export default Input;
+export default InputPassword;

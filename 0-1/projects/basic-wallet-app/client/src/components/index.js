@@ -3,6 +3,7 @@ import Button from './Button';
 import ButtonHero from './ButtonHero';
 import Input from './Input';
 import InputPassword from './InputPassword';
+import InputSearch from './InputSearch';
 import SideBar from './SideBar';
 import NavLink from './NavigationLink';
 import PopUp from './PopUp';
@@ -11,6 +12,8 @@ import NavBar from './NavBar';
 import SourceCode from './SourceCode';
 import GainIndicator from './GainIndicator';
 import DepositForm from './DepositForm';
+import DataTable from './DataTable';
+import DialogBox from './DialogBox';
 
 export {
   AuthForm,
@@ -18,6 +21,7 @@ export {
   ButtonHero,
   Input,
   InputPassword,
+  InputSearch,
   SideBar,
   NavLink,
   PopUp,
@@ -26,4 +30,6 @@ export {
   SourceCode,
   GainIndicator,
   DepositForm,
+  DataTable,
+  DialogBox,
 };
