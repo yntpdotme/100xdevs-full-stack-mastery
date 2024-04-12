@@ -14,6 +14,9 @@ import GainIndicator from './GainIndicator';
 import DepositForm from './DepositForm';
 import DataTable from './DataTable';
 import DialogBox from './DialogBox';
+import UpdateProfileForm from './UpdateProfileForm';
+import UpdatePasswordForm from './UpdatePasswordForm';
+import UpdatePassword from './UpdatePassword';
 
 export {
   AuthForm,
@@ -32,4 +35,7 @@ export {
   DepositForm,
   DataTable,
   DialogBox,
+  UpdateProfileForm,
+  UpdatePasswordForm,
+  UpdatePassword,
 };

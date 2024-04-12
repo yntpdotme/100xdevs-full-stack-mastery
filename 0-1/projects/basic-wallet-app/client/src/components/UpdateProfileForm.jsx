@@ -1,10 +1,11 @@
 import {useForm} from 'react-hook-form';
 import {zodResolver} from '@hookform/resolvers/zod';
+import {Link} from 'react-router-dom';
 
-import {depositSchema} from '../validators/formValidators';
+import {updateProfileSchema} from '../validators/formValidators';
 import {Input} from './index';
 
-const DepositForm = ({onSubmit}) => {
+const UpdateProfileForm = ({onSubmit}) => {
   const {
     register,
     handleSubmit,
@@ -12,7 +13,7 @@ const DepositForm = ({onSubmit}) => {
     setError,
     reset,
   } = useForm({
-    resolver: zodResolver(depositSchema),
+    resolver: zodResolver(updateProfileSchema),
     mode: 'onChange',
   });
 
@@ -41,17 +42,34 @@ const DepositForm = ({onSubmit}) => {
           <div className="flex flex-col space-y-1">
             <label
               className="w-full text-sm font-medium text-gray-400"
-              htmlFor="amount"
+              htmlFor="name"
             >
-              Amount
+              Your Name
             </label>
             <Input
-              props={register('amount', {valueAsNumber: true})}
+              props={register('name')}
               type="text"
               placeholder=""
-              error={errors.amount?.message}
-              id="amount"
+              error={errors.name?.message}
+              id="name"
             />
+          </div>
+
+          <div>
+            <button
+              type="button"
+              tabIndex="-1"
+              className="inline-flex items-center justify-center rounded-md px-3 text-sm font-palanquin font-normal ring-offset-background transition-colors hover:bg-accent/50 hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+            >
+              <Link
+                class="flex h-full w-full items-center transition-transform duration-500 ease-out"
+                to="/profile/password"
+              >
+                <span className="flex w-full flex-1 items-center justify-center">
+                  Update Password
+                </span>
+              </Link>
+            </button>
           </div>
 
           <div>
@@ -59,7 +77,7 @@ const DepositForm = ({onSubmit}) => {
               className="inline-flex items-center justify-center rounded-md bg-primary bg-gradient-to-r px-6 py-3 text-sm font-medium text-white shadow-2xl transition-colors hover:bg-primary/90 focus-visible:outline-none disabled:pointer-events-none max-sm:w-full"
               disabled={!isValid}
             >
-              <span className="font-montserrat">Add Money</span>
+              <span className="font-montserrat">Update Profile</span>
             </button>
           </div>
 
@@ -70,22 +88,8 @@ const DepositForm = ({onSubmit}) => {
           )}
         </div>
       </form>
-
-      <div className="mt-8 flex flex-auto items-center justify-center space-x-5 font-palanquin sm:justify-end">
-        <div className="flex items-center space-x-3">
-          <span className="mx-auto flex size-8 shrink-0 overflow-hidden rounded-full group-focus:ring-2">
-            <span className="flex h-full w-full items-center justify-center rounded-full bg-primary font-semibold uppercase text-primary-foreground">
-              a
-            </span>
-          </span>
-          <div className="block truncate text-sm">user@email.com</div>
-        </div>
-        <div className="flex items-center space-x-2 rounded bg-sky-50 px-2 py-1 text-xs font-medium text-sky-800 dark:bg-sky-500/10 dark:text-sky-600">
-          You
-        </div>
-      </div>
     </>
   );
 };
 
-export default DepositForm;
+export default UpdateProfileForm;
