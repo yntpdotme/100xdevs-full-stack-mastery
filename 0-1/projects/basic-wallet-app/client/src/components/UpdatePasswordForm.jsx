@@ -1,10 +1,10 @@
 import {useForm} from 'react-hook-form';
 import {zodResolver} from '@hookform/resolvers/zod';
 
-import {depositSchema} from '../validators/formValidators';
-import {Input} from './index';
+import {updatePasswordSchema} from '../validators/formValidators';
+import {Input, InputPassword} from './index';
 
-const DepositForm = ({onSubmit}) => {
+const UpdatePasswordForm = ({onSubmit}) => {
   const {
     register,
     handleSubmit,
@@ -12,7 +12,7 @@ const DepositForm = ({onSubmit}) => {
     setError,
     reset,
   } = useForm({
-    resolver: zodResolver(depositSchema),
+    resolver: zodResolver(updatePasswordSchema),
     mode: 'onChange',
   });
 
@@ -41,16 +41,48 @@ const DepositForm = ({onSubmit}) => {
           <div className="flex flex-col space-y-1">
             <label
               className="w-full text-sm font-medium text-gray-400"
-              htmlFor="amount"
+              htmlFor="oldPassword"
             >
-              Amount
+              Old Password
+            </label>
+            <InputPassword
+              props={register('oldPassword')}
+              type="password"
+              placeholder=""
+              error={errors.oldPassword?.message}
+              id="oldPassword"
+            />
+          </div>
+          
+					<div className="flex flex-col space-y-1">
+            <label
+              className="w-full text-sm font-medium text-gray-400"
+              htmlFor="newPassword"
+            >
+              New Password
+            </label>
+            <InputPassword
+              props={register('newPassword')}
+              type="password"
+              placeholder=""
+              error={errors.newPassword?.message}
+              id="newPassword"
+            />
+          </div>
+
+          <div className="flex flex-col space-y-1">
+            <label
+              className="w-full text-sm font-medium text-gray-400"
+              htmlFor="confirmNewPassword"
+            >
+              Repeat New Password
             </label>
             <Input
-              props={register('amount', {valueAsNumber: true})}
-              type="text"
+              props={register('confirmNewPassword')}
+              type="password"
               placeholder=""
-              error={errors.amount?.message}
-              id="amount"
+              error={errors.confirmNewPassword?.message}
+              id="confirmNewPassword"
             />
           </div>
 
@@ -59,7 +91,7 @@ const DepositForm = ({onSubmit}) => {
               className="inline-flex items-center justify-center rounded-md bg-primary bg-gradient-to-r px-6 py-3 text-sm font-medium text-white shadow-2xl transition-colors hover:bg-primary/90 focus-visible:outline-none disabled:pointer-events-none max-sm:w-full"
               disabled={!isValid}
             >
-              <span className="font-montserrat">Add Money</span>
+              <span className="font-montserrat">Update Password</span>
             </button>
           </div>
 
@@ -70,22 +102,8 @@ const DepositForm = ({onSubmit}) => {
           )}
         </div>
       </form>
-
-      <div className="mt-8 flex flex-auto items-center justify-center space-x-5 font-palanquin sm:justify-end">
-        <div className="flex items-center space-x-3">
-          <span className="mx-auto flex size-8 shrink-0 overflow-hidden rounded-full group-focus:ring-2">
-            <span className="flex h-full w-full items-center justify-center rounded-full bg-primary font-semibold uppercase text-primary-foreground">
-              a
-            </span>
-          </span>
-          <div className="block truncate text-sm">user@email.com</div>
-        </div>
-        <div className="flex items-center space-x-2 rounded bg-sky-50 px-2 py-1 text-xs font-medium text-sky-800 dark:bg-sky-500/10 dark:text-sky-600">
-          You
-        </div>
-      </div>
     </>
   );
 };
 
-export default DepositForm;
+export default UpdatePasswordForm;

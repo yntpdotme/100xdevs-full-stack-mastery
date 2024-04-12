@@ -10,7 +10,7 @@ import {
   TransferPage,
 } from './pages';
 import {githubLogo} from './assets';
-import {NavBar, SideBar, SourceCode} from './components';
+import {NavBar, SideBar, SourceCode, UpdatePassword} from './components';
 import {soureCodeLink} from './constants';
 import ThemeToggler from './components/ThemeToggler';
 
@@ -42,6 +42,7 @@ const App = () => {
             <Route path="/transfer" element={<TransferPage />} />
             <Route path="/transactions" element={<TransactionsPage />} />
             <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/profile/password" element={<UpdatePassword />} />
           </Routes>
 
           {!renderNavigation && (
