@@ -1,9 +1,15 @@
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 
 import {dashboardIcon, settingsIcon, signOutIcon, themeIcon} from '../assets';
 import ThemeToggler from './ThemeToggler';
 
 const PopUp = ({hidePopUp}) => {
+  const navigate = useNavigate();
+
+  const signOut = () => {
+    navigate('/');
+  };
+
   return (
     <div className="relative min-w-[14.5rem] rounded-md border border-gray-200 bg-popover p-1 font-light text-popover-foreground shadow-lg dark:border-dark-800 dark:shadow-2xl dark:shadow-primary/40">
       <div
@@ -68,7 +74,10 @@ const PopUp = ({hidePopUp}) => {
       <button
         className="relative flex w-full cursor-pointer select-none items-center rounded-sm px-3 py-2 font-montserrat text-sm font-normal outline-none transition-colors hover:bg-accent focus:text-accent-foreground"
         tabIndex="-1"
-        onClick={hidePopUp}
+        onClick={() => {
+          hidePopUp();
+          signOut();
+        }}
       >
         <span className="flex items-center space-x-2.5">
           <img src={signOutIcon} className="h-5 dark:invert dark:filter" />

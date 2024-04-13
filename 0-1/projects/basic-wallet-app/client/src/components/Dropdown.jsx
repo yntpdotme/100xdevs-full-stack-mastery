@@ -1,12 +1,19 @@
-import {signOutIcon} from '../assets';
-import {navLinks} from '../constants';
-import {NavLink} from './index';
 import {useSetRecoilState} from 'recoil';
+import {useNavigate} from 'react-router-dom';
 
 import {dropdownState} from '../recoil/atoms/dropdownState';
+import {signOutIcon} from '../assets';
+import {NavLink} from './index';
+import {navLinks} from '../constants';
 
 const Dropdown = () => {
   const setShowDropDown = useSetRecoilState(dropdownState);
+
+  const navigate = useNavigate();
+
+  const signOut = () => {
+    navigate('/');
+  };
 
   return (
     <>
@@ -30,9 +37,12 @@ const Dropdown = () => {
             className="-mx-1 my-1 h-px bg-muted"
           ></div>
           <button
-            className="relative flex cursor-pointer select-none items-center rounded-sm px-4 py-2 text-sm outline-none transition-colors hover:bg-accent focus:text-accent-foreground"
+            className="relative flex cursor-pointer select-none items-center rounded-sm px-4 py-1 pb-2 text-sm outline-none transition-colors hover:bg-accent focus:text-accent-foreground"
             tabIndex="-1"
-            onClick={() => setShowDropDown(p => !p)}
+            onClick={() => {
+              setShowDropDown(p => !p);
+              signOut();
+            }}
           >
             <span className="flex items-center space-x-3">
               <img src={signOutIcon} className="h-6 dark:invert dark:filter" />
