@@ -12,7 +12,7 @@ const ProfilePage = () => {
           Manage your profile details.
         </h5>
 
-        <div className="mt-8 w-full xl:max-w-2xl">
+        <div className="mt-4 w-full xl:max-w-2xl">
           <UpdateProfileForm />
         </div>
       </div>

@@ -12,7 +12,7 @@ const UpdatePassword = () => {
           Update your password.
         </h5>
 
-        <div className="mt-8 w-full xl:max-w-2xl">
+        <div className="mt-4 w-full xl:max-w-2xl">
           <UpdatePasswordForm />
         </div>
       </div>
