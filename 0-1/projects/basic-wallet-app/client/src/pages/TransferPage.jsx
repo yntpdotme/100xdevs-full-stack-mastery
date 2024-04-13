@@ -1,4 +1,4 @@
-import {InputSearch, DataTable} from '../components';
+import {InputSearch, UsersTable} from '../components';
 
 const TransferPage = () => {
   const userData = [
@@ -26,7 +26,7 @@ const TransferPage = () => {
 
         <div className="rounded-md border border-x-gray-200 p-1 dark:border-dark-800">
           <div className="w-full overflow-auto">
-            <DataTable data={userData} />
+            <UsersTable users={userData} />
           </div>
         </div>
       </div>

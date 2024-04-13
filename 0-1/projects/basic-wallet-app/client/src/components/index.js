@@ -12,11 +12,12 @@ import NavBar from './NavBar';
 import SourceCode from './SourceCode';
 import GainIndicator from './GainIndicator';
 import DepositForm from './DepositForm';
-import DataTable from './DataTable';
+import UsersTable from './UsersTable';
 import DialogBox from './DialogBox';
 import UpdateProfileForm from './UpdateProfileForm';
 import UpdatePasswordForm from './UpdatePasswordForm';
 import UpdatePassword from './UpdatePassword';
+import TansactionsTable from './TansactionsTable';
 
 export {
   AuthForm,
@@ -33,9 +34,10 @@ export {
   SourceCode,
   GainIndicator,
   DepositForm,
-  DataTable,
+  UsersTable,
   DialogBox,
   UpdateProfileForm,
   UpdatePasswordForm,
   UpdatePassword,
+  TansactionsTable,
 };
