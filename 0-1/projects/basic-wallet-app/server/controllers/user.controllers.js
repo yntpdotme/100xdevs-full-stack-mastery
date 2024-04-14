@@ -160,9 +160,12 @@ const logoutUser = async (req, res) => {
 const getAllUsers = async (req, res) => {
   const filter = req.query.filter || '';
 
+  // This regex matches each word in a name starting with "filter".
+  const regex = `\\b(${filter})`;
+
   const users = await User.find({
     name: {
-      $regex: filter,
+      $regex: regex,
       $options: 'i',
     },
   });
@@ -222,40 +225,44 @@ const refreshAccessToken = async (req, res) => {
     throw new ApiError(401, 'Unauthorized request');
   }
 
-  const decodedToken = jwt.verify(
-    incomingRefreshToken,
-    process.env.REFRESH_TOKEN_SECRET
-  );
-
-  const user = await User.findById(decodedToken?._id);
-  if (!user) {
-    throw new ApiError(401, 'Invalid refresh token');
-  }
-
-  if (incomingRefreshToken !== user?.refreshToken) {
-    // If token is valid but is used already
-    throw new ApiError(401, 'Refresh token is expired or used');
-  }
-
-  const {accessToken, refreshToken: newRefreshToken} =
-    await generateAccessAndRefreshTokens(user._id);
-
-  const options = {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
-  };
-
-  return res
-    .status(200)
-    .cookie('accessToken', accessToken, options)
-    .cookie('refreshToken', newRefreshToken, options)
-    .json(
-      new ApiResponse(
-        200,
-        {accessToken, refreshToken: newRefreshToken},
-        'Access token refreshed'
-      )
+  try {
+    const decodedToken = jwt.verify(
+      incomingRefreshToken,
+      process.env.REFRESH_TOKEN_SECRET
     );
+
+    const user = await User.findById(decodedToken?._id);
+    if (!user) {
+      throw new ApiError(401, 'Invalid refresh token');
+    }
+
+    if (incomingRefreshToken !== user?.refreshToken) {
+      // If token is valid but is used already
+      throw new ApiError(401, 'Refresh token is expired or used');
+    }
+
+    const {accessToken, refreshToken: newRefreshToken} =
+      await generateAccessAndRefreshTokens(user._id);
+
+    const options = {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+    };
+
+    return res
+      .status(200)
+      .cookie('accessToken', accessToken, options)
+      .cookie('refreshToken', newRefreshToken, options)
+      .json(
+        new ApiResponse(
+          200,
+          {accessToken, refreshToken: newRefreshToken},
+          'Access token refreshed'
+        )
+      );
+  } catch (error) {
+    throw new ApiError(401, error?.message || 'Invalid refresh token');
+  }
 };
 
 export {
