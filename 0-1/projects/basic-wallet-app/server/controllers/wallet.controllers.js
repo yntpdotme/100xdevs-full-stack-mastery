@@ -21,8 +21,9 @@ const getBalance = async (req, res) => {
         walletHolder: wallet.userId?.name,
         balance: wallet.balanceINR,
         currency: 'INR',
+        gain: wallet.gainInBalance.slice(-1)[0],
       },
-      'Users fetched successfully'
+      'Balance fetched successfully'
     )
   );
 };
@@ -38,6 +39,9 @@ const depositAmount = async (req, res) => {
     {$inc: {balance: amount}},
     {new: true}
   ).populate('userId');
+
+  // Calculate gain
+  const gainInBalance = await wallet.depositGain(amount);
 
   // ADMIN_ID must come from DB. Hardcoding it for testing.
   const ADMIN_ID = '65ffe9ec8d4a1398face07e2';
@@ -56,6 +60,7 @@ const depositAmount = async (req, res) => {
         walletHolder: wallet.userId?.name,
         balance: wallet.balanceINR,
         currency: 'INR',
+        gain: gainInBalance,
       },
       'Deposit is successful'
     )
@@ -101,6 +106,10 @@ const transferAmount = async (req, res, next) => {
       {userId: recipientId},
       {$inc: {balance: amount}}
     ).session(session);
+
+    // Calculate gain
+    await senderWallet.transferGain(-amount, {session});
+    await recipientWallet.transferGain(amount, {session});
 
     // Store tranfer data
     await Transaction.create({
