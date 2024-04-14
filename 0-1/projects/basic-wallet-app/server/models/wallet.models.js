@@ -12,8 +12,12 @@ const walletSchema = new mongoose.Schema({
   balance: {
     type: Number,
     required: true,
-    min: 0, 
+    min: 0,
     set: amount => Math.round(amount * 100),
+  },
+  gainInBalance: {
+    type: [Number],
+    default: [100],
   },
 });
 
@@ -21,6 +25,29 @@ walletSchema.virtual('balanceINR').get(function () {
   // Convert the balance from paisa to rupees
   return (this.balance / 100).toFixed(2);
 });
+
+walletSchema.methods.depositGain = async function (amount) {
+  const gain = Math.round((amount / (this.balanceINR - amount)) * 100);
+
+  // Update the gainInBalance field in the wallet schema
+  this.gainInBalance.push(gain);
+  await this.save();
+
+  return gain;
+};
+
+walletSchema.methods.transferGain = async function (amount) {
+  console.log(amount);
+  console.log(this.balanceINR);
+  const gain = Math.round((amount / this.balanceINR) * 100);
+  console.log(gain);
+
+  // Update the gainInBalance field in the wallet schema
+  this.gainInBalance.push(gain);
+  await this.save();
+
+  return gain;
+};
 
 // Create and Export Model
 export const Wallet = mongoose.model('Wallet', walletSchema);
