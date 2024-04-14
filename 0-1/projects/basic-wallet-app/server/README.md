@@ -1,11 +1,12 @@
+<h1 align="center">Wallet Application Backend</h1>
+
 <h3 align="center">
 
-[🗂️&nbsp; Source Code](../server/)
+[🗂️&nbsp; Source Code](../server/)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[📑&nbsp; API Docs](https://documenter.getpostman.com/view/31850881/2sA3Bn7srM) 
 
 </h3>
-<br>
 
-<h1 align="center">Wallet Application Backend</h1>
+<br>
 
 - It uses various routes for different functionalities.
 
@@ -15,7 +16,7 @@
 
 ## User Authentication &nbsp; 🔐
 
-### Sign Up
+### - Sign Up
 
 - Endpoint: `/api/v1/auth/signup`
 
@@ -23,7 +24,7 @@
 
 - Description: Register a new account with required information.
 
-### Sign In
+### - Sign In
 
 - Endpoint: `/api/v1/auth/signin`
 
@@ -31,7 +32,7 @@
 
 - Description: Authenticate and sign in with credentials.
 
-### Sing Out
+### - Sing Out
 
 - Endpoint: `/api/v1/auth/logout`
 
@@ -39,7 +40,7 @@
 
 - Description: Logs out the authenticated user session.
 
-### 
+### - Refresh Token
 
 - Endpoint: `/api/v1/auth/refresh`
 
@@ -51,7 +52,7 @@
 
 ## User Management &nbsp;👤
 
-### Get All Users
+### - Get All Users
 
 - Endpoint: `/api/v1/users`
 
@@ -59,7 +60,7 @@
 
 - Description: Retrieve all users.
 
-### Update User
+### - Update User
 
 - Endpoint: `/api/v1/users/me`
 
@@ -71,7 +72,7 @@
 
 ## Wallet Management &nbsp;💰
 
-### Get Balance
+### - Get Balance
 
 - Endpoint: `/api/v1/wallet/balance`
 
@@ -79,7 +80,7 @@
 
 - Description: Retrieves the wallet balance for the authenticated user.
 
-### Doposite Ammount
+### - Doposite Ammount
 
 - Endpoint: `/api/v1/wallet/deposit`
 
@@ -87,7 +88,7 @@
 
 - Description: Allows authenticated users to add funds to their wallet.
 
-### Transfer Ammount
+### - Transfer Ammount
 
 - Endpoint: `/api/v1/wallet/transfer`
 
@@ -99,7 +100,7 @@
 
 ## Transactions History &nbsp;🧾
 
-### Get All Transactions
+### - Get All Transactions
 
 - Endpoint: `/api/v1/transactions/`
 
@@ -115,41 +116,36 @@ Feel free to explore backend APIs implementation and run it locally to verify it
 
 <h1 align="center">🖥️&nbsp;&nbsp; Local Development</h1>
 
-- **Navigate to the Backend Codebase:**
+1. **Navigate to the Backend Codebase:**
 
-	```bash
-	cd server/
-	```
+    ```bash
+    cd server/
+    ```
 
-- **Install dependencies:**
+2. **Install dependencies:**
 
-	```bash
-	npm install
-	```
+    ```bash
+    npm install
+    ```
 
-- **Add Environment Variables:**
+3. **Add Environment Variables:**
 
-	```bash
-	touch .env
-	cat >> .env
-	DB_URL = "mongodb_string/wallet_app"
-	
-	ACCESS_TOKEN_SECRET="access_token_secret"
-	ACCESS_TOKEN_EXPIRY=1d # 1 day
+    Create .env file in the root folder and copy paste the content of .env.sample.
 
-	REFRESH_TOKEN_SECRET="refresh_token_secret"
-	REFRESH_TOKEN_EXPIRY=10d # 10day
+    ```bash
+    cp .env.sample .env
+    ```
 
-	CORS_ORIGIN="http://localhost:"
+    If required, add necessary credentials.
 
-	(Control+D to terminate)
-	```
+4.  **Start the Server:**
 
-- **Run the Server:**
+    ```bash
+    npm start
+    ```
 
-	```bash
-	npm run dev
-	```
+5. **Explore the API:**
+
+	  Access the project APIs at the specified endpoints using [API Docs](https://documenter.getpostman.com/view/31850881/2sA3Bn7srM).
 
 <br><br>
-
