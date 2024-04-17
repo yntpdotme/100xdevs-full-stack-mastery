@@ -1,9 +1,16 @@
-import {useQuery} from '@tanstack/react-query';
+import {useNavigate} from 'react-router-dom';
+import {useEffect} from 'react';
+import {useMutation, useQuery, useQueryClient} from '@tanstack/react-query';
 
-import {WalletService} from '../api/services';
+import {LocalStorage, WalletService} from '../api/services';
 import {GainIndicator, DepositForm} from '../components';
 
 const DashboardPage = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!LocalStorage.get('accessToken')) navigate('/');
+  }, [navigate]);
+
   const {data, isLoading, isError} = useQuery({
     queryKey: ['balance'],
     queryFn: async () => {
@@ -12,7 +19,14 @@ const DashboardPage = () => {
     },
   });
 
-  const handleDeposit = () => {};
+  const queryClient = useQueryClient();
+
+  const depositMutation = useMutation({
+    mutationFn: WalletService.deposit,
+    onSuccess: () => {
+      queryClient.invalidateQueries({queryKey: ['balance']});
+    },
+  });
 
   return (
     <section className="px-2 pt-6 lg:p-6">
@@ -37,7 +51,7 @@ const DashboardPage = () => {
           </div>
         ) : isError ? (
           <div className="mt-8 text-2xl font-normal leading-tight text-red-400">
-            Your request cannot be processed at this time.
+            Balance couldn&apos;t load
           </div>
         ) : (
           <div className="flex flex-col space-y-5">
@@ -57,7 +71,7 @@ const DashboardPage = () => {
           Add money to your Wallet
         </p>
 
-        <DepositForm onSubmit={handleDeposit} />
+        <DepositForm onSubmit={depositMutation.mutateAsync} />
       </div>
     </section>
   );
