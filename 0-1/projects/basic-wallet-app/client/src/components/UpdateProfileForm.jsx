@@ -62,7 +62,7 @@ const UpdateProfileForm = ({onSubmit}) => {
               className="inline-flex items-center justify-center rounded-md px-3 text-sm font-palanquin font-normal ring-offset-background transition-colors hover:bg-accent/50 hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
             >
               <Link
-                class="flex h-full w-full items-center transition-transform duration-500 ease-out"
+                className="flex h-full w-full items-center transition-transform duration-500 ease-out"
                 to="/profile/password"
               >
                 <span className="flex w-full flex-1 items-center justify-center">
