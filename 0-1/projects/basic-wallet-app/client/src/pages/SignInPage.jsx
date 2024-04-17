@@ -1,11 +1,18 @@
 import {Link, useNavigate} from 'react-router-dom';
 
 import {AuthForm} from '../components';
+import {AuthService, LocalStorage} from '../api/services';
 
 const SignInPage = () => {
   const navigate = useNavigate();
 
-  const handleSignUp = async () => {
+  const handleSignUp = async formData => {
+    const response = await AuthService.signIn(formData);
+    const {accessToken, refreshToken} = response?.data?.data || {};
+
+    LocalStorage.set('accessToken', accessToken);
+    LocalStorage.set('refreshToken', refreshToken);
+
     navigate('/dashboard');
   };
 
