@@ -18,6 +18,7 @@ import UpdateProfileForm from './UpdateProfileForm';
 import UpdatePasswordForm from './UpdatePasswordForm';
 import UpdatePassword from './UpdatePassword';
 import TansactionsTable from './TansactionsTable';
+import Notification from './Notification';
 
 export {
   AuthForm,
@@ -40,4 +41,5 @@ export {
   UpdatePasswordForm,
   UpdatePassword,
   TansactionsTable,
+  Notification,
 };

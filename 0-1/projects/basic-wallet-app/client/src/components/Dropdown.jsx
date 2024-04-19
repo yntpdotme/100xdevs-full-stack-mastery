@@ -2,7 +2,7 @@ import {useSetRecoilState} from 'recoil';
 import {useNavigate} from 'react-router-dom';
 import {useQueryClient} from '@tanstack/react-query';
 
-import {dropdownState} from '../recoil/atoms/dropdownState';
+import {dropdownState} from '../recoil/atoms';
 import {signOutIcon} from '../assets';
 import {NavLink} from './index';
 import {navLinks} from '../constants';

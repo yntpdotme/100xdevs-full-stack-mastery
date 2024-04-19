@@ -116,7 +116,7 @@ const DialogBox = ({label, onSubmit, onClose}) => {
               e.stopPropagation();
               onClose();
             }}
-            className="dark:border-dark-700 disabled:opacity-50active:bg-gray-100 dark:active:bg-dark-600 absolute right-6 top-4 flex h-8 w-8 items-center justify-center rounded-full border-gray-100 bg-transparent outline-none ring-primary/70 transition-all hover:border focus:ring-2 disabled:cursor-not-allowed dark:focus:ring-primary/70"
+            className="dark:border-dark-700 disabled:opacity-50 active:bg-gray-100 dark:active:bg-dark-600 absolute right-6 top-4 flex h-8 w-8 items-center justify-center rounded-full border-gray-100 bg-transparent outline-none ring-primary/70 transition-all hover:border focus:ring-2 disabled:cursor-not-allowed dark:focus:ring-primary/70"
           >
             <img
               src={closeIcon}

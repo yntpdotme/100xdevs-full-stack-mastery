@@ -1,8 +1,10 @@
 import {useForm} from 'react-hook-form';
 import {zodResolver} from '@hookform/resolvers/zod';
+import {useSetRecoilState} from 'recoil';
 
 import {updatePasswordSchema} from '../validators/formValidators';
 import {Input, InputPassword} from './index';
+import {formSubmissionState, notificationState} from '../recoil/atoms';
 
 const UpdatePasswordForm = ({onSubmit}) => {
   const {
@@ -16,24 +18,29 @@ const UpdatePasswordForm = ({onSubmit}) => {
     mode: 'onChange',
   });
 
+  const setFormSubmission = useSetRecoilState(formSubmissionState);
+  const setShowNotification = useSetRecoilState(notificationState);
+
   const onSubmitHandler = async data => {
     try {
+      setFormSubmission(true);
       await onSubmit(data);
       reset();
     } catch (error) {
       let errorMessage = 'An unexpected error occurred. Please try again.';
 
-      if (error?.response?.data) {
-        errorMessage = error.response.data;
+      if (error?.response?.data?.message) {
+        errorMessage = error.response.data.message;
       }
 
       setError('message', {
         type: 'manual',
         message: errorMessage,
       });
+    } finally {
+      setTimeout(() => setFormSubmission(false), 500);
     }
   };
-
   return (
     <>
       <form onSubmit={handleSubmit(onSubmitHandler)} className="mt-6">
@@ -53,8 +60,8 @@ const UpdatePasswordForm = ({onSubmit}) => {
               id="oldPassword"
             />
           </div>
-          
-					<div className="flex flex-col space-y-1">
+
+          <div className="flex flex-col space-y-1">
             <label
               className="w-full text-sm font-medium text-gray-400"
               htmlFor="newPassword"
@@ -90,6 +97,7 @@ const UpdatePasswordForm = ({onSubmit}) => {
             <button
               className="inline-flex items-center justify-center rounded-md bg-primary bg-gradient-to-r px-6 py-3 text-sm font-medium text-white shadow-2xl transition-colors hover:bg-primary/90 focus-visible:outline-none disabled:pointer-events-none max-sm:w-full"
               disabled={!isValid}
+              onClick={() => setShowNotification(true)}
             >
               <span className="font-montserrat">Update Password</span>
             </button>
