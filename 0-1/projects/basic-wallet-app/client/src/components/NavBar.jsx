@@ -1,7 +1,7 @@
 import {Link} from 'react-router-dom';
 import {useRecoilState} from 'recoil';
 
-import {dropdownState} from '../recoil/atoms/dropdownState';
+import {dropdownState} from '../recoil/atoms';
 import {hamburgerMenu} from '../assets';
 import {Dropdown} from '.';
 import ThemeToggler from './ThemeToggler';

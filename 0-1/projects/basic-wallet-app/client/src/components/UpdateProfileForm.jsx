@@ -1,9 +1,11 @@
 import {useForm} from 'react-hook-form';
 import {zodResolver} from '@hookform/resolvers/zod';
 import {Link} from 'react-router-dom';
+import {useSetRecoilState} from 'recoil';
 
 import {updateProfileSchema} from '../validators/formValidators';
 import {Input} from './index';
+import {formSubmissionState, notificationState} from '../recoil/atoms';
 
 const UpdateProfileForm = ({onSubmit}) => {
   const {
@@ -17,21 +19,27 @@ const UpdateProfileForm = ({onSubmit}) => {
     mode: 'onChange',
   });
 
+  const setFormSubmission = useSetRecoilState(formSubmissionState);
+  const setShowNotification = useSetRecoilState(notificationState);
+
   const onSubmitHandler = async data => {
     try {
+      setFormSubmission(true);
       await onSubmit(data);
       reset();
     } catch (error) {
       let errorMessage = 'An unexpected error occurred. Please try again.';
 
-      if (error?.response?.data) {
-        errorMessage = error.response.data;
+      if (error?.response?.data?.message) {
+        errorMessage = error.response.data.message;
       }
 
       setError('message', {
         type: 'manual',
         message: errorMessage,
       });
+    } finally {
+      setTimeout(() => setFormSubmission(false), 500);
     }
   };
 
@@ -59,7 +67,7 @@ const UpdateProfileForm = ({onSubmit}) => {
             <button
               type="button"
               tabIndex="-1"
-              className="inline-flex items-center justify-center rounded-md px-3 text-sm font-palanquin font-normal ring-offset-background transition-colors hover:bg-accent/50 hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+              className="inline-flex items-center justify-center rounded-md px-3 font-palanquin text-sm font-normal ring-offset-background transition-colors hover:bg-accent/50 hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
             >
               <Link
                 className="flex h-full w-full items-center transition-transform duration-500 ease-out"
@@ -76,6 +84,7 @@ const UpdateProfileForm = ({onSubmit}) => {
             <button
               className="inline-flex items-center justify-center rounded-md bg-primary bg-gradient-to-r px-6 py-3 text-sm font-medium text-white shadow-2xl transition-colors hover:bg-primary/90 focus-visible:outline-none disabled:pointer-events-none max-sm:w-full"
               disabled={!isValid}
+              onClick={() => setShowNotification(true)}
             >
               <span className="font-montserrat">Update Profile</span>
             </button>

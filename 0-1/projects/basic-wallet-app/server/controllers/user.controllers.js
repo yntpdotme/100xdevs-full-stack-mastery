@@ -9,6 +9,7 @@ import {
   ValidateLogin,
   ValidateUpdate,
 } from '../validators/user.validators.js';
+import { getAvatarName } from '../utils/helper.js';
 
 const generateAccessAndRefreshTokens = async userId => {
   try {
@@ -40,15 +41,7 @@ const registerUser = async (req, res) => {
   let user = await User.findOne({email});
   if (user) throw new ApiError(409, 'User with email already exists', []);
 
-  const getCustomName = name => {
-    const words = name.split(' ');
-
-    return words.length === 1
-      ? words[0].slice(0, 2)
-      : words[0][0] + words[words.length - 1][0];
-  };
-
-  const avatar = `https://ui-avatars.com/api/?name=${getCustomName(
+  const avatar = `https://ui-avatars.com/api/?name=${getAvatarName(
     name
   )}&size=250&background=4d2be2&color=ffffff`;
 
@@ -211,6 +204,9 @@ const updateCurrentUser = async (req, res) => {
 
   if (name) {
     user.name = name;
+    user.avatar = `https://ui-avatars.com/api/?name=${getAvatarName(
+      name
+    )}&size=250&background=4d2be2&color=ffffff`;
   }
 
   await user.save();

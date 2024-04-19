@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
 import {useRecoilState} from 'recoil';
 
-import {themeState} from '../recoil/atoms/themeState';
+import {themeState} from '../recoil/atoms';
 import {moonIcon, sunIcon} from '../assets';
 
 const ThemeToggler = () => {
