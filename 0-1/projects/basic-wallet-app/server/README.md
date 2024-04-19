@@ -60,13 +60,13 @@
 
 - Description: Retrieve all users.
 
-### - Update User
+### - Update Current User
 
 - Endpoint: `/api/v1/users/me`
 
 - Method: `PATCH`
 
-- Description: Update a specific user.
+- Description: Update a current user.
 
 <br/>
 

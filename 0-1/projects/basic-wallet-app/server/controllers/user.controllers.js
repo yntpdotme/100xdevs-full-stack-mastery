@@ -181,7 +181,7 @@ const getAllUsers = async (req, res) => {
   );
 };
 
-const updateUserById = async (req, res) => {
+const updateCurrentUser = async (req, res) => {
   const {error} = ValidateUpdate(req.body);
   if (error) throw new ApiError(400, error.issues[0].message, []);
 
@@ -270,6 +270,6 @@ export {
   loginUser,
   logoutUser,
   getAllUsers,
-  updateUserById,
+  updateCurrentUser,
   refreshAccessToken,
 };

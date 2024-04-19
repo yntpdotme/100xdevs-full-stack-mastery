@@ -5,6 +5,8 @@ import authorization from '../middlewares/auth.middlewares.js';
 
 const router = express.Router();
 
-router.route('/').get(authorization, getAllTransactions);
+router
+	.route('/')
+	.get(authorization, getAllTransactions);
 
 export default router;
