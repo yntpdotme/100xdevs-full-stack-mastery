@@ -1,18 +1,30 @@
 import {useSetRecoilState} from 'recoil';
 import {useNavigate} from 'react-router-dom';
+import {useQueryClient} from '@tanstack/react-query';
 
 import {dropdownState} from '../recoil/atoms/dropdownState';
 import {signOutIcon} from '../assets';
 import {NavLink} from './index';
 import {navLinks} from '../constants';
+import {AuthService, LocalStorage} from '../api/services';
 
 const Dropdown = () => {
   const setShowDropDown = useSetRecoilState(dropdownState);
 
   const navigate = useNavigate();
+  const queryClient = useQueryClient();
 
-  const signOut = () => {
-    navigate('/');
+  const handleSignOut = async () => {
+    try {
+      await AuthService.signOut();
+
+      LocalStorage.clear();
+      queryClient.clear();
+
+      navigate('/');
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -41,7 +53,7 @@ const Dropdown = () => {
             tabIndex="-1"
             onClick={() => {
               setShowDropDown(p => !p);
-              signOut();
+              handleSignOut();
             }}
           >
             <span className="flex items-center space-x-3">
