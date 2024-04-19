@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import {Link} from 'react-router-dom';
 
+import useCurrentUser from '../hooks/useCurrentUser';
 import {closeSideBar, openSideBar} from '../assets';
 import {navLinks} from '../constants';
 import {NavLink, PopUp} from './index';
@@ -8,6 +9,8 @@ import {NavLink, PopUp} from './index';
 const SideBar = () => {
   const [open, setOpen] = useState(true);
   const [showMenu, setShowMenu] = useState(false);
+
+  const {data:currentUser, isError} = useCurrentUser();
 
   return (
     <div className="hidden lg:block">
@@ -44,15 +47,25 @@ const SideBar = () => {
                 onClick={() => setShowMenu(!showMenu)}
               >
                 <span className="relative mx-auto flex h-9 w-9 shrink-0 overflow-hidden rounded-full group-focus:ring-2">
-                  <span className="flex h-full w-full items-center justify-center rounded-full bg-primary font-semibold uppercase text-primary-foreground">
-                    U
-                  </span>
+                  {isError ? (
+                    <span className="flex h-full w-full items-center justify-center rounded-full bg-red-400 font-semibold uppercase text-primary-foreground">
+                      ?
+                    </span>
+                  ) : (
+                    <img src={currentUser?.avatar} alt="avatar" />
+                  )}
                 </span>
                 {open && (
                   <>
                     <div className="flex w-full flex-col truncate text-left">
                       <span className="truncate text-xs text-gray-400">
-                        User Name
+                        {isError ? (
+                          <div className="font-normal leading-tight text-red-400">
+                            Name couldn&apos;t load.
+                          </div>
+                        ) : (
+                          currentUser?.name
+                        )}
                       </span>
                     </div>
                     <svg

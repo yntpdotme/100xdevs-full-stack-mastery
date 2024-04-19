@@ -2,6 +2,7 @@ import {useForm} from 'react-hook-form';
 import {zodResolver} from '@hookform/resolvers/zod';
 
 import {depositSchema} from '../validators/formValidators';
+import useCurrentUser from '../hooks/useCurrentUser';
 import {Input} from './index';
 
 const DepositForm = ({onSubmit}) => {
@@ -33,6 +34,8 @@ const DepositForm = ({onSubmit}) => {
       });
     }
   };
+
+  const {data:currentUser, isError} = useCurrentUser();
 
   return (
     <>
@@ -74,11 +77,21 @@ const DepositForm = ({onSubmit}) => {
       <div className="mt-8 flex flex-auto items-center justify-center space-x-5 font-palanquin sm:justify-end">
         <div className="flex items-center space-x-3">
           <span className="mx-auto flex size-8 shrink-0 overflow-hidden rounded-full group-focus:ring-2">
-            <span className="flex h-full w-full items-center justify-center rounded-full bg-primary font-semibold uppercase text-primary-foreground">
-              a
-            </span>
+            {isError ? (
+              <span className="flex h-full w-full items-center justify-center rounded-full bg-red-400 font-semibold uppercase text-primary-foreground">
+                ?
+              </span>
+            ) : (
+              <img src={currentUser?.avatar} alt="avatar" />
+            )}
           </span>
-          <div className="block truncate text-sm">user@email.com</div>
+          <div className="block truncate text-sm">
+            {isError ? (
+              <span className="text-red-400">Email couldn&apos;t load</span>
+            ) : (
+              currentUser?.email
+            )}
+          </div>
         </div>
         <div className="flex items-center space-x-2 rounded bg-sky-50 px-2 py-1 text-xs font-medium text-sky-800 dark:bg-sky-500/10 dark:text-sky-600">
           You
