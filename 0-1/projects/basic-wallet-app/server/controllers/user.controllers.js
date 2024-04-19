@@ -181,6 +181,16 @@ const getAllUsers = async (req, res) => {
   );
 };
 
+const getCurrentUser = async (req, res) => {
+  const currentUser = await User.findById(req.user._id).select(
+    '-password -refreshToken -__v'
+  );
+
+  return res.json(
+    new ApiResponse(200, {currentUser}, 'User fetched successfully')
+  );
+};
+
 const updateCurrentUser = async (req, res) => {
   const {error} = ValidateUpdate(req.body);
   if (error) throw new ApiError(400, error.issues[0].message, []);
@@ -270,6 +280,7 @@ export {
   loginUser,
   logoutUser,
   getAllUsers,
+  getCurrentUser,
   updateCurrentUser,
   refreshAccessToken,
 };
