@@ -10,9 +10,21 @@ import authorization from '../middlewares/auth.middlewares.js';
 
 const router = express.Router();
 
-router.route('/signup').post(registerUser);
-router.route('/signin').post(loginUser);
-router.route('/logout').get(authorization, logoutUser);
-router.route('/refresh').post(refreshAccessToken);
+router
+  .route('/signup')
+  .post(registerUser)
 
-export default router;
+router
+  .route('/signin')
+  .post(loginUser)
+
+router
+  .route('/logout')
+  .get(authorization, logoutUser)
+
+router
+  .route('/refresh')
+  .post(refreshAccessToken)
+
+
+export default router
