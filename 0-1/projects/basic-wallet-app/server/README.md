@@ -60,6 +60,14 @@
 
 - Description: Retrieve all users.
 
+### - Get Current User
+
+- Endpoint: `/api/v1/users/me`
+
+- Method: `GET`
+
+- Description: Get a current user.
+
 ### - Update Current User
 
 - Endpoint: `/api/v1/users/me`

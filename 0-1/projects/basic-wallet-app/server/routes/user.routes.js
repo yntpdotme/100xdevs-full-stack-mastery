@@ -1,6 +1,6 @@
 import express from 'express';
 
-import {getAllUsers, updateCurrentUser} from '../controllers/user.controllers.js';
+import {getAllUsers, getCurrentUser, updateCurrentUser} from '../controllers/user.controllers.js';
 import authorization from '../middlewares/auth.middlewares.js';
 
 const router = express.Router();
@@ -11,6 +11,7 @@ router
 
 router
 	.route('/me')
+	.get(authorization, getCurrentUser)
 	.patch(authorization, updateCurrentUser);
 
 export default router;
