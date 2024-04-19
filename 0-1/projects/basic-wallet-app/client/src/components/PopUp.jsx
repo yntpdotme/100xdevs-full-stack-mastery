@@ -1,14 +1,26 @@
 import {Link, useNavigate} from 'react-router-dom';
+import {useQueryClient} from '@tanstack/react-query';
 
 import {dashboardIcon, settingsIcon, signOutIcon, themeIcon} from '../assets';
 import ThemeToggler from './ThemeToggler';
 import useCurrentUser from '../hooks/useCurrentUser';
+import {AuthService, LocalStorage} from '../api/services';
 
 const PopUp = ({hidePopUp}) => {
   const navigate = useNavigate();
+  const queryClient = useQueryClient();
 
-  const signOut = () => {
-    navigate('/');
+  const handleSignOut = async () => {
+    try {
+      await AuthService.signOut();
+
+      LocalStorage.clear();
+      queryClient.clear();
+      
+      navigate('/');
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const {data:currentUser, isError} = useCurrentUser();
@@ -85,7 +97,7 @@ const PopUp = ({hidePopUp}) => {
         tabIndex="-1"
         onClick={() => {
           hidePopUp();
-          signOut();
+          handleSignOut();
         }}
       >
         <span className="flex items-center space-x-2.5">
