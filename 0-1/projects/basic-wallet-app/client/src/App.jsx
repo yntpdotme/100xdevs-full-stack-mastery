@@ -1,4 +1,5 @@
-import {Route, Routes, useLocation} from 'react-router-dom';
+import {Route, Routes, useLocation, useNavigate} from 'react-router-dom';
+import {useEffect} from 'react';
 
 import {
   DashboardPage,
@@ -13,6 +14,7 @@ import {githubLogo} from './assets';
 import {NavBar, SideBar, SourceCode, UpdatePassword} from './components';
 import {soureCodeLink} from './constants';
 import ThemeToggler from './components/ThemeToggler';
+import {LocalStorage} from './api/services';
 
 const App = () => {
   const location = useLocation();
@@ -20,6 +22,12 @@ const App = () => {
   const renderNavigation = !['/', '/signin', '/signup'].includes(
     location.pathname,
   );
+
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (['/', '/signin', '/signup'].includes(location.pathname)) return;
+    if (!LocalStorage.get('accessToken')) navigate('/');
+  }, [navigate, location]);
 
   return (
     <>
