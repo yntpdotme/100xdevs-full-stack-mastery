@@ -1,7 +1,8 @@
 import {clientPrivate as apiClient} from '../client';
 
 const UserService = {
-  getAllUsers: query => apiClient.get(`/users?filter=${query}`),
+  getAllUsers: (search='', page) =>
+    apiClient.get(`/users?filter=${search}&page=${page}&limit=5`),
 
   getCurrentUser: () => apiClient.get('/users/me'),
 
