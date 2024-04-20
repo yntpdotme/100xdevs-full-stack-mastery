@@ -3,7 +3,7 @@ import {useQueryClient} from '@tanstack/react-query';
 
 import {dashboardIcon, settingsIcon, signOutIcon, themeIcon} from '../assets';
 import ThemeToggler from './ThemeToggler';
-import useCurrentUser from '../hooks/useCurrentUser';
+import {useCurrentUser} from '../hooks';
 import {AuthService, LocalStorage} from '../api/services';
 
 const PopUp = ({hidePopUp}) => {

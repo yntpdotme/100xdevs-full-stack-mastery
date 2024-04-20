@@ -2,7 +2,7 @@ import {useForm} from 'react-hook-form';
 import {zodResolver} from '@hookform/resolvers/zod';
 
 import {depositSchema} from '../validators/formValidators';
-import useCurrentUser from '../hooks/useCurrentUser';
+import {useCurrentUser} from '../hooks';
 import {Input} from './index';
 
 const DepositForm = ({onSubmit}) => {

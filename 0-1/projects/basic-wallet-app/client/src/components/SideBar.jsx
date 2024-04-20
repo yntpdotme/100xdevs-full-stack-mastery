@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import {Link} from 'react-router-dom';
 
-import useCurrentUser from '../hooks/useCurrentUser';
+import {useCurrentUser} from '../hooks';
 import {closeSideBar, openSideBar} from '../assets';
 import {navLinks} from '../constants';
 import {NavLink, PopUp} from './index';
