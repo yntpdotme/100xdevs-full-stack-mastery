@@ -1,18 +1,21 @@
 import mongoose from 'mongoose';
 
 import {Transaction} from '../models/transaction.models.js';
-import {ApiResponse} from '../utils/ApiResponse.js';
+import {ApiResponse, paginateQuery} from '../utils/index.js';
 
 const getAllTransactions = async (req, res) => {
-  const transactions = await Transaction.find({
-    $or: [{senderId: req.user._id}, {recipientId: req.user._id}],
-  })
+  const {page = 1, limit = 10} = req.query;
+
+  const transactionsQuery = Transaction
+    .find({$or: [{senderId: req.user._id}, {recipientId: req.user._id}]})
     .populate('senderId', 'name')
     .populate('recipientId', 'name')
     .select('-__v')
     .sort({createdAt: -1});
 
-  const transactionList = transactions.map(transaction => {
+  const result = await paginateQuery(transactionsQuery, page, limit);
+
+  const transactionList = result.data.map(transaction => {
     const utcDate = new Date(transaction.createdAt);
 
     return {
@@ -27,7 +30,7 @@ const getAllTransactions = async (req, res) => {
   return res.json(
     new ApiResponse(
       200,
-      {transactions: transactionList},
+      {transactions: transactionList, pagination: result.pagination},
       'Transactions fetched successfully'
     )
   );
