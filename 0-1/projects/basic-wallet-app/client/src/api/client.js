@@ -34,10 +34,11 @@ const createClient = withCredentials => {
               {refreshToken: LocalStorage.get('refreshToken')},
               {withCredentials: true},
             );
-            const {accessToken, refreshToken} = response.data;
+            const {accessToken, refreshToken} = response.data.data;
             LocalStorage.set('accessToken', accessToken);
             LocalStorage.set('refreshToken', refreshToken);
             originalRequest.headers.Authorization = `Bearer ${accessToken}`;
+
             return axios(originalRequest);
           } catch (refreshError) {
             console.error('Error refreshing token:', refreshError);
