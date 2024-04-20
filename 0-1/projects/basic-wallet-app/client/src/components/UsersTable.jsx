@@ -45,7 +45,7 @@ const UsersTable = ({query, setPage, onSend}) => {
             {headings.map((heading, index) => (
               <th
                 key={index}
-                className="h-12 w-[150px] px-4 text-left align-middle font-medium text-muted-foreground"
+                className="h-[54px] text-base w-[150px] px-4 text-left align-middle font-medium text-muted-foreground"
               >
                 {heading}
               </th>
@@ -64,13 +64,13 @@ const UsersTable = ({query, setPage, onSend}) => {
                 className="border-b border-gray-50 transition-colors hover:bg-muted/50 dark:border-dark-800"
                 onClick={() => handleDialogVisibility(index)}
               >
-                <td className="h-[50px] whitespace-nowrap px-4 align-middle">
+                <td className="h-[53px] whitespace-nowrap px-4 align-middle">
                   {user.name}
                 </td>
-                <td className="h-[50px] whitespace-nowrap px-4 align-middle">
+                <td className="h-[53px] whitespace-nowrap px-4 align-middle">
                   {user.email}
                 </td>
-                <td className="h-[50px] whitespace-nowrap px-4 align-middle">
+                <td className="h-[53px] whitespace-nowrap px-4 align-middle">
                   <span>
                     <button
                       type="button"

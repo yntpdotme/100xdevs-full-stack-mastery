@@ -1,11 +1,20 @@
+import {useState} from 'react';
+import {useQuery, keepPreviousData} from '@tanstack/react-query';
+
+import {TransactionService} from '../api/services';
 import {TansactionsTable} from '../components';
 
 const TransactionsPage = () => {
-  const transactionData = [
-    {From: 'abc', To: 'pqr', Amount: 100, Date: '18/4/2024', Time: '10:20 AM'},
-    {From: 'pqr', To: 'abc', Amount: 200, Date: '16/4/2024', Time: '01:00 PM'},
-    {From: 'abc', To: 'xyz', Amount: 150, Date: '13/4/2024', Time: '06:30 AM'},
-  ];
+  const [page, setPage] = useState(1);
+
+  const query = useQuery({
+    queryKey: ['transactions', {page}],
+    queryFn: async () => {
+      const response = await TransactionService.getAllTransactions(page);
+      return response.data.data;
+    },
+    placeholderData: keepPreviousData,
+  });
 
   return (
     <section className="px-2 pt-6 lg:p-6">
@@ -19,10 +28,10 @@ const TransactionsPage = () => {
         </h5>
       </div>
 
-      <div className="mt-8 flex flex-col space-y-4">
+      <div className="mt-16 flex flex-col space-y-4 lg:mt-12">
         <div className="rounded-md border border-x-gray-200 p-1 dark:border-dark-800">
           <div className="w-full overflow-auto">
-            <TansactionsTable transactions={transactionData} />
+            <TansactionsTable query={query} setPage={setPage} />
           </div>
         </div>
       </div>
