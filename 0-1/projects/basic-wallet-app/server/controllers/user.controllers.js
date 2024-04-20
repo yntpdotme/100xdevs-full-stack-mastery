@@ -2,14 +2,12 @@ import jwt from 'jsonwebtoken';
 
 import {User} from '../models/user.models.js';
 import {Wallet} from '../models/wallet.models.js';
-import {ApiError} from '../utils/ApiError.js';
-import {ApiResponse} from '../utils/ApiResponse.js';
+import {ApiError, ApiResponse, getAvatarName, paginateQuery} from '../utils/index.js';
 import {
   ValidateRegister,
   ValidateLogin,
   ValidateUpdate,
 } from '../validators/user.validators.js';
-import { getAvatarName } from '../utils/helper.js';
 
 const generateAccessAndRefreshTokens = async userId => {
   try {
@@ -151,26 +149,26 @@ const logoutUser = async (req, res) => {
 };
 
 const getAllUsers = async (req, res) => {
-  const filter = req.query.filter || '';
+  const {filter = '', page = 1, limit = 10} = req.query;
 
   // This regex matches each word in a name starting with "filter".
-  const regex = `\\b(${filter})`;
+  const regex = new RegExp(`\\b${filter}`, 'i');
 
-  const users = await User.find({
-    name: {
-      $regex: regex,
-      $options: 'i',
-    },
-  });
+  const usersQuery = User.find({name: {$regex: regex}});
+  const result = await paginateQuery(usersQuery, page, limit);
 
-  const userList = users.map(user => ({
+  const userList = result.data.map(user => ({
     name: user.name,
     email: user.email,
     _id: user._id,
   }));
 
   return res.json(
-    new ApiResponse(200, {users: userList}, 'Users fetched successfully')
+    new ApiResponse(
+      200,
+      {users: userList, pagination: result.pagination},
+      'Users fetched successfully'
+    )
   );
 };
 
