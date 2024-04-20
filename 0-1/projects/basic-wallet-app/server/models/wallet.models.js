@@ -37,10 +37,7 @@ walletSchema.methods.depositGain = async function (amount) {
 };
 
 walletSchema.methods.transferGain = async function (amount) {
-  console.log(amount);
-  console.log(this.balanceINR);
   const gain = Math.round((amount / this.balanceINR) * 100);
-  console.log(gain);
 
   // Update the gainInBalance field in the wallet schema
   this.gainInBalance.push(gain);
