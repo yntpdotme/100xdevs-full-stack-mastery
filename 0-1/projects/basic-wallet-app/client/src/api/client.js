@@ -30,7 +30,7 @@ const createClient = withCredentials => {
           originalRequest._retry = true;
           try {
             const response = await axios.post(
-              `${baseURL}/auth/refresh`,
+              `${baseURL.endsWith('/') ? baseURL : `${baseURL}/`}auth/refresh`,
               {refreshToken: LocalStorage.get('refreshToken')},
               {withCredentials: true},
             );
