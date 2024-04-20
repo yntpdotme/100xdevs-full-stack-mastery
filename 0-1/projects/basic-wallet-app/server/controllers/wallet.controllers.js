@@ -2,8 +2,7 @@ import mongoose from 'mongoose';
 
 import {Wallet} from '../models/wallet.models.js';
 import {Transaction} from '../models/transaction.models.js';
-import {ApiError} from '../utils/ApiError.js';
-import {ApiResponse} from '../utils/ApiResponse.js';
+import {ApiError, ApiResponse} from '../utils/index.js';
 import {
   ValidateDeposit,
   ValidateTransfer,
