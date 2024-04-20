@@ -19,6 +19,8 @@ import UpdatePasswordForm from './UpdatePasswordForm';
 import UpdatePassword from './UpdatePassword';
 import TansactionsTable from './TansactionsTable';
 import Notification from './Notification';
+import Pagination from './Pagination';
+import TableLoader from './TableLoader';
 
 export {
   AuthForm,
@@ -42,4 +44,6 @@ export {
   UpdatePassword,
   TansactionsTable,
   Notification,
+  Pagination,
+  TableLoader,
 };
