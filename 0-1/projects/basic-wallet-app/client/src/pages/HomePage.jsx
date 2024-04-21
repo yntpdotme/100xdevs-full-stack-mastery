@@ -6,7 +6,7 @@ import {ButtonHero} from '../components';
 const HomePage = () => {
   const navigate = useNavigate();
   const handleSetStarted = () => {
-    navigate('/signup');
+    navigate('/signin');
   };
 
   return (

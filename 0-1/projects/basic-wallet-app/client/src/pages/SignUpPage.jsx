@@ -1,6 +1,6 @@
 import {Link, useNavigate} from 'react-router-dom';
 
-import {AuthForm} from '../components';
+import {AuthForm, GuestLogin} from '../components';
 import {AuthService, LocalStorage} from '../api/services';
 
 const SignUpPage = () => {
@@ -22,7 +22,7 @@ const SignUpPage = () => {
         <Link to="/">PaymentX</Link>
       </p>
 
-      <div className="flex w-full max-w-sm flex-col items-center space-y-4 rounded-xl border-transparent bg-white px-4 py-8 dark:bg-transparent md:w-8/12 md:border md:px-8 dark:md:shadow-[0_0_1200px_0] dark:md:shadow-primary/30 lg:w-7/12 lg:bg-background lg:px-6 dark:lg:border-dark-800 xl:w-6/12 2xl:w-5/12">
+      <div className="flex w-full max-w-sm flex-col items-center space-y-4 rounded-xl border-transparent bg-white px-4 py-8 pb-4 dark:bg-transparent md:w-8/12 md:border md:px-8 dark:md:shadow-[0_0_1200px_0] dark:md:shadow-primary/30 lg:w-7/12 lg:bg-background lg:px-6 dark:lg:border-dark-800 xl:w-6/12 2xl:w-5/12">
         <div>
           <h5 className="mb-2 font-palanquin text-xl font-medium">
             Create an account
@@ -42,6 +42,8 @@ const SignUpPage = () => {
             </Link>
           </p>
         </div>
+
+        <GuestLogin />
       </div>
     </section>
   );
