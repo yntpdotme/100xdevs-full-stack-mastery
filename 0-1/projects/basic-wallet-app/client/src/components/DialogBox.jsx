@@ -6,7 +6,7 @@ import {closeIcon} from '../assets';
 import {transferSchema} from '../validators/formValidators';
 import {Input, Button} from './index';
 
-const DialogBox = ({label, onSubmit, onClose}) => {
+const DialogBox = ({user, label, onSubmit, onClose}) => {
   const {
     register,
     handleSubmit,
@@ -64,16 +64,15 @@ const DialogBox = ({label, onSubmit, onClose}) => {
                 <div className="flex flex-col space-y-1">
                   <label
                     className="w-full text-sm font-medium text-gray-400"
-                    htmlFor="recipientId"
+                    htmlFor="To"
                   >
                     To
                   </label>
                   <Input
-                    props={register('recipientId')}
                     type="text"
                     placeholder="Recipient"
-                    error={errors.recipientId?.message}
-                    id="recipientId"
+                    id="To"
+                    props={{value: user.name}}
                   />
                 </div>
 
@@ -92,6 +91,12 @@ const DialogBox = ({label, onSubmit, onClose}) => {
                     id="amount"
                   />
                 </div>
+
+                <input
+                  type="hidden"
+                  {...register('recipientId')}
+                  value={user._id}
+                />
 
                 <div className="flex justify-end pt-1">
                   <Button
@@ -116,7 +121,7 @@ const DialogBox = ({label, onSubmit, onClose}) => {
               e.stopPropagation();
               onClose();
             }}
-            className="dark:border-dark-700 disabled:opacity-50 active:bg-gray-100 dark:active:bg-dark-600 absolute right-6 top-4 flex h-8 w-8 items-center justify-center rounded-full border-gray-100 bg-transparent outline-none ring-primary/70 transition-all hover:border focus:ring-2 disabled:cursor-not-allowed dark:focus:ring-primary/70"
+            className="dark:border-dark-700 dark:active:bg-dark-600 absolute right-6 top-4 flex h-8 w-8 items-center justify-center rounded-full border-gray-100 bg-transparent outline-none ring-primary/70 transition-all hover:border focus:ring-2 active:bg-gray-100 disabled:cursor-not-allowed disabled:opacity-50 dark:focus:ring-primary/70"
           >
             <img
               src={closeIcon}

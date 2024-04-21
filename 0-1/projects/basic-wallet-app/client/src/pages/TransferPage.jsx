@@ -1,8 +1,13 @@
 import {useState} from 'react';
-import {useQuery, keepPreviousData} from '@tanstack/react-query';
+import {
+  useQuery,
+  keepPreviousData,
+  useQueryClient,
+  useMutation,
+} from '@tanstack/react-query';
 
 import {InputSearch, UsersTable} from '../components';
-import {UserService} from '../api/services';
+import {UserService, WalletService} from '../api/services';
 import {useDebounce} from '../hooks';
 
 const TransferPage = () => {
@@ -19,8 +24,17 @@ const TransferPage = () => {
     placeholderData: keepPreviousData,
   });
 
+  const queryClient = useQueryClient();
+
+  const transferFundsMutation = useMutation({
+    mutationFn: WalletService.transfer,
+    onSuccess: () => {
+      queryClient.invalidateQueries({queryKey: ['balance', 'transactions']});
+    },
+  });
+
   const handleSearchChange = e => {
-    setSearch(e.target.value); 
+    setSearch(e.target.value);
   };
 
   return (
@@ -35,7 +49,7 @@ const TransferPage = () => {
         </h5>
       </div>
 
-      <div className="mt-8 flex flex-col space-y-4">
+      <div className="mt-16 flex flex-col space-y-4 lg:mt-12">
         <div className="w-full max-w-sm">
           <InputSearch
             type="search"
@@ -46,7 +60,11 @@ const TransferPage = () => {
 
         <div className="rounded-md border border-x-gray-200 p-1 dark:border-dark-800">
           <div className="w-full overflow-auto">
-            <UsersTable query={query} setPage={setPage} />
+            <UsersTable
+              query={query}
+              setPage={setPage}
+              onSend={transferFundsMutation.mutateAsync}
+            />
           </div>
         </div>
       </div>
