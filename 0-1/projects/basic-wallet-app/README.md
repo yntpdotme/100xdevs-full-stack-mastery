@@ -31,16 +31,36 @@
 
 ## <a name="introduction">❄️&nbsp; Introduction</a>
 
-To-Do App created during Week-5 of 100xDevs Cohort by Harkirat Singh.
+Wallet App created during Week-8 of 100xDevs Cohort by Harkirat Singh.
 
 <p align=center>
-	<img width = "550px" alt="Jio Network blocking the view? Network switch reveals the magic!" src="./assets/wallet-app.png">
+	<img width = "650px" alt="Jio Network blocking the view? Network switch reveals the magic!" src="./assets/wallet-app.png">
 <p>
 <br>
 
 ## <a name="features">🔋&nbsp; Features</a>
 
 - **Organized File and Folder Structure**: Maintain a well-organized file and folder structure for easy navigation and management.
+
+- **Intuitive UI**: Well-organized and intuitive user interface design for a smooth user experience.
+
+- **Server Side State Management**: Leveraged React Query for efficient data fetching and caching.
+
+- **Client Side States Management**: Recoil for managing global state at client side.
+
+- **Custom Hooks**: Efficient data management with a custom hooks.
+
+- **Schema Validation**: Enforced schema validation on both frontend and backend for enhanced data integrity using zod.
+
+- **Secure Authentication**: Robust authentication using JWT tokens.
+
+- **Security Measures**: Implemented rate limiting and refereshing tokens.
+
+- **Documentation**: For clarity & a local development setup guide.
+
+- **Fully Responsive Design**: Utilize Tailwind CSS utilities for great UX across different screen sizes.
+
+- **Dark and Light Mode**: Seamlessly switch between dark and light themes for personalized visual preferences.
   <br><br>
 
 ## <a name="tech-stack">⚙️&nbsp; Tech Stack</a>
@@ -50,6 +70,8 @@ To-Do App created during Week-5 of 100xDevs Cohort by Harkirat Singh.
 - [React](https://react.dev/) – library for building UI
 - [Node.js](https://nodejs.org/) – JavaScript runtime
 - [Tailwind CSS](https://tailwindcss.com/) – utility-first CSS framework
+- [Recoil](https://recoiljs.org/) – library for state management
+- [Tanstack Query](https://tanstack.com/query/latest) – library for asynchronous state management
 - [Mongoose](https://mongoosejs.com/) – MongoDB object modeling
 - [RESTful API](https://restfulapi.net/) – API design principles
 - [Git](https://git-scm.com/) – versioning
@@ -76,6 +98,81 @@ To-Do App created during Week-5 of 100xDevs Cohort by Harkirat Singh.
     ```bash
     cd 100xdevs-full-stack-mastery/0-1/projects/basic-wallet-app/
     ```
+
+3.  **Setup Backend:**
+
+    - **Navigate to the Backend Codebase:**
+
+      ```bash
+      cd server/
+      ```
+
+    - **Install dependencies:**
+
+      ```bash
+      npm install
+      ```
+
+    - **Add Environment Variables:**
+
+      Create .env file in the root folder and copy paste the content of .env.sample.
+
+      ```bash
+      cp .env.sample .env
+      ```
+
+      If required, add necessary credentials.
+
+    - **Start the Server:**
+
+      ```bash
+      npm start
+      ```
+
+    - **Explore the API:**
+
+      Access the project APIs at the specified endpoints using [API Docs](https://documenter.getpostman.com/view/31850881/2sA3Bn7srM).
+
+4.  **Setup Frontend:**
+
+    - **Navigate to the Frontent Codebase:**
+
+      ```bash
+      cd client/
+      ```
+
+    - **Install dependencies:**
+
+      ```bash
+      npm install
+      ```
+
+    - **Add Environment Variables:**
+
+      Create .env file in the root folder and copy paste the content of .env.sample.
+
+      ```bash
+      cp .env.sample .env
+      ```
+
+      If required, add necessary credentials.
+
+    - **Start the frontend app:**
+
+      ```bash
+      npm run dev
+      ```
+
+    - **Start the backend server:**
+
+      ```bash
+      cd ../server
+      npm start
+      ```
+
+    - **Open app in browser:**
+
+      Visit [https://localhost:5173](https://localhost:5173) to access frontent.
 
 <br>
 
