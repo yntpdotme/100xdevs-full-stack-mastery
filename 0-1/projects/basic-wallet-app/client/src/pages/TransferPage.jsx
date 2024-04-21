@@ -5,10 +5,12 @@ import {
   useQueryClient,
   useMutation,
 } from '@tanstack/react-query';
+import {useRecoilState} from 'recoil';
 
-import {InputSearch, UsersTable} from '../components';
+import {InputSearch, Notification, UsersTable} from '../components';
 import {UserService, WalletService} from '../api/services';
 import {useDebounce} from '../hooks';
+import {notificationState} from '../recoil/atoms';
 
 const TransferPage = () => {
   const [page, setPage] = useState(1);
@@ -24,18 +26,29 @@ const TransferPage = () => {
     placeholderData: keepPreviousData,
   });
 
+  const [showNotification, setShowNotification] =
+    useRecoilState(notificationState);
+
   const queryClient = useQueryClient();
 
   const transferFundsMutation = useMutation({
     mutationFn: WalletService.transfer,
     onSuccess: () => {
       queryClient.invalidateQueries({queryKey: ['balance', 'transactions']});
+      setTimeout(() => setShowNotification(false), 2000);
     },
+    onError: () => setShowNotification(false),
   });
 
-  const handleSearchChange = e => {
+  const handleSearchInputChange = e => {
     setSearch(e.target.value);
   };
+
+  const notificationLabels = {
+    loading: 'Transferring...',
+    success: 'Transfer successful',
+  };
+
 
   return (
     <section className="px-2 pt-6 lg:p-6">
@@ -54,7 +67,7 @@ const TransferPage = () => {
           <InputSearch
             type="search"
             placeholder="Search for user..."
-            props={{onChange: handleSearchChange}}
+            props={{onChange: handleSearchInputChange}}
           />
         </div>
 
@@ -67,6 +80,8 @@ const TransferPage = () => {
             />
           </div>
         </div>
+
+        {showNotification && <Notification labels={notificationLabels} />}
       </div>
     </section>
   );

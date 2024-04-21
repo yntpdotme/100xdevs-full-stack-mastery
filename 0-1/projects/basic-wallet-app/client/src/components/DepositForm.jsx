@@ -1,9 +1,11 @@
 import {useForm} from 'react-hook-form';
 import {zodResolver} from '@hookform/resolvers/zod';
+import {useSetRecoilState} from 'recoil';
 
 import {depositSchema} from '../validators/formValidators';
 import {useCurrentUser} from '../hooks';
 import {Input} from './index';
+import {formSubmissionState, notificationState} from '../recoil/atoms';
 
 const DepositForm = ({onSubmit}) => {
   const {
@@ -17,8 +19,12 @@ const DepositForm = ({onSubmit}) => {
     mode: 'onChange',
   });
 
+  const setFormSubmission = useSetRecoilState(formSubmissionState);
+  const setShowNotification = useSetRecoilState(notificationState);
+
   const onSubmitHandler = async data => {
     try {
+      setFormSubmission(true);
       await onSubmit(data);
       reset();
     } catch (error) {
@@ -32,10 +38,12 @@ const DepositForm = ({onSubmit}) => {
         type: 'manual',
         message: errorMessage,
       });
+    } finally {
+      setTimeout(() => setFormSubmission(false), 500);
     }
   };
 
-  const {data:currentUser, isError} = useCurrentUser();
+  const {data: currentUser, isError} = useCurrentUser();
 
   return (
     <>
@@ -61,6 +69,7 @@ const DepositForm = ({onSubmit}) => {
             <button
               className="inline-flex items-center justify-center rounded-md bg-primary bg-gradient-to-r px-6 py-3 text-sm font-medium text-white shadow-2xl transition-colors hover:bg-primary/90 focus-visible:outline-none disabled:pointer-events-none max-sm:w-full"
               disabled={!isValid}
+              onClick={() => setShowNotification(true)}
             >
               <span className="font-montserrat">Add Money</span>
             </button>
