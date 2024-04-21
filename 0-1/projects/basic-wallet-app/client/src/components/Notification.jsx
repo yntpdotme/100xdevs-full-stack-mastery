@@ -8,11 +8,14 @@ const Notification = ({labels}) => {
 
   return (
     <section tabIndex="-1">
-      <ol className="absolute right-5 top-20 m-0 w-full max-w-[22rem]">
-        <li className="mb-4 w-full rounded-lg border border-gray-200 bg-popover p-3 shadow-lg dark:border-dark-800 dark:shadow-2xl dark:shadow-primary/40">
-          <div className="flex items-end">
+      <ol className="fixed bottom-0 right-5 z-40 w-full max-w-[22rem] translate-y-[-30px] transform transition-all delay-[1000ms] duration-300 ease-in-out">
+        <li className="w-full rounded-lg border border-gray-200 bg-popover p-3 shadow-lg dark:border-dark-800 dark:shadow-2xl dark:shadow-primary/40">
+          <div className="flex items-center">
             {formSubmission ? (
-              <div className="mr-3 h-5 w-5 animate-spin rounded-full border-b-2 border-t-2 border-gray-200"></div>
+              <div className="flex items-center">
+                <div className="mr-3 inline-block size-7 animate-spin rounded-full border-[4px] border-gray-200 border-t-primary dark:border-gray-600 dark:border-t-primary"></div>
+                <span className="sr-only">Loading...</span>
+              </div>
             ) : (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -27,10 +30,9 @@ const Notification = ({labels}) => {
                 ></path>
               </svg>
             )}
-            <div>
-              <div className="font-montserrat text-[16px] font-medium leading-normal text-gray-400">
-                {formSubmission ? labels?.loading : labels?.success}
-              </div>
+
+            <div className="font-montserrat text-[16px] font-medium text-gray-400">
+              {formSubmission ? labels?.loading : labels?.success}
             </div>
 
             <button type="button" onClick={() => setShowNotification(false)}>

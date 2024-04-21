@@ -1,10 +1,12 @@
 import {useForm} from 'react-hook-form';
 import {zodResolver} from '@hookform/resolvers/zod';
 import {useEffect} from 'react';
+import {useSetRecoilState} from 'recoil';
 
 import {closeIcon} from '../assets';
 import {transferSchema} from '../validators/formValidators';
 import {Input, Button} from './index';
+import {formSubmissionState, notificationState} from '../recoil/atoms';
 
 const DialogBox = ({user, label, onSubmit, onClose}) => {
   const {
@@ -23,8 +25,12 @@ const DialogBox = ({user, label, onSubmit, onClose}) => {
     setFocus('amount');
   }, [setFocus]);
 
+  const setFormSubmission = useSetRecoilState(formSubmissionState);
+  const setShowNotification = useSetRecoilState(notificationState);
+
   const onSubmitHandler = async data => {
     try {
+      setFormSubmission(true);
       await onSubmit(data);
       reset();
       onClose();
@@ -40,6 +46,8 @@ const DialogBox = ({user, label, onSubmit, onClose}) => {
         type: 'manual',
         message: errorMessage,
       });
+    } finally {
+      setTimeout(() => setFormSubmission(false), 500);
     }
   };
 
@@ -103,6 +111,7 @@ const DialogBox = ({user, label, onSubmit, onClose}) => {
                     label="Transfer"
                     roundedCorners="md"
                     isDisabled={!isValid}
+                    onClick={() => setShowNotification(true)}
                   />
                 </div>
 

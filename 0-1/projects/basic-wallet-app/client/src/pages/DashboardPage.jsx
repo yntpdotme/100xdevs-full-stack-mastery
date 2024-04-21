@@ -1,7 +1,9 @@
 import {useMutation, useQuery, useQueryClient} from '@tanstack/react-query';
+import {useRecoilState} from 'recoil';
 
 import {WalletService} from '../api/services';
-import {GainIndicator, DepositForm} from '../components';
+import {GainIndicator, DepositForm, Notification} from '../components';
+import {notificationState} from '../recoil/atoms';
 
 const DashboardPage = () => {
   const {data, isLoading, isError} = useQuery({
@@ -12,14 +14,24 @@ const DashboardPage = () => {
     },
   });
 
+  const [showNotification, setShowNotification] =
+    useRecoilState(notificationState);
+
   const queryClient = useQueryClient();
 
   const depositMutation = useMutation({
     mutationFn: WalletService.deposit,
     onSuccess: () => {
       queryClient.invalidateQueries({queryKey: ['balance']});
+      setTimeout(() => setShowNotification(false), 2000);
     },
+    onError: () => setShowNotification(false),
   });
+
+  const notificationLabels = {
+    loading: 'Processing...',
+    success: 'Amount deposited successfully',
+  };
 
   return (
     <section className="px-2 pt-6 lg:p-6">
@@ -63,8 +75,8 @@ const DashboardPage = () => {
         <p className="font-montserrat text-gray-500 dark:text-gray-400">
           Add money to your Wallet
         </p>
-
         <DepositForm onSubmit={depositMutation.mutateAsync} />
+        {showNotification && <Notification labels={notificationLabels} />}
       </div>
     </section>
   );
