@@ -21,6 +21,8 @@ import TansactionsTable from './TansactionsTable';
 import Notification from './Notification';
 import Pagination from './Pagination';
 import TableLoader from './TableLoader';
+import GuestLogin from './GuestLogin';
+import ErrorNotification from './ErrorNotification';
 
 export {
   AuthForm,
@@ -46,4 +48,6 @@ export {
   Notification,
   Pagination,
   TableLoader,
+  GuestLogin,
+  ErrorNotification,
 };
