@@ -34,11 +34,11 @@
 
 ### - Sing Out
 
-- Endpoint: `/api/v1/auth/logout`
+- Endpoint: `/api/v1/auth/signout`
 
 - Method: `GET`
 
-- Description: Logs out the authenticated user session.
+- Description: Sign out the authenticated user session.
 
 ### - Refresh Token
 

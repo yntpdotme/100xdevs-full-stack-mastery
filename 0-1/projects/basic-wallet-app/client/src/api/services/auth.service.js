@@ -5,7 +5,7 @@ const AuthService = {
 
   signIn: formData => apiClient.post('/auth/signin', formData),
 
-  signOut: () => clientPrivate.get('/auth/logout'),
+  signOut: () => clientPrivate.get('/auth/signout'),
 };
 
 export default AuthService;
