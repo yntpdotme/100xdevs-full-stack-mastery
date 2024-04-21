@@ -19,7 +19,7 @@ router
   .post(loginUser)
 
 router
-  .route('/logout')
+  .route('/signout')
   .get(authorization, logoutUser)
 
 router
