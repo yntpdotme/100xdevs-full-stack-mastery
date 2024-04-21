@@ -6,6 +6,7 @@ import {useSetRecoilState} from 'recoil';
 import {updateProfileSchema} from '../validators/formValidators';
 import {Input} from './index';
 import {formSubmissionState, notificationState} from '../recoil/atoms';
+import {useCurrentUser} from '../hooks';
 
 const UpdateProfileForm = ({onSubmit}) => {
   const {
@@ -21,14 +22,23 @@ const UpdateProfileForm = ({onSubmit}) => {
 
   const setFormSubmission = useSetRecoilState(formSubmissionState);
   const setShowNotification = useSetRecoilState(notificationState);
+  const {data: currentUser} = useCurrentUser();
 
   const onSubmitHandler = async data => {
     try {
+      if (currentUser?.email === 'guest@email.com') {
+        setShowNotification(false);
+        throw new Error(`Profile update for guest users is not permitted`);
+      }
       setFormSubmission(true);
       await onSubmit(data);
       reset();
     } catch (error) {
       let errorMessage = 'An unexpected error occurred. Please try again.';
+
+      if (error.message) {
+        errorMessage = error.message;
+      }
 
       if (error?.response?.data?.message) {
         errorMessage = error.response.data.message;

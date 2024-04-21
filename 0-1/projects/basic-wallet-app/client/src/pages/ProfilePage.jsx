@@ -13,7 +13,7 @@ const ProfilePage = () => {
   const currentUserMutation = useMutation({
     mutationFn: UserService.updateUser,
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['currentUser'] });
+      queryClient.invalidateQueries({queryKey: ['currentUser']});
       setTimeout(() => setShowNotification(false), 2000);
     },
     onError: () => setShowNotification(false),

@@ -35,7 +35,7 @@ const GuestLogin = () => {
 
       console.log(errorMessage);
     } finally {
-      // setTimeout(() => setShowNotification(false), 2000);
+      setTimeout(() => setShowNotification(false), 2000);
     }
   };
 

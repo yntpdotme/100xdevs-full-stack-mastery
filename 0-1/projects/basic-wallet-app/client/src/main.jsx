@@ -16,7 +16,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <RecoilRoot>
         <QueryClientProvider client={queryClient}>
           <App />
-          <ReactQueryDevtools buttonPosition='top-right'/>
+          <ReactQueryDevtools buttonPosition="bottom-left" />
         </QueryClientProvider>
       </RecoilRoot>
     </BrowserRouter>
