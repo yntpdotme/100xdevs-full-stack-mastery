@@ -38,7 +38,7 @@ The foundational building blocks of my development journey within the 100xDevs p
 
 ### [1-100 Cohort](./1-100/)
 
-Transforming into a full-stack ninja 🥷: Stay tuned.
+Transforming into a full-stack ninja 🥷. ([Dive In](./1-100/README.md#showcase))
 </br></br>
 
 ## Highlights
@@ -99,6 +99,8 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for ways to get started.
 Here are some related projects
 
 - [Official - 100xDevs Cohort 2](https://github.com/100xdevs-cohort-2/assignments)
+
+- [Indrakant D - 100x-Cohort-Programs](https://github.com/its-id/100x-Cohort-Programs)
 
 - [Ajaydeep Singh Rajpoot - 100xdevsCohort](https://github.com/Ajaydeep123/100xdevsCohort)
 
