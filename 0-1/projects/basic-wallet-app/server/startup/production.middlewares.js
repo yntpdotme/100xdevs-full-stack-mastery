@@ -5,6 +5,8 @@ import compression from 'compression';
 import hpp from 'hpp';
 import rateLimit from 'express-rate-limit';
 
+import {ApiError} from '../utils/index.js';
+
 const corsOptions = {
   origin:
     process.env.CORS_ORIGIN === '*' ? '*' : process.env.CORS_ORIGIN?.split(','),

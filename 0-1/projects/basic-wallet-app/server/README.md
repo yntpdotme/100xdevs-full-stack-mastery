@@ -8,9 +8,9 @@
 
 <br>
 
-- It uses various routes for different functionalities.
+- This codebase contains the backend logic for the **Wallet** app.
 
-- Here's an overview:
+- Dive into the codebase to explore the inner workings of Wallet App's backend.
 
 <br>
 
@@ -157,3 +157,5 @@ Feel free to explore backend APIs implementation and run it locally to verify it
 	  Access the project APIs at the specified endpoints using [API Docs](https://documenter.getpostman.com/view/31850881/2sA3Bn7srM).
 
 <br><br>
+
+Feel free to explore backend APIs implementation and run it locally to verify it's correctness. Happy coding!
