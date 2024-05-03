@@ -13,9 +13,17 @@
 </div>
 <br>
 
+- ### [Week 0 : Zerodha Landing Page (HTML + CSS)](../assignments/week-0/README.md)
+
+  &nbsp;[Repository](https://github.com/KadlagAkash/zerodha-landing-replica) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Live Demo](https://zerodha-landing-replica.vercel.app/)
+
 - ### [Week 5 : Basic Todo App (MERN)](./basic-todo-app/README.md)
 
+  &nbsp;[Repository](https://github.com/KadlagAkash/simply-todo) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Live Demo](https://simply-todo-client.vercel.app/)
+
 - ### [Week 8 : Basic Wallet App (MERN + Tailwind)](./basic-wallet-app/README.md)
+
+  &nbsp;[Repository](https://github.com/KadlagAkash/zippy-x) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Live Demo](https://zippy-x.vercel.app/)
   </br></br>
 
 ## Contributing
