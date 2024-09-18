@@ -6,7 +6,7 @@ const BirthdayCardPage = () => {
   return (
     <>
       <a
-        href="https://github.com/KadlagAkash/100xdevs-full-stack-mastery/blob/main/0-1/assignments/week-7/src/components/BirthdayCard/BirthdayCard.jsx"
+        href="https://github.com/yntpdotme/100xdevs-full-stack-mastery/blob/main/0-1/assignments/week-7/src/components/BirthdayCard/BirthdayCard.jsx"
         target="_blank"
       >
         <img src={gitHubLogo} className="logo" alt="Github logo" />

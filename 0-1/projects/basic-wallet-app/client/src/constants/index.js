@@ -13,4 +13,4 @@ export const navLinks = [
 ];
 
 export const soureCodeLink =
-  'https://github.com/KadlagAkash/100xdevs-full-stack-mastery/blob/main/0-1/projects/basic-wallet-app/README.md';
+  'https://github.com/yntpdotme/100xdevs-full-stack-mastery/blob/main/0-1/projects/basic-wallet-app/README.md';

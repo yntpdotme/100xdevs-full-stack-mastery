@@ -6,7 +6,7 @@ const BackgroundChangerPage = () => {
   return (
     <>
       <a
-        href="https://github.com/KadlagAkash/100xdevs-full-stack-mastery/blob/main/0-1/assignments/week-7/src/components/BackgroundChanger/BackgroundChanger.jsx"
+        href="https://github.com/yntpdotme/100xdevs-full-stack-mastery/blob/main/0-1/assignments/week-7/src/components/BackgroundChanger/BackgroundChanger.jsx"
         target="_blank"
       >
         <img src={gitHubLogo} className="logo" alt="Github logo" />

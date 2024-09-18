@@ -13,7 +13,7 @@ const HomePage = () => {
     <section className="max-container relative flex h-screen flex-col items-center justify-center px-1">
       <p className="absolute left-5 top-10 animate-pulse font-montserrat xl:left-0">
         From{' '}
-        <a href="https://linktr.ee/kadlagakash" target="_blank">
+        <a href="https://yntp.me" target="_blank">
           <span className="font-medium">Akash Kadlag</span>
         </a>
         ...

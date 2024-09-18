@@ -6,7 +6,7 @@ const OTPLoginPage = () => {
   return (
     <>
       <a
-        href="https://github.com/KadlagAkash/100xdevs-full-stack-mastery/blob/main/0-1/assignments/week-7/src/components/OTPLogin/OTPLogin.jsx"
+        href="https://github.com/yntpdotme/100xdevs-full-stack-mastery/blob/main/0-1/assignments/week-7/src/components/OTPLogin/OTPLogin.jsx"
         target="_blank"
       >
         <img src={gitHubLogo} className="logo" alt="Github logo" />

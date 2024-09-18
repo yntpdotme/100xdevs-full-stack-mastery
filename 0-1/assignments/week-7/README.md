@@ -123,7 +123,7 @@ Ensure you have Node.js installed on your machine. Follow the steps below to ins
 3. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/KadlagAkash/100xdevs-full-stack-mastery.git
+   git clone https://github.com/yntpdotme/100xdevs-full-stack-mastery.git
    ```
 
 4. **Navigate to the project directory:**
